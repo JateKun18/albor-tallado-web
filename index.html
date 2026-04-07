@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Albor Tallado — Arte en parafina de alta gama tallada a mano en Quito, Ecuador. Esculturas y piezas de decoración de alta gama que transforman cada espacio en una experiencia sensorial única.">
-    <title>Albor Tallado | Arte Escultural en Parafina | Quito, Ecuador</title>
+    <meta name="description" content="Regalos de parafina Quito — Ramos botánicos y esculturas de autor tallados a mano. Detalles artesanales Ecuador, decoración artesanal premium. Taller boutique en Quito, Ecuador.">
+    <link rel="canonical" href="https://albortallado.com">
+    <link rel="icon" href="assets/img/logo-albor.png" type="image/png">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1E1B18">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Albor Tallado | Piezas Decorativas Talladas a Mano | Quito">
+    <meta name="twitter:description" content="Esculturas decorativas en parafina de alta gama, creadas artesanalmente en Quito, Ecuador. Servicio Bespoke disponible.">
+    <meta name="twitter:image" content="https://albortallado.com/assets/img/producto-albor.png">
+    <title>Albor Tallado — Piezas Decorativas en Parafina | Quito, Ecuador</title>
 
     <!-- Open Graph / WhatsApp / Instagram -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://albor-tallado-web.vercel.app">
-    <meta property="og:title" content="Albor Tallado | Arte Escultural en Parafina | Quito, Ecuador">
-    <meta property="og:description" content="Albor Tallado — Arte en parafina de alta gama tallada a mano en Quito, Ecuador. Esculturas y piezas de decoración de alta gama que transforman cada espacio en una experiencia sensorial única.">
-    <meta property="og:image" content="https://albor-tallado-web.vercel.app/assets/img/producto-albor.png">
+    <meta property="og:url" content="https://albortallado.com">
+    <meta property="og:title" content="Albor Tallado | Regalos de Parafina Quito | Detalles Artesanales Ecuador">
+    <meta property="og:description" content="Regalos de parafina Quito — ramos botánicos y esculturas talladas a mano. Decoración artesanal premium desde Ecuador. Piezas únicas, comisiones bespoke disponibles.">
+    <meta property="og:image" content="https://albortallado.com/assets/img/producto-albor.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -91,9 +99,15 @@
         }
 
         nav .logo img {
-            height: 48px;
+            height: 64px;
             width: auto;
             object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            nav .logo img {
+                height: 52px;
+            }
         }
 
         nav .logo-text {
@@ -547,6 +561,213 @@
 
         .galeria-item.col-right {
             grid-row: span 1;
+        }
+
+        /* ===================== CATÁLOGO VISOR ===================== */
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .catalogo-card {
+            overflow: hidden;
+            border: 1px solid rgba(184, 134, 69, 0.14);
+            background: var(--color-alabastro);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+        }
+
+        .catalogo-card:hover {
+            box-shadow: 0 20px 56px rgba(30, 27, 24, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .catalogo-visor {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            background: #ede9e0;
+        }
+
+        .catalogo-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.95s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .catalogo-slide.active {
+            opacity: 1;
+        }
+
+        .catalogo-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .catalogo-dots {
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 2;
+        }
+
+        .catalogo-dot {
+            background: rgba(30, 27, 24, 0.22);
+            border: 1px solid rgba(244, 241, 235, 0.5);
+            border-radius: 2px;
+            padding: 3px 11px;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .catalogo-dot span {
+            font-family: var(--font-cuerpo);
+            font-size: 0.56rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(244, 241, 235, 0.88);
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .catalogo-dot.active {
+            background: var(--color-oro);
+            border-color: var(--color-oro);
+        }
+
+        .catalogo-dot.active span {
+            color: var(--color-alabastro);
+        }
+
+        .catalogo-info {
+            padding: 20px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(184, 134, 69, 0.14);
+        }
+
+        .catalogo-nombre {
+            font-family: var(--font-titulo);
+            font-size: 1.15rem;
+            font-weight: 400;
+            letter-spacing: 0.07em;
+            color: var(--color-espresso);
+        }
+
+        .catalogo-cta {
+            font-family: var(--font-cuerpo);
+            font-size: 0.66rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-oro);
+            text-decoration: none;
+            transition: letter-spacing 0.35s, color 0.3s;
+        }
+
+        .catalogo-cta:hover {
+            letter-spacing: 0.3em;
+            color: var(--color-espresso);
+        }
+
+        @media (max-width: 720px) {
+            .catalogo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===================== CUESTIONARIO BESPOKE ===================== */
+        .bespoke-form {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bespoke-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .bespoke-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .bespoke-field label {
+            font-family: var(--font-cuerpo);
+            font-size: 0.62rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--color-oro);
+        }
+
+        .bespoke-field input,
+        .bespoke-field select {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(30, 27, 24, 0.25);
+            padding: 10px 0;
+            font-family: var(--font-cuerpo);
+            font-size: 0.88rem;
+            font-weight: 300;
+            color: var(--color-espresso);
+            outline: none;
+            transition: border-color 0.3s;
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+
+        .bespoke-field input::placeholder {
+            color: rgba(30, 27, 24, 0.3);
+            font-weight: 300;
+        }
+
+        .bespoke-field input:focus,
+        .bespoke-field select:focus {
+            border-bottom-color: var(--color-oro);
+        }
+
+        .bespoke-field select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B88645' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 4px center;
+            padding-right: 24px;
+        }
+
+        .bespoke-field select option {
+            color: var(--color-espresso);
+        }
+
+        .bespoke-submit {
+            margin-top: 8px;
+            align-self: flex-start;
+        }
+
+        .bespoke-form-msg {
+            font-family: var(--font-cuerpo);
+            font-size: 0.82rem;
+            font-weight: 300;
+            padding: 12px 0;
+            display: none;
+        }
+
+        .bespoke-form-msg.success { color: #5a8a5a; display: block; }
+        .bespoke-form-msg.error   { color: #b85a5a; display: block; }
+
+        @media (max-width: 640px) {
+            .bespoke-form-row { grid-template-columns: 1fr; }
         }
 
         /* ===================== UBICACION ===================== */
@@ -1207,9 +1428,387 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* ===================== CURSOR PERSONALIZADO ===================== */
+        * { cursor: none !important; }
+        .cursor-dot {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            width: 8px;
+            height: 8px;
+            background: var(--color-espresso);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: background 0.2s;
+            top: 0; left: 0;
+        }
+        .cursor-ring {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(30, 27, 24, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.25s, height 0.25s, border-color 0.25s, opacity 0.25s;
+            top: 0; left: 0;
+        }
+        .cursor-ring.hover {
+            width: 52px;
+            height: 52px;
+            border-color: var(--color-oro);
+            opacity: 1;
+        }
+
+        /* ===================== HERO ENTRY ANIMATION ===================== */
+        .hero-content > * {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: heroEntry 0.85s ease forwards;
+        }
+        .hero-eyebrow { animation-delay: 0.15s; }
+        .hero h1 { animation-delay: 0.38s; }
+        .hero-description { animation-delay: 0.58s; }
+        .hero-actions { animation-delay: 0.74s; }
+        @keyframes heroEntry {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===================== TESTIMONIOS ===================== */
+        .testimonios {
+            padding: 100px 0;
+            background: var(--color-alabastro);
+        }
+        .testimonios-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .testimonio-card {
+            border: 1px solid rgba(184, 134, 69, 0.2);
+            padding: 40px 32px 36px;
+            position: relative;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .testimonio-card:hover {
+            border-color: rgba(184, 134, 69, 0.5);
+            transform: translateY(-4px);
+        }
+        .testimonio-quote-mark {
+            font-family: var(--font-titulo);
+            font-size: 4.5rem;
+            color: var(--color-oro);
+            opacity: 0.25;
+            line-height: 1;
+            margin-bottom: -16px;
+            display: block;
+        }
+        .testimonio-texto {
+            font-size: 0.88rem;
+            font-weight: 300;
+            line-height: 1.9;
+            color: var(--color-espresso-soft);
+            margin-bottom: 28px;
+            font-style: italic;
+        }
+        .testimonio-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
+        .testimonio-stars span {
+            color: var(--color-oro);
+            font-size: 0.75rem;
+        }
+        .testimonio-autor strong {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--color-espresso);
+            letter-spacing: 0.05em;
+            margin-bottom: 2px;
+        }
+        .testimonio-autor span {
+            font-size: 0.72rem;
+            font-weight: 300;
+            color: var(--color-oro);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        @media (max-width: 900px) {
+            .testimonios-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+        }
+
+        /* ===================== PRECIO BESPOKE ===================== */
+        .bespoke-price-badge {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 32px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(184, 134, 69, 0.2);
+            flex-wrap: wrap;
+        }
+        .price-desde {
+            font-size: 0.68rem;
+            font-weight: 300;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--color-espresso);
+            opacity: 0.55;
+        }
+        .price-amount {
+            font-family: var(--font-titulo);
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: var(--color-oro);
+            line-height: 1;
+        }
+        .price-nota {
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: var(--color-espresso);
+            opacity: 0.5;
+            letter-spacing: 0.04em;
+        }
+
+        /* ===================== FAQ ===================== */
+        .faq {
+            padding: 100px 0;
+            background: #EDE9E1;
+        }
+        .faq-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(30, 27, 24, 0.1);
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 400;
+            color: var(--color-espresso);
+            gap: 16px;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: var(--font-cuerpo);
+            transition: color 0.3s;
+        }
+        .faq-question:hover { color: var(--color-oro); }
+        .faq-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .faq-icon::before,
+        .faq-icon::after {
+            content: '';
+            position: absolute;
+            background: var(--color-oro);
+            transition: transform 0.35s ease;
+        }
+        .faq-icon::before { width: 14px; height: 1px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .faq-icon::after { width: 1px; height: 14px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .faq-item.open .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .faq-answer p {
+            font-size: 0.84rem;
+            font-weight: 300;
+            color: var(--color-espresso-soft);
+            line-height: 1.9;
+            padding: 0 0 22px;
+        }
+        .faq-item.open .faq-answer { max-height: 240px; }
+        @media (max-width: 768px) {
+            .faq-inner { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        /* ===================== CATÁLOGO SUBTÍTULO ===================== */
+        .catalogo-subtitulo {
+            font-family: var(--font-cuerpo);
+            font-size: 0.62rem;
+            font-weight: 300;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-oro);
+            margin-top: 3px;
+        }
+
+        .catalogo-info {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .catalogo-info-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        /* ===================== PRELOADER ===================== */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--color-alabastro);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.75s ease, visibility 0.75s ease;
+        }
+
+        #preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .preloader-flame-wrap {
+            width: 64px;
+            height: 96px;
+            position: relative;
+        }
+
+        .preloader-flame {
+            width: 100%;
+            height: 100%;
+            animation: flameEmerge 1.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+            transform: scale(0.2) translateY(50px);
+        }
+
+        @keyframes flameEmerge {
+            0%   { opacity: 0; transform: scale(0.2) translateY(50px); }
+            55%  { opacity: 1; transform: scale(1.1) translateY(-6px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .preloader-glow {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 30px;
+            background: radial-gradient(ellipse, rgba(184,134,69,0.35) 0%, transparent 70%);
+            animation: flameEmerge 1.3s ease forwards;
+            opacity: 0;
+        }
+
+        .preloader-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--color-espresso);
+            margin-top: 24px;
+            opacity: 0;
+            animation: preloaderText 0.5s ease 1.0s forwards;
+        }
+
+        @keyframes preloaderText {
+            to { opacity: 0.75; }
+        }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Albor Tallado",
+      "description": "Taller boutique de piezas decorativas en parafina talladas a mano. Escultura artesanal, comisiones bespoke y colecciones limitadas desde Quito, Ecuador.",
+      "url": "https://albortallado.com",
+      "telephone": "+593979323908",
+      "email": "albor.tallado@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Quito",
+        "addressRegion": "Pichincha",
+        "postalCode": "170150",
+        "addressCountry": "EC"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-0.1807",
+        "longitude": "-78.4678"
+      },
+      "image": "https://albortallado.com/assets/img/producto-albor.png",
+      "priceRange": "$$$$",
+      "openingHours": "Mo-Sa 10:00-18:00",
+      "keywords": "regalos de parafina Quito, detalles artesanales Ecuador, decoración artesanal, ramos botánicos parafina, escultura artesanal Quito",
+      "areaServed": {
+        "@type": "City",
+        "name": "Quito",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "Ecuador"
+        }
+      },
+      "sameAs": ["https://www.instagram.com/albortallado"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Pieza Decorativa Tallada en Parafina — Albor Tallado",
+      "description": "Escultura artesanal en parafina tallada a mano. Pieza única, sin producción en serie. Comisiones bespoke disponibles. Taller boutique en Quito, Ecuador.",
+      "brand": { "@type": "Brand", "name": "Albor Tallado" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/MadeToOrder",
+        "seller": { "@type": "Organization", "name": "Albor Tallado" }
+      }
+    }
+    </script>
 </head>
 <body>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-flame-wrap">
+            <svg class="preloader-flame" viewBox="0 0 60 92" xmlns="http://www.w3.org/2000/svg">
+                <!-- Llama exterior -->
+                <path d="M30 88 C9 77 4 57 8 40 C12 24 20 15 25 7 C27 3 28.5 0 30 2 C31.5 0 33 3 35 7 C40 15 48 24 52 40 C56 57 51 77 30 88 Z"
+                      fill="#B88645" opacity="0.9"/>
+                <!-- Llama interior (calor) -->
+                <path d="M30 73 C19 64 17 50 20 37 C23 27 27 20 30 12 C33 20 37 27 40 37 C43 50 41 64 30 73 Z"
+                      fill="#d4a55a" opacity="0.6"/>
+                <!-- Núcleo luminoso -->
+                <path d="M30 58 C25 52 24 44 26 36 C28 30 29.5 25 30 20 C30.5 25 32 30 34 36 C36 44 35 52 30 58 Z"
+                      fill="#F4F1EB" opacity="0.45"/>
+            </svg>
+            <div class="preloader-glow"></div>
+        </div>
+        <span class="preloader-brand">Albor</span>
+    </div>
 
     <!-- NAV -->
     <nav id="navbar">
@@ -1225,7 +1824,7 @@
                     <li><a href="#proceso">Proceso</a></li>
                     <li><a href="#ubicacion">Taller</a></li>
                 </ul>
-                <a href="https://wa.me/593979323908?text=Hola%20Albor%20Tallado,%20deseo%20información%20sobre%20una%20pieza%20personalizada%20para%20mi%20espacio." class="nav-cta" target="_blank" rel="noopener">Comisionar Obra</a>
+                <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20sus%20piezas%20y%20quiero%20regalar%20una.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%3F" class="nav-cta" target="_blank" rel="noopener">Elegir una Pieza</a>
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
@@ -1242,22 +1841,22 @@
         <a href="#bespoke" class="mobile-link">Bespoke</a>
         <a href="#proceso" class="mobile-link">Proceso</a>
         <a href="#ubicacion" class="mobile-link">Taller</a>
-        <a href="https://wa.me/593979323908?text=Hola%20Albor%20Tallado,%20deseo%20información%20sobre%20una%20pieza%20personalizada%20para%20mi%20espacio." class="mobile-link" target="_blank" rel="noopener">Comisionar</a>
+        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20sus%20piezas%20y%20quiero%20regalar%20una.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%3F" class="mobile-link" target="_blank" rel="noopener">Elegir una Pieza</a>
     </div>
 
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-eyebrow">Arte Escultural en Parafina</p>
-            <h1>La belleza del<br><em>amanecer,</em><br>esculpida<br>para siempre.</h1>
-            <p class="hero-description">Piezas de decoración exclusiva de alta gama, creadas en nuestro taller de Quito para los espacios más exigentes de Ecuador.</p>
+            <p class="hero-eyebrow">Tallado a mano en Quito, Ecuador</p>
+            <h1>Arte en parafina:<br>Piezas botánicas y<br><em>esculturas de autor</em></h1>
+            <p class="hero-description">Piezas decorativas en parafina talladas a mano desde un taller boutique en Quito. Sin producción en serie — solo artesanía de verdad, para transformar un espacio o regalar algo que permanece.</p>
             <div class="hero-actions">
                 <a href="#galeria" class="btn-primary">Ver Colección</a>
-                <a href="#bespoke" class="btn-secondary">Servicio Bespoke</a>
+                <a href="#regalar" class="btn-secondary">Para Regalar</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="assets/img/producto-albor.png" alt="Pieza escultural Albor Tallado">
+            <img src="assets/img/producto-albor.png" alt="Ramo botánico de parafina artesanal — regalos de parafina artesanales Quito">
             <div class="hero-image-overlay"></div>
         </div>
         <div class="hero-scroll-indicator">
@@ -1269,60 +1868,183 @@
     <!-- STRIP -->
     <div class="strip">
         <div class="strip-track">
-            <span>Arte Escultural</span><span class="dot">&#183;</span>
-            <span>Decoración de Alta Gama</span><span class="dot">&#183;</span>
-            <span>Comisión Bespoke</span><span class="dot">&#183;</span>
+            <span>Tallado a Mano</span><span class="dot">&#183;</span>
+            <span>Decoración Artesanal</span><span class="dot">&#183;</span>
+            <span>Piezas Personalizadas</span><span class="dot">&#183;</span>
             <span>Taller en Quito</span><span class="dot">&#183;</span>
-            <span>Colecciones Limitadas</span><span class="dot">&#183;</span>
-            <span>Interiorismo de Lujo</span><span class="dot">&#183;</span>
-            <span>Arte Escultural</span><span class="dot">&#183;</span>
-            <span>Decoración de Alta Gama</span><span class="dot">&#183;</span>
-            <span>Comisión Bespoke</span><span class="dot">&#183;</span>
+            <span>El Regalo que Permanece</span><span class="dot">&#183;</span>
+            <span>Hecho con Cuidado</span><span class="dot">&#183;</span>
+            <span>Tallado a Mano</span><span class="dot">&#183;</span>
+            <span>Decoración Artesanal</span><span class="dot">&#183;</span>
+            <span>Piezas Personalizadas</span><span class="dot">&#183;</span>
             <span>Taller en Quito</span><span class="dot">&#183;</span>
-            <span>Colecciones Limitadas</span><span class="dot">&#183;</span>
-            <span>Interiorismo de Lujo</span><span class="dot">&#183;</span>
+            <span>El Regalo que Permanece</span><span class="dot">&#183;</span>
+            <span>Hecho con Cuidado</span><span class="dot">&#183;</span>
         </div>
     </div>
 
     <!-- MANIFESTO -->
     <section class="manifesto">
         <div class="container">
-            <p class="manifesto-label reveal">El Manifiesto</p>
+            <p class="manifesto-label reveal">Nuestra Creencia</p>
             <blockquote class="reveal">
-                "Más que iluminación, es arquitectura de cera. Piezas diseñadas para perdurar como centros de atención, no para consumirse con el fuego."
+                "Hay regalos que se usan y regalos que se quedan. Una pieza Albor transforma el lugar donde vive, y recuerda cada vez que la ves por qué fue especial recibirla."
             </blockquote>
             <div class="manifesto-divider reveal"></div>
         </div>
     </section>
 
-    <!-- GALERIA -->
+    <!-- GALERIA / CATÁLOGO -->
     <section class="galeria" id="galeria">
         <div class="container">
             <div class="galeria-header reveal">
                 <div>
-                    <p class="section-label">Colección</p>
-                    <h2 class="section-title">Cada pieza es<br><em>única e irrepetible</em></h2>
+                    <p class="section-label">Colección Actual</p>
+                    <h2 class="section-title">Piezas decorativas<br>en parafina — <em>Colección Actual</em></h2>
                 </div>
-                <a href="#bespoke" class="galeria-link">Ver Servicio Bespoke</a>
+                <a href="#regalar" class="galeria-link">Ver opciones de regalo</a>
             </div>
-            <div class="galeria-grid">
-                <div class="galeria-item reveal" style="grid-row: span 2;">
-                    <img src="assets/img/producto-albor.png" alt="Pieza principal Albor">
-                    <div class="galeria-item-overlay">
-                        <span class="galeria-item-caption">Serie Albor No. I</span>
+            <div class="catalogo-grid">
+
+                <!-- PRODUCTO 1 -->
+                <div class="catalogo-card reveal">
+                    <div class="catalogo-visor">
+                        <div class="catalogo-slide active">
+                            <img src="assets/img/catalogo/1/frontal1.png" alt="Ramo Albor 01 — regalo de parafina Quito, vaciado artesanal hecho a mano en Ecuador" loading="lazy">
+                        </div>
+                        <div class="catalogo-slide">
+                            <img src="assets/img/catalogo/1/cenital1.png" alt="Ramo botánico de parafina vista cenital — detalles artesanales Ecuador, decoración artesanal Quito" loading="lazy">
+                        </div>
+                        <div class="catalogo-slide">
+                            <img src="assets/img/catalogo/1/detalle1.png" alt="Detalle vaciado artesanal en parafina — regalos de parafina Quito, Albor Tallado" loading="lazy">
+                        </div>
+                        <div class="catalogo-dots">
+                            <button class="catalogo-dot active" data-index="0"><span>Frontal</span></button>
+                            <button class="catalogo-dot" data-index="1"><span>Cenital</span></button>
+                            <button class="catalogo-dot" data-index="2"><span>Detalle</span></button>
+                        </div>
+                    </div>
+                    <div class="catalogo-info">
+                        <div>
+                            <h3 class="catalogo-nombre">Ramo Albor 01</h3>
+                            <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
+                        </div>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2001%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                 </div>
-                <div class="galeria-item reveal">
-                    <img src="assets/img/textura-albor.png" alt="Detalle de textura Albor">
-                    <div class="galeria-item-overlay">
-                        <span class="galeria-item-caption">Detalle de Superficie</span>
+
+                <!-- PRODUCTO 2 -->
+                <div class="catalogo-card reveal">
+                    <div class="catalogo-visor">
+                        <div class="catalogo-slide active">
+                            <img src="assets/img/catalogo/2/frontal2.png" alt="Ramo Albor 02 — regalos de parafina Quito, pieza botánica vaciada artesanalmente en Ecuador" loading="lazy">
+                        </div>
+                        <div class="catalogo-slide">
+                            <img src="assets/img/catalogo/2/cenital2.png" alt="Ramo de parafina vista cenital — detalles artesanales Quito Ecuador, decoración artesanal" loading="lazy">
+                        </div>
+                        <div class="catalogo-slide">
+                            <img src="assets/img/catalogo/2/detalle2.png" alt="Detalle vaciado artesanal parafina Quito — regalo artesanal único Ecuador, Albor Tallado" loading="lazy">
+                        </div>
+                        <div class="catalogo-dots">
+                            <button class="catalogo-dot active" data-index="0"><span>Frontal</span></button>
+                            <button class="catalogo-dot" data-index="1"><span>Cenital</span></button>
+                            <button class="catalogo-dot" data-index="2"><span>Detalle</span></button>
+                        </div>
+                    </div>
+                    <div class="catalogo-info">
+                        <div>
+                            <h3 class="catalogo-nombre">Ramo Albor 02</h3>
+                            <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
+                        </div>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2002%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                 </div>
-                <div class="galeria-item reveal">
-                    <img src="assets/img/cenital-albor.png" alt="Vista cenital Albor">
-                    <div class="galeria-item-overlay">
-                        <span class="galeria-item-caption">Vista Cenital</span>
+
+                <!-- PRODUCTO 3 -->
+                <div class="catalogo-card reveal">
+                    <div class="catalogo-visor">
+                        <div class="catalogo-slide active">
+                            <img src="assets/img/catalogo/3/frontal3.png" alt="Ramo Albor 03 — decoración artesanal Quito, ramo botánico de parafina vaciado a mano Ecuador" loading="lazy">
+                        </div>
+                        <div class="catalogo-slide">
+                            <img src="assets/img/catalogo/3/cenital3.png" alt="Ramo de parafina artesanal cenital — regalos de parafina Quito, detalles artesanales Ecuador" loading="lazy">
+                        </div>
+                        <div class="catalogo-slide">
+                            <img src="assets/img/catalogo/3/detalle3.png" alt="Detalle ramo botánico vaciado artesanal — decoración artesanal Quito Ecuador, Albor Tallado" loading="lazy">
+                        </div>
+                        <div class="catalogo-dots">
+                            <button class="catalogo-dot active" data-index="0"><span>Frontal</span></button>
+                            <button class="catalogo-dot" data-index="1"><span>Cenital</span></button>
+                            <button class="catalogo-dot" data-index="2"><span>Detalle</span></button>
+                        </div>
                     </div>
+                    <div class="catalogo-info">
+                        <div>
+                            <h3 class="catalogo-nombre">Ramo Albor 03</h3>
+                            <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
+                        </div>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2003%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 4 -->
+                <div class="catalogo-card reveal">
+                    <div class="catalogo-visor">
+                        <div class="catalogo-slide active">
+                            <img src="assets/img/catalogo/4/frontal4.png" alt="Ramo Albor 04 — regalo de parafina Quito, escultura botánica vaciada artesanalmente, detalles artesanales Ecuador" loading="lazy">
+                        </div>
+                        <div class="catalogo-slide">
+                            <img src="assets/img/catalogo/4/cenital4.png" alt="Ramo de parafina cenital — decoración artesanal Quito Ecuador, regalos artesanales únicos" loading="lazy">
+                        </div>
+                        <div class="catalogo-slide">
+                            <img src="assets/img/catalogo/4/detalle4.png" alt="Detalle parafina vaciado artesanal — regalo de parafina artesanal Albor Tallado Quito" loading="lazy">
+                        </div>
+                        <div class="catalogo-dots">
+                            <button class="catalogo-dot active" data-index="0"><span>Frontal</span></button>
+                            <button class="catalogo-dot" data-index="1"><span>Cenital</span></button>
+                            <button class="catalogo-dot" data-index="2"><span>Detalle</span></button>
+                        </div>
+                    </div>
+                    <div class="catalogo-info">
+                        <div>
+                            <h3 class="catalogo-nombre">Ramo Albor 04</h3>
+                            <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
+                        </div>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2004%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PARA REGALAR -->
+    <section class="proceso" id="regalar">
+        <div class="container">
+            <div class="proceso-header reveal">
+                <p class="section-label">Para Regalar</p>
+                <h2 class="section-title">El regalo que <em>no se olvida</em></h2>
+            </div>
+            <div class="proceso-grid">
+                <div class="proceso-step reveal">
+                    <div class="proceso-step-num">01</div>
+                    <h3 class="proceso-step-title">Día de la Madre</h3>
+                    <p class="proceso-step-desc">Una pieza Albor dice lo que las palabras no alcanzan. Algo hecho a mano, pensado para durar y decorar su espacio con cariño.</p>
+                </div>
+                <div class="proceso-step reveal">
+                    <div class="proceso-step-num">02</div>
+                    <h3 class="proceso-step-title">Cumpleaños especiales</h3>
+                    <p class="proceso-step-desc">Para alguien que lo tiene todo y merece algo distinto. Un regalo que se queda en su casa y le recuerda que pensaste en ella.</p>
+                </div>
+                <div class="proceso-step reveal">
+                    <div class="proceso-step-num">03</div>
+                    <h3 class="proceso-step-title">Bodas y celebraciones</h3>
+                    <p class="proceso-step-desc">El detalle que transforma una mesa, una sala o un momento. Piezas personalizadas para parejas, familias y eventos que importan.</p>
+                </div>
+                <div class="proceso-step reveal">
+                    <div class="proceso-step-num">04</div>
+                    <h3 class="proceso-step-title">Sin ocasión específica</h3>
+                    <p class="proceso-step-desc">A veces el mejor regalo es el que llega sin razón. Una pieza Albor siempre encuentra su lugar en un hogar que la aprecia.</p>
                 </div>
             </div>
         </div>
@@ -1335,7 +2057,7 @@
                 <div class="ubicacion-text reveal">
                     <p class="section-label">Nuestro Taller</p>
                     <h2 class="section-title" style="color: #F4F1EB;">Creado desde<br><em>Quito</em>, para<br>el mundo.</h2>
-                    <p>Desde nuestro taller boutique en Quito, creamos piezas que definen la atmósfera de los espacios más exclusivos de Ecuador. Cada obra nace de un proceso artesanal riguroso, donde la parafina se convierte en arquitectura.</p>
+                    <p>Desde nuestro taller en Quito, tallamos cada pieza a mano con parafina y dedicación. No hay máquinas, no hay producción en serie. Solo tiempo, herramientas y cuidado en cada detalle.</p>
                     <div class="ubicacion-badge">
                         <svg class="ubicacion-badge-icon" viewBox="0 0 24 24">
                             <path d="M12 21s-7-6.75-7-11a7 7 0 0114 0c0 4.25-7 11-7 11z"/>
@@ -1345,7 +2067,7 @@
                     </div>
                 </div>
                 <div class="ubicacion-image reveal">
-                    <img src="assets/img/cenital-albor.png" alt="Taller Albor en Quito">
+                    <img src="assets/img/cenital-albor.png" alt="Taller Albor en Quito" loading="lazy">
                     <div class="ubicacion-image-frame"></div>
                 </div>
             </div>
@@ -1358,21 +2080,51 @@
         <div class="container">
             <div class="bespoke-inner">
                 <div class="bespoke-image reveal">
-                    <img src="assets/img/textura-albor.png" alt="Comisión personalizada Albor">
+                    <img src="assets/img/textura-albor.png" alt="Escultura de parafina tallada a mano — obra personalizada bajo pedido Albor" loading="lazy">
                     <div class="bespoke-image-accent"></div>
                 </div>
                 <div class="bespoke-content reveal">
-                    <p class="section-label">Servicio de Comisión</p>
-                    <h2 class="section-title">Obras <em>creadas</em><br>para su espacio</h2>
-                    <p>Creamos obras personalizadas y colecciones limitadas adaptadas a la paleta cromática y concepto de su evento o residencia. Un servicio reservado para quienes comprenden que el arte verdadero no puede ser genérico.</p>
-                    <ul class="bespoke-features">
-                        <li>Consulta de diseño personalizada</li>
-                        <li>Adaptación a paleta cromática del espacio</li>
-                        <li>Colecciones para eventos de alta gama</li>
-                        <li>Piezas para residencias y hoteles boutique</li>
-                        <li>Certificado de autenticidad incluido</li>
-                    </ul>
-                    <a href="https://wa.me/593979323908?text=Hola%20Albor%20Tallado,%20deseo%20información%20sobre%20una%20pieza%20personalizada%20para%20mi%20espacio." class="btn-primary" target="_blank" rel="noopener">Solicitar Comisión</a>
+                    <p class="section-label">Piezas Personalizadas</p>
+                    <h2 class="section-title">Hecha <em>para ti</em>,<br>o para quien amas</h2>
+                    <p>¿Buscas algo único? Nuestra maestra artesana talla a mano obras exclusivas bajo pedido. Transforma una idea en una escultura de parafina tallada solo para ti.</p>
+                    <p>Cuéntanos lo que tienes en mente — te respondemos en menos de 24 horas para empezar a crear tu pieza juntos.</p>
+
+                    <form class="bespoke-form" id="bespoke-form" novalidate>
+                        <input type="hidden" name="access_key" value="f0b9099c-9a72-41bf-901f-564522d43f92">
+                        <input type="hidden" name="subject" value="Nueva consulta bespoke — Albor Tallado">
+                        <input type="hidden" name="from_name" value="Albor Tallado Web">
+
+                        <div class="bespoke-form-row">
+                            <div class="bespoke-field">
+                                <label for="bf-nombre">Tu nombre</label>
+                                <input type="text" id="bf-nombre" name="nombre" placeholder="¿Cómo te llamas?" required>
+                            </div>
+                            <div class="bespoke-field">
+                                <label for="bf-ciudad">Ciudad</label>
+                                <input type="text" id="bf-ciudad" name="ciudad" placeholder="Quito, Guayaquil..." required>
+                            </div>
+                        </div>
+
+                        <div class="bespoke-form-row">
+                            <div class="bespoke-field">
+                                <label for="bf-telefono">Teléfono / WhatsApp</label>
+                                <input type="tel" id="bf-telefono" name="telefono" placeholder="+593 9..." required>
+                            </div>
+                            <div class="bespoke-field">
+                                <label for="bf-piezas">¿Cuántas piezas deseas?</label>
+                                <select id="bf-piezas" name="piezas" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="1">1 pieza</option>
+                                    <option value="2">2 piezas</option>
+                                    <option value="3-5">3 a 5 piezas</option>
+                                    <option value="6+">6 o más (evento / empresa)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="bespoke-form-msg" id="bespoke-msg"></div>
+                        <button type="submit" class="btn-primary bespoke-submit" id="bespoke-btn">Enviar Consulta</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1382,29 +2134,130 @@
     <section class="proceso" id="proceso">
         <div class="container">
             <div class="proceso-header reveal">
-                <p class="section-label">Metodología</p>
-                <h2 class="section-title">El proceso <em>Albor</em></h2>
+                <p class="section-label">Cómo funciona</p>
+                <h2 class="section-title">De tu idea<br><em>a tus manos</em></h2>
             </div>
             <div class="proceso-grid">
                 <div class="proceso-step reveal">
                     <div class="proceso-step-num">01</div>
                     <h3 class="proceso-step-title">Consulta</h3>
-                    <p class="proceso-step-desc">Conversación inicial para entender el espacio, la estética y el propósito de la pieza. Sin compromiso.</p>
+                    <p class="proceso-step-desc">Nos cuentas para qué es la pieza: un regalo, tu sala, una boda. Sin compromiso, solo escuchamos.</p>
                 </div>
                 <div class="proceso-step reveal">
                     <div class="proceso-step-num">02</div>
                     <h3 class="proceso-step-title">Diseño</h3>
-                    <p class="proceso-step-desc">Bocetos y propuestas cromáticas adaptadas a su concepto. Iteración hasta lograr la visión exacta.</p>
+                    <p class="proceso-step-desc">Proponemos colores, formas y tamaño. Ajustamos hasta que la idea sea exactamente lo que imaginabas.</p>
                 </div>
                 <div class="proceso-step reveal">
                     <div class="proceso-step-num">03</div>
                     <h3 class="proceso-step-title">Tallado</h3>
-                    <p class="proceso-step-desc">Ejecución artesanal en nuestro taller de Quito. Cada incisión es deliberada, cada forma es intencional.</p>
+                    <p class="proceso-step-desc">Tallamos tu pieza a mano en nuestro taller de Quito. Cada detalle lleva tiempo porque cada detalle importa.</p>
                 </div>
                 <div class="proceso-step reveal">
                     <div class="proceso-step-num">04</div>
                     <h3 class="proceso-step-title">Entrega</h3>
-                    <p class="proceso-step-desc">Embalaje de lujo y entrega a domicilio. La pieza llega lista para ser el centro de atención de su espacio.</p>
+                    <p class="proceso-step-desc">Llega empacada con cuidado, lista para regalar o poner en su lugar. Solo queda disfrutarla.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonios" id="testimonios">
+        <div class="container">
+            <div class="testimonios-header reveal">
+                <p class="section-label">Lo que sentimos</p>
+                <h2 class="section-title">Tres razones para<br><em>elegir Albor</em></h2>
+            </div>
+            <div class="testimonios-grid">
+                <div class="testimonio-card reveal">
+                    <span class="testimonio-quote-mark">"</span>
+                    <p class="testimonio-texto">Cada pieza es única. No existe otra igual en el mundo, porque cada una se talla a mano, con parafina y tiempo. No es producción en serie — es artesanía de verdad.</p>
+                    <div class="testimonio-autor">
+                        <div>
+                            <strong>Hecho a mano, siempre</strong>
+                            <span>Sin máquinas. Sin atajos.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio-card reveal">
+                    <span class="testimonio-quote-mark">"</span>
+                    <p class="testimonio-texto">Un regalo Albor no se guarda en un cajón. Se pone en la sala, en la mesita de noche, en el centro de la mesa. Y cada vez que alguien lo ve, pregunta de dónde es.</p>
+                    <div class="testimonio-autor">
+                        <div>
+                            <strong>El regalo que se nota</strong>
+                            <span>Decoración con historia propia.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio-card reveal">
+                    <span class="testimonio-quote-mark">"</span>
+                    <p class="testimonio-texto">Si tienes una idea, una ocasión o simplemente quieres algo bonito para tu espacio, escríbenos. Te ayudamos a elegir o creamos algo pensado especialmente para ti.</p>
+                    <div class="testimonio-autor">
+                        <div>
+                            <strong>Te ayudamos a elegir</strong>
+                            <span>Solo escríbenos por WhatsApp.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq-inner">
+                <div class="faq-header reveal">
+                    <p class="section-label">Preguntas Frecuentes</p>
+                    <h2 class="section-title">Antes de<br><em>escribirnos</em></h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Cuánto tiempo tarda una pieza personalizada?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El proceso bespoke completo toma entre 2 y 4 semanas, dependiendo de la complejidad de la obra. Proyectos de colección para eventos pueden requerir coordinación anticipada.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Las piezas se pueden encender?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Las piezas están hechas en parafina y tienen mecha, así que sí se pueden encender. Pero están pensadas principalmente como decoración — para que duren mucho tiempo y se vean bonitas en tu espacio.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Hacen envíos a otras ciudades del Ecuador?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí. Enviamos a Guayaquil, Cuenca y otras ciudades. Cada pieza viaja bien empacada para llegar en perfecto estado. Consúltanos el costo de envío cuando nos escribas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Qué necesito para pedir una pieza personalizada?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Solo cuéntanos la idea: para qué es, qué colores te gustan y el tamaño aproximado. Con eso es suficiente para empezar. Nosotros te guiamos en el resto.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            ¿Hacen piezas para bodas o eventos?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí. Creamos piezas para bodas, cumpleaños, bautizos y eventos de empresa. Podemos adaptar colores y tamaño a la decoración del evento. Escríbenos con tiempo y lo organizamos juntos.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1413,10 +2266,10 @@
     <!-- CTA -->
     <section class="cta-section">
         <div class="container">
-            <p class="section-label reveal">Comenzar</p>
-            <h2 class="reveal">Reserve su <em>obra</em><br>personalizada hoy</h2>
+            <p class="section-label reveal">¿Lista para regalar?</p>
+            <h2 class="reveal">Encuentra la pieza<br><em>perfecta para ti</em></h2>
             <div class="cta-actions reveal">
-                <a href="https://wa.me/593979323908?text=Hola%20Albor%20Tallado,%20deseo%20información%20sobre%20una%20pieza%20personalizada%20para%20mi%20espacio." class="btn-primary" target="_blank" rel="noopener">Comisionar una Pieza</a>
+                <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20sus%20piezas%20y%20quiero%20regalar%20una.%20%C2%BFMe%20pueden%20ayudar%20a%20elegir%3F" class="btn-primary" target="_blank" rel="noopener">Quiero Regalar una Pieza</a>
                 <a href="#galeria" class="btn-secondary">Ver Colección</a>
             </div>
         </div>
@@ -1428,7 +2281,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="logo-text">Albor Tallado</span>
-                    <p>Arte escultural en parafina. Piezas de decoración exclusiva creadas para los espacios más exigentes.</p>
+                    <p>Piezas decorativas talladas a mano en parafina. Para regalar, para decorar, para quedarse.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegación</h4>
@@ -1445,7 +2298,7 @@
                         Taller Boutique<br>
                         Quito, Ecuador<br><br>
                         Instagram: @albortallado<br>
-                        hola@albortallado.com
+                        <a href="mailto:albor.tallado@gmail.com" style="color:inherit;text-decoration:none;">albor.tallado@gmail.com</a>
                     </address>
                 </div>
             </div>
@@ -1464,38 +2317,59 @@
     <div class="modal-overlay" id="modal">
         <div class="modal">
             <button class="modal-close" id="modal-close"></button>
-            <p class="modal-label">Servicio Bespoke</p>
-            <h3>Cuéntenos sobre<br>su espacio</h3>
+            <p class="modal-label">Piezas Personalizadas</p>
+            <h3>Cuéntanos<br>tu idea</h3>
             <form class="modal-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
-                    <label>Nombre completo</label>
-                    <input type="text" placeholder="Su nombre" required>
+                    <label>Tu nombre</label>
+                    <input type="text" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
                     <label>Correo electrónico</label>
                     <input type="email" placeholder="correo@ejemplo.com" required>
                 </div>
                 <div class="form-group">
-                    <label>Tipo de proyecto</label>
+                    <label>¿Para qué ocasión es?</label>
                     <select>
                         <option value="">Seleccionar...</option>
-                        <option>Residencia privada</option>
-                        <option>Hotel o boutique</option>
-                        <option>Evento de gala</option>
-                        <option>Regalo corporativo</option>
-                        <option>Otro</option>
+                        <option>Para regalar</option>
+                        <option>Para mi hogar</option>
+                        <option>Para una boda o evento</option>
+                        <option>Para una empresa</option>
+                        <option>Solo quiero ver opciones</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Descripción del proyecto</label>
-                    <textarea rows="3" placeholder="Cuéntenos sobre su espacio, paleta de colores y visión..."></textarea>
+                    <label>¿Qué tienes en mente?</label>
+                    <textarea rows="3" placeholder="Cuéntanos colores, tamaño, para quién es o cualquier idea que tengas..."></textarea>
                 </div>
-                <button type="submit" class="btn-primary">Enviar Solicitud</button>
+                <button type="submit" class="btn-primary">Enviar por WhatsApp</button>
             </form>
         </div>
     </div>
 
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
     <script>
+        // --- PRELOADER ---
+        (function () {
+            var preloader = document.getElementById('preloader');
+            function dismissPreloader() {
+                preloader.classList.add('fade-out');
+                setTimeout(function () {
+                    if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+                }, 800);
+            }
+            // Dismiss tras la animación de la llama (1.3s emerge + 0.5s pausa = ~2s)
+            var timer = setTimeout(dismissPreloader, 2000);
+            // Si la página tarda más en cargar, esperar al load event
+            window.addEventListener('load', function () {
+                clearTimeout(timer);
+                setTimeout(dismissPreloader, 400);
+            });
+        })();
+
         // --- NAV SCROLL ---
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1534,16 +2408,28 @@
         // --- FORM SUBMIT ---
         function handleSubmit(e) {
             e.preventDefault();
-            const btn = e.target.querySelector('button[type="submit"]');
-            btn.textContent = 'Solicitud enviada';
+            const form = e.target;
+            const nombre = form.querySelector('input[type="text"]').value;
+            const correo = form.querySelector('input[type="email"]').value;
+            const tipo = form.querySelector('select').value || 'No especificado';
+            const descripcion = form.querySelector('textarea').value;
+
+            const mensaje = `Hola, vi sus piezas y quiero regalar una. ¿Me pueden ayudar a elegir?\n\n*Nombre:* ${nombre}\n*Correo:* ${correo}\n*Ocasión:* ${tipo}\n*Idea:* ${descripcion}`;
+            const waUrl = `https://wa.me/593979323908?text=${encodeURIComponent(mensaje)}`;
+
+            const btn = form.querySelector('button[type="submit"]');
+            btn.textContent = 'Abriendo WhatsApp...';
             btn.style.background = 'var(--color-oro)';
             btn.style.borderColor = 'var(--color-oro)';
-            setTimeout(closeModal, 1800);
+
             setTimeout(() => {
+                window.open(waUrl, '_blank');
+                closeModal();
                 btn.textContent = 'Enviar Solicitud';
                 btn.style.background = '';
                 btn.style.borderColor = '';
-            }, 2200);
+                form.reset();
+            }, 600);
         }
 
         // --- SCROLL REVEAL ---
@@ -1568,6 +2454,135 @@
                 }
             });
         });
+
+        // --- CURSOR PERSONALIZADO ---
+        const cursorDot = document.getElementById('cursorDot');
+        const cursorRing = document.getElementById('cursorRing');
+        if (cursorDot && cursorRing) {
+            let mouseX = 0, mouseY = 0;
+            let ringX = 0, ringY = 0;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+            });
+            function animateRing() {
+                ringX += (mouseX - ringX) * 0.12;
+                ringY += (mouseY - ringY) * 0.12;
+                cursorRing.style.left = ringX + 'px';
+                cursorRing.style.top = ringY + 'px';
+                requestAnimationFrame(animateRing);
+            }
+            animateRing();
+            document.querySelectorAll('a, button, .galeria-item, .proceso-step, .catalogo-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+            });
+        }
+
+        // --- FORMULARIO BESPOKE → WEB3FORMS → GMAIL ---
+        (function () {
+            var form = document.getElementById('bespoke-form');
+            var btn  = document.getElementById('bespoke-btn');
+            var msg  = document.getElementById('bespoke-msg');
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                btn.textContent = 'Enviando...';
+                btn.disabled = true;
+
+                var data = new FormData(form);
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: data
+                })
+                .then(function (res) { return res.json(); })
+                .then(function (json) {
+                    if (json.success) {
+                        msg.className = 'bespoke-form-msg success';
+                        msg.textContent = '¡Consulta enviada! Te escribimos pronto.';
+                        form.reset();
+                        btn.textContent = 'Enviar Consulta';
+                        btn.disabled = false;
+                    } else {
+                        throw new Error(json.message || 'Error al enviar');
+                    }
+                })
+                .catch(function () {
+                    msg.className = 'bespoke-form-msg error';
+                    msg.textContent = 'Hubo un error. Escríbenos directo por WhatsApp.';
+                    btn.textContent = 'Enviar Consulta';
+                    btn.disabled = false;
+                });
+            });
+        })();
+
+        // --- CATÁLOGO VISOR / AUTO-SLIDE ---
+        (function () {
+            const INTERVAL = 3500;
+            document.querySelectorAll('.catalogo-card').forEach(function (card) {
+                var slides = card.querySelectorAll('.catalogo-slide');
+                var dots = card.querySelectorAll('.catalogo-dot');
+                var current = 0;
+                var timer = null;
+                var paused = false;
+
+                function goTo(index) {
+                    slides[current].classList.remove('active');
+                    dots[current].classList.remove('active');
+                    current = (index + slides.length) % slides.length;
+                    slides[current].classList.add('active');
+                    dots[current].classList.add('active');
+                }
+
+                function tick() {
+                    if (!paused) goTo(current + 1);
+                }
+
+                function resetTimer() {
+                    clearInterval(timer);
+                    timer = setInterval(tick, INTERVAL);
+                }
+
+                dots.forEach(function (dot, i) {
+                    dot.addEventListener('click', function () {
+                        goTo(i);
+                        resetTimer();
+                    });
+                });
+
+                card.addEventListener('mouseenter', function () { paused = true; });
+                card.addEventListener('mouseleave', function () { paused = false; });
+
+                resetTimer();
+            });
+        })();
+
+        // --- FAQ ACCORDION ---
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // --- NAV ACTIVE SECTION ---
+        const navSections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('nav ul li a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            navSections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 140) current = s.getAttribute('id');
+            });
+            navItems.forEach(l => {
+                const href = l.getAttribute('href');
+                l.style.color = href === '#' + current ? 'var(--color-oro)' : '';
+            });
+        }, { passive: true });
     </script>
 
 </body>

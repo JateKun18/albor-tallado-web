@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://albortallado.com/sitemap.xml
+
+# Bloquear rastreo de assets internos
+Disallow: /.vercel/
+Disallow: /.claude/
+Disallow: /.git/
