@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Albor Tallado | Arte Escultural en Parafina | Quito, Ecuador">
     <meta property="og:description" content="Albor Tallado — Arte en parafina de alta gama tallada a mano en Quito, Ecuador. Esculturas y piezas de decoración de alta gama que transforman cada espacio en una experiencia sensorial única.">
-    <meta property="og:image" content="assets/img/producto-albor.png">
+    <meta property="og:image" content="https://albor-tallado-web.vercel.app/assets/img/producto-albor.png">
     <meta property="og:image:alt" content="Albor Tallado — Arte escultural en parafina">
     <meta property="og:locale" content="es_EC">
 
@@ -167,7 +167,13 @@
         }
 
         .mobile-menu {
-            display: none;
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu.open {
+                display: flex !important;
+            }
         }
 
         /* ===================== HERO ===================== */
