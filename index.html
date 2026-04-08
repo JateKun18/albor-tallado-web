@@ -649,9 +649,19 @@
         .catalogo-info {
             padding: 20px 26px;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
             border-top: 1px solid rgba(184, 134, 69, 0.14);
+        }
+
+        .catalogo-desc {
+            font-family: var(--font-cuerpo);
+            font-size: 0.78rem;
+            font-weight: 300;
+            color: var(--color-espresso-soft);
+            line-height: 1.65;
+            margin-top: 9px;
+            max-width: 260px;
         }
 
         .catalogo-nombre {
@@ -1942,6 +1952,47 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
         }
+
+        /* ===================== WHATSAPP FLOTANTE ===================== */
+        .wa-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 999;
+            width: 54px;
+            height: 54px;
+            background: var(--color-espresso);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 18px rgba(30, 27, 24, 0.22);
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s;
+            pointer-events: none;
+        }
+        .wa-float.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .wa-float:hover {
+            background: var(--color-oro);
+        }
+        .wa-float svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--color-alabastro);
+        }
+        @media (max-width: 768px) {
+            .wa-float {
+                bottom: 20px;
+                right: 20px;
+                width: 48px;
+                height: 48px;
+            }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -2029,7 +2080,7 @@
                 <div class="cd-block"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Min</span></div>
             </div>
             <span class="announcement-sep">&#183;</span>
-            <span>Solo <strong>5 cupos Bespoke</strong> disponibles</span>
+            <span>Entrega garantizada antes del <strong>10 de mayo</strong></span>
             <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20asegurar%20mi%20pieza%20para%20el%20D%C3%ADa%20de%20la%20Madre." class="announcement-cta" target="_blank" rel="noopener">Reservar ahora</a>
         </div>
     </div>
@@ -2153,8 +2204,9 @@
                         <div>
                             <h3 class="catalogo-nombre">Ramo Albor 01</h3>
                             <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
+                            <p class="catalogo-desc">El favorito del taller. Composición densa y de gran presencia — ocupa el centro de cualquier espacio sin necesidad de nada más.</p>
                         </div>
-                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2001%20y%20quiero%20regalarlo%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFEst%C3%A1%20disponible%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2001%20(el%20m%C3%A1s%20pedido)%20y%20me%20interesa%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFEst%C3%A1%20disponible%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                     <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20el%20Ramo%20Albor%2001%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFHay%20disponibilidad%3F" class="quick-buy-btn" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
@@ -2185,8 +2237,9 @@
                         <div>
                             <h3 class="catalogo-nombre">Ramo Albor 02</h3>
                             <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
+                            <p class="catalogo-desc">Proporciones equilibradas, acabado fino. La pieza que más se regala — llega embalada y lista para entregar sin envolver más.</p>
                         </div>
-                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2002%20y%20quiero%20regalarlo%20para%20el%20D%C3%ADa%20de%20la%20Madre." class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2002%20y%20me%20parece%20perfecta%20para%20regalar%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFEst%C3%A1%20disponible%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                     <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20el%20Ramo%20Albor%2002%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFHay%20disponibilidad%3F" class="quick-buy-btn" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
@@ -2197,7 +2250,7 @@
                 <!-- PRODUCTO 3 -->
                 <div class="catalogo-card reveal">
                     <div class="catalogo-visor">
-                        <span class="producto-badge badge-urgenc">Últimas unidades</span>
+                        <span class="producto-badge badge-oro">Reservar Pronto</span>
                         <div class="catalogo-slide active">
                             <img src="assets/img/catalogo/3/frontal3.png" alt="Ramo Albor 03 — regalo Día de la Madre Quito, ramo botánico en parafina vaciado a mano Ecuador" loading="lazy">
                         </div>
@@ -2217,8 +2270,9 @@
                         <div>
                             <h3 class="catalogo-nombre">Ramo Albor 03</h3>
                             <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
+                            <p class="catalogo-desc">La de mayor detalle de la colección. Cada pétalo tallado individualmente — ninguna pieza es idéntica a la anterior.</p>
                         </div>
-                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2003%20y%20quiero%20regalarlo%20para%20el%20D%C3%ADa%20de%20la%20Madre." class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2003%20y%20me%20llama%20mucho%20el%20nivel%20de%20detalle%20del%20tallado.%20%C2%BFHay%20disponibilidad%20para%20el%20D%C3%ADa%20de%20la%20Madre%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                     <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20el%20Ramo%20Albor%2003%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFHay%20disponibilidad%3F" class="quick-buy-btn" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
@@ -2249,8 +2303,9 @@
                         <div>
                             <h3 class="catalogo-nombre">Ramo Albor 04</h3>
                             <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
+                            <p class="catalogo-desc">Composición asimétrica de edición limitada. Pensada como objeto de colección para quien ya sabe que no quiere lo convencional.</p>
                         </div>
-                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2004%20y%20quiero%20regalarlo%20para%20el%20D%C3%ADa%20de%20la%20Madre." class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2004%20(edici%C3%B3n%20especial)%20y%20me%20interesa%20como%20regalo.%20%C2%BFEst%C3%A1%20disponible%20para%20el%20D%C3%ADa%20de%20la%20Madre%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                     <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20el%20Ramo%20Albor%2004%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFHay%20disponibilidad%3F" class="quick-buy-btn" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
@@ -2573,12 +2628,17 @@
                 <p>&copy; 2026 Albor Tallado. Todos los derechos reservados.</p>
                 <div class="footer-social">
                     <a href="#">Instagram</a>
-                    <a href="#">WhatsApp</a>
+                    <a href="https://wa.me/593979323908" target="_blank" rel="noopener">WhatsApp</a>
                     <a href="#">Pinterest</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20saber%20m%C3%A1s%20sobre%20las%20piezas%20Albor." class="wa-float" id="wa-float" target="_blank" rel="noopener" aria-label="Escribirnos por WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+    </a>
 
     <!-- MODAL BESPOKE -->
     <div class="modal-overlay" id="modal">
@@ -2681,10 +2741,12 @@
             });
         })();
 
-        // --- NAV SCROLL ---
+        // --- NAV SCROLL + WA FLOTANTE ---
         const navbar = document.getElementById('navbar');
+        const waFloat = document.getElementById('wa-float');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 40);
+            waFloat.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6);
         });
 
         // --- HAMBURGER / MOBILE MENU ---
