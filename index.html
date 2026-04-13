@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Regala algo único este Día de la Madre en Quito — Ramos botánicos en parafina tallados a mano. El regalo que permanece. Cupos limitados · Entrega garantizada antes del 10 de mayo · Envíos a toda la provincia.">
+    <meta name="description" content="Regala algo único este Día de la Madre en Quito — Productos en parafina elaborados artesanalmente en Quito. El regalo que permanece. Cupos limitados · Entrega garantizada antes del 10 de mayo · Envíos a toda la provincia.">
     <link rel="canonical" href="https://albortallado.com">
     <link rel="icon" href="assets/img/logo-albor.png" type="image/png">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#1E1B18">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Albor Tallado | Piezas Decorativas Talladas a Mano | Quito">
-    <meta name="twitter:description" content="El regalo perfecto para el Día de la Madre en Quito — Ramos botánicos en parafina tallados a mano. Cupos Bespoke limitados. Entrega garantizada antes del 10 de mayo.">
+    <meta name="twitter:title" content="Albor Tallado | Piezas Decorativas en Parafina | Quito">
+    <meta name="twitter:description" content="El regalo perfecto para el Día de la Madre en Quito — Productos en parafina elaborados artesanalmente. Cupos Bespoke limitados. Entrega garantizada antes del 10 de mayo.">
     <meta name="twitter:image" content="https://albortallado.com/assets/img/producto-albor.png">
-    <title>Albor Tallado — Regalo Día de la Madre Quito | Ramos Botánicos en Parafina Artesanal</title>
+    <title>Albor Tallado — Regalo Día de la Madre Quito | Productos en Parafina Elaborados Artesanalmente</title>
 
     <!-- Open Graph / WhatsApp / Instagram -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://albortallado.com">
-    <meta property="og:title" content="Albor Tallado | Regalo Día de la Madre Quito | Ramos Botánicos en Parafina">
-    <meta property="og:description" content="Día de la Madre en Quito — Ramos botánicos y esculturas de parafina talladas a mano. El regalo que tu mamá recordará siempre. Cupos limitados · Envíos a toda la provincia.">`
+    <meta property="og:title" content="Albor Tallado | Regalo Día de la Madre Quito | Productos en Parafina Elaborados Artesanalmente">
+    <meta property="og:description" content="Día de la Madre en Quito — Productos en parafina elaborados artesanalmente. El regalo que tu mamá recordará siempre. Cupos limitados · Envíos a toda la provincia.">`
     <meta property="og:image" content="https://albortallado.com/assets/img/producto-albor.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
@@ -647,10 +647,10 @@
         }
 
         .catalogo-info {
-            padding: 20px 26px;
+            padding: 20px 26px 0;
             display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 0;
             border-top: 1px solid rgba(184, 134, 69, 0.14);
         }
 
@@ -670,6 +670,15 @@
             font-weight: 400;
             letter-spacing: 0.07em;
             color: var(--color-espresso);
+        }
+
+        .catalogo-precio {
+            font-family: var(--font-titulo);
+            font-size: 1.45rem;
+            font-weight: 500;
+            color: var(--color-oro);
+            letter-spacing: 0.04em;
+            line-height: 1;
         }
 
         .catalogo-cta {
@@ -1349,13 +1358,18 @@
                 color: var(--color-espresso);
             }
 
+            /* Hero mobile */
             .hero {
                 grid-template-columns: 1fr;
                 min-height: auto;
             }
 
+            .hero h1 {
+                font-size: 2.2rem !important;
+            }
+
             .hero-content {
-                padding: 120px 32px 60px;
+                padding: 120px 20px 60px;
                 order: 2;
             }
 
@@ -1369,11 +1383,12 @@
                 display: none;
             }
 
+            /* Grids mobile */
             .ubicacion-inner,
             .bespoke-inner,
             .footer-inner {
                 grid-template-columns: 1fr;
-                gap: 48px;
+                gap: 40px;
             }
 
             .bespoke-inner {
@@ -1382,7 +1397,52 @@
 
             .ubicacion-image img,
             .bespoke-image img {
-                height: 300px;
+                height: 280px;
+            }
+
+            /* Catálogo 1 columna */
+            .catalogo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .catalogo-precio {
+                font-size: 1.6rem;
+            }
+
+            /* Bespoke form mobile */
+            .bespoke-field input,
+            .bespoke-field select {
+                padding: 14px 0;
+                font-size: 1rem;
+            }
+
+            .bespoke-submit,
+            .btn-primary {
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Subtítulos Cormorant mínimo 1.4rem */
+            .section-title {
+                font-size: clamp(1.4rem, 5vw, 2.6rem);
+            }
+
+            /* Secciones — reducir padding vertical */
+            .manifesto,
+            .galeria,
+            .proceso,
+            .bespoke,
+            .testimonios,
+            .cta-section {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            .ubicacion {
+                padding-top: 60px;
+                padding-bottom: 60px;
             }
 
             .galeria-grid {
@@ -1667,17 +1727,40 @@
             margin-top: 3px;
         }
 
-        .catalogo-info {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-        }
-
-        .catalogo-info-row {
+        .catalogo-info-bottom {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            padding: 14px 0 16px;
+            border-top: 1px solid rgba(184, 134, 69, 0.1);
+            margin-top: 12px;
+        }
+
+        /* ===================== BESPOKE TIER BADGE ===================== */
+        .bespoke-tier-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(184, 134, 69, 0.45);
+            padding: 8px 18px;
+            margin-bottom: 20px;
+            background: rgba(184, 134, 69, 0.06);
+        }
+        .bespoke-tier-badge-dot {
+            width: 5px;
+            height: 5px;
+            background: var(--color-oro);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .bespoke-tier-badge span {
+            font-family: var(--font-cuerpo);
+            font-size: 0.62rem;
+            font-weight: 400;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--color-oro);
         }
 
         /* ===================== PRELOADER ===================== */
@@ -1999,7 +2082,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Albor Tallado",
-      "description": "Taller boutique de piezas decorativas en parafina talladas a mano. Escultura artesanal, comisiones bespoke y colecciones limitadas desde Quito, Ecuador.",
+      "description": "Taller boutique de productos en parafina elaborados artesanalmente. Diseños propios, colecciones limitadas y comisiones bespoke desde Quito, Ecuador.",
       "url": "https://albortallado.com",
       "telephone": "+593979323908",
       "email": "albor.tallado@gmail.com",
@@ -2018,7 +2101,7 @@
       "image": "https://albortallado.com/assets/img/producto-albor.png",
       "priceRange": "$$$$",
       "openingHours": "Mo-Sa 10:00-18:00",
-      "keywords": "regalo Día de la Madre Quito, regalos de parafina Quito, detalles artesanales Ecuador, decoración artesanal, ramos botánicos parafina, escultura artesanal Quito, regalo mama Quito Ecuador",
+      "keywords": "regalo Día de la Madre Quito, regalos de parafina Quito, detalles artesanales Ecuador, decoración artesanal, productos parafina tallados, artesanía parafina Quito, regalo mama Quito Ecuador",
       "areaServed": {
         "@type": "City",
         "name": "Quito",
@@ -2034,8 +2117,8 @@
     {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": "Pieza Decorativa Tallada en Parafina — Albor Tallado",
-      "description": "Escultura artesanal en parafina tallada a mano. Pieza única, sin producción en serie. Comisiones bespoke disponibles. Taller boutique en Quito, Ecuador.",
+      "name": "Pieza Decorativa en Parafina — Albor Tallado",
+      "description": "Producto artesanal en parafina elaborado en nuestro taller boutique. Diseño propio, sin producción en serie. Comisiones bespoke con tallado a mano disponibles. Quito, Ecuador.",
       "brand": { "@type": "Brand", "name": "Albor Tallado" },
       "offers": {
         "@type": "Offer",
@@ -2124,7 +2207,7 @@
         <div class="hero-content">
             <p class="hero-eyebrow">Día de la Madre &mdash; Quito, Ecuador</p>
             <h1>El regalo que<br>mamá va a<br><em>recordar siempre</em></h1>
-            <p class="hero-description">Ramos botánicos y esculturas de parafina talladas a mano en Quito. Sin producción en serie — cada pieza es única. Entrega garantizada antes del 10 de mayo. Cupos limitados.</p>
+            <p class="hero-description">Productos en parafina hechos en Quito, uno por uno. El regalo que se queda — y recuerda por qué fue especial recibirlo.</p>
             <div class="hero-actions">
                 <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20elegir%20un%20regalo%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFQu%C3%A9%20piezas%20tienen%20disponibles%3F" class="btn-primary" target="_blank" rel="noopener">Elegir mi Regalo</a>
                 <a href="#galeria" class="btn-secondary">Ver Colección</a>
@@ -2144,13 +2227,13 @@
     <div class="strip">
         <div class="strip-track">
             <span>Día de la Madre — 10 de Mayo</span><span class="dot">&#183;</span>
-            <span>Tallado a Mano</span><span class="dot">&#183;</span>
+            <span>Elaborado Artesanalmente</span><span class="dot">&#183;</span>
             <span>Cupos Limitados</span><span class="dot">&#183;</span>
             <span>Entrega en Quito</span><span class="dot">&#183;</span>
             <span>El Regalo que Permanece</span><span class="dot">&#183;</span>
             <span>Piezas Únicas</span><span class="dot">&#183;</span>
             <span>Día de la Madre — 10 de Mayo</span><span class="dot">&#183;</span>
-            <span>Tallado a Mano</span><span class="dot">&#183;</span>
+            <span>Elaborado Artesanalmente</span><span class="dot">&#183;</span>
             <span>Cupos Limitados</span><span class="dot">&#183;</span>
             <span>Entrega en Quito</span><span class="dot">&#183;</span>
             <span>El Regalo que Permanece</span><span class="dot">&#183;</span>
@@ -2201,12 +2284,13 @@
                         </div>
                     </div>
                     <div class="catalogo-info">
-                        <div>
-                            <h3 class="catalogo-nombre">Ramo Albor 01</h3>
-                            <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
-                            <p class="catalogo-desc">El favorito del taller. Composición densa y de gran presencia — ocupa el centro de cualquier espacio sin necesidad de nada más.</p>
+                        <h3 class="catalogo-nombre">Ramo Albor 01</h3>
+                        <p class="catalogo-subtitulo">Pieza en parafina — Elaborada artesanalmente</p>
+                        <p class="catalogo-desc">El más pedido del taller. Presencia real, flores que no se marchitan — para una mamá que merece algo que dure.</p>
+                        <div class="catalogo-info-bottom">
+                            <p class="catalogo-precio">$25</p>
+                            <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2001%20(el%20m%C3%A1s%20pedido)%20y%20me%20interesa%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFEst%C3%A1%20disponible%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                         </div>
-                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2001%20(el%20m%C3%A1s%20pedido)%20y%20me%20interesa%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFEst%C3%A1%20disponible%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                     <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20el%20Ramo%20Albor%2001%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFHay%20disponibilidad%3F" class="quick-buy-btn" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
@@ -2219,7 +2303,7 @@
                     <div class="catalogo-visor">
                         <span class="producto-badge badge-destac">Perfecta para regalar</span>
                         <div class="catalogo-slide active">
-                            <img src="assets/img/catalogo/2/frontal2.png" alt="Ramo Albor 02 — regalo Día de la Madre Quito, pieza botánica vaciada artesanalmente en Ecuador" loading="lazy">
+                            <img src="assets/img/catalogo/2/frontal2.png" alt="Ramo Albor 02 — regalo Día de la Madre Quito, pieza en parafina tallada a mano en Ecuador" loading="lazy">
                         </div>
                         <div class="catalogo-slide">
                             <img src="assets/img/catalogo/2/cenital2.png" alt="Ramo de parafina vista cenital — detalles artesanales Quito Ecuador, decoración artesanal" loading="lazy">
@@ -2234,12 +2318,13 @@
                         </div>
                     </div>
                     <div class="catalogo-info">
-                        <div>
-                            <h3 class="catalogo-nombre">Ramo Albor 02</h3>
-                            <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
-                            <p class="catalogo-desc">Proporciones equilibradas, acabado fino. La pieza que más se regala — llega embalada y lista para entregar sin envolver más.</p>
+                        <h3 class="catalogo-nombre">Ramo Albor 02</h3>
+                        <p class="catalogo-subtitulo">Pieza en parafina — Elaborada artesanalmente</p>
+                        <p class="catalogo-desc">Elegante y lista para regalar. Llega embalada — no necesita nada más para sorprender.</p>
+                        <div class="catalogo-info-bottom">
+                            <p class="catalogo-precio">$25</p>
+                            <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2002%20y%20me%20parece%20perfecta%20para%20regalar%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFEst%C3%A1%20disponible%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                         </div>
-                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2002%20y%20me%20parece%20perfecta%20para%20regalar%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFEst%C3%A1%20disponible%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                     <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20el%20Ramo%20Albor%2002%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFHay%20disponibilidad%3F" class="quick-buy-btn" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
@@ -2252,7 +2337,7 @@
                     <div class="catalogo-visor">
                         <span class="producto-badge badge-oro">Reservar Pronto</span>
                         <div class="catalogo-slide active">
-                            <img src="assets/img/catalogo/3/frontal3.png" alt="Ramo Albor 03 — regalo Día de la Madre Quito, ramo botánico en parafina vaciado a mano Ecuador" loading="lazy">
+                            <img src="assets/img/catalogo/3/frontal3.png" alt="Ramo Albor 03 — regalo Día de la Madre Quito, pieza en parafina tallada a mano Ecuador" loading="lazy">
                         </div>
                         <div class="catalogo-slide">
                             <img src="assets/img/catalogo/3/cenital3.png" alt="Ramo de parafina artesanal cenital — regalos Día de la Madre Quito, detalles artesanales Ecuador" loading="lazy">
@@ -2267,12 +2352,13 @@
                         </div>
                     </div>
                     <div class="catalogo-info">
-                        <div>
-                            <h3 class="catalogo-nombre">Ramo Albor 03</h3>
-                            <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
-                            <p class="catalogo-desc">La de mayor detalle de la colección. Cada pétalo tallado individualmente — ninguna pieza es idéntica a la anterior.</p>
+                        <h3 class="catalogo-nombre">Ramo Albor 03</h3>
+                        <p class="catalogo-subtitulo">Pieza en parafina — Elaborada artesanalmente</p>
+                        <p class="catalogo-desc">La pieza con mayor nivel de detalle de la colección. Cada elemento está pensado para que quien la reciba no pueda dejar de verla.</p>
+                        <div class="catalogo-info-bottom">
+                            <p class="catalogo-precio">$25</p>
+                            <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2003%20y%20me%20llama%20mucho%20el%20nivel%20de%20detalle%20del%20tallado.%20%C2%BFHay%20disponibilidad%20para%20el%20D%C3%ADa%20de%20la%20Madre%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                         </div>
-                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2003%20y%20me%20llama%20mucho%20el%20nivel%20de%20detalle%20del%20tallado.%20%C2%BFHay%20disponibilidad%20para%20el%20D%C3%ADa%20de%20la%20Madre%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                     <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20el%20Ramo%20Albor%2003%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFHay%20disponibilidad%3F" class="quick-buy-btn" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
@@ -2285,7 +2371,7 @@
                     <div class="catalogo-visor">
                         <span class="producto-badge badge-destac">Edición especial</span>
                         <div class="catalogo-slide active">
-                            <img src="assets/img/catalogo/4/frontal4.png" alt="Ramo Albor 04 — regalo Día de la Madre Quito, escultura botánica vaciada artesanalmente en Ecuador" loading="lazy">
+                            <img src="assets/img/catalogo/4/frontal4.png" alt="Ramo Albor 04 — regalo Día de la Madre Quito, pieza especial en parafina tallada a mano Ecuador" loading="lazy">
                         </div>
                         <div class="catalogo-slide">
                             <img src="assets/img/catalogo/4/cenital4.png" alt="Ramo de parafina cenital — regalo Día de la Madre Quito Ecuador, regalos artesanales únicos" loading="lazy">
@@ -2300,12 +2386,13 @@
                         </div>
                     </div>
                     <div class="catalogo-info">
-                        <div>
-                            <h3 class="catalogo-nombre">Ramo Albor 04</h3>
-                            <p class="catalogo-subtitulo">Ramo botánico de autor — Vaciado artesanal</p>
-                            <p class="catalogo-desc">Composición asimétrica de edición limitada. Pensada como objeto de colección para quien ya sabe que no quiere lo convencional.</p>
+                        <h3 class="catalogo-nombre">Ramo Albor 04</h3>
+                        <p class="catalogo-subtitulo">Pieza en parafina — Elaborada artesanalmente</p>
+                        <p class="catalogo-desc">Para quien quiere algo diferente a todo. Composición única, edición limitada — cuando el regalo tiene que ser inconfundible.</p>
+                        <div class="catalogo-info-bottom">
+                            <p class="catalogo-precio">$25</p>
+                            <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2004%20(edici%C3%B3n%20especial)%20y%20me%20interesa%20como%20regalo.%20%C2%BFEst%C3%A1%20disponible%20para%20el%20D%C3%ADa%20de%20la%20Madre%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                         </div>
-                        <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20Ramo%20Albor%2004%20(edici%C3%B3n%20especial)%20y%20me%20interesa%20como%20regalo.%20%C2%BFEst%C3%A1%20disponible%20para%20el%20D%C3%ADa%20de%20la%20Madre%3F" class="catalogo-cta" target="_blank" rel="noopener">Pedir esta pieza →</a>
                     </div>
                     <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20el%20Ramo%20Albor%2004%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFHay%20disponibilidad%3F" class="quick-buy-btn" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
@@ -2384,9 +2471,17 @@
                 </div>
                 <div class="bespoke-content reveal">
                     <p class="section-label">Piezas Personalizadas</p>
+                    <div class="bespoke-tier-badge">
+                        <span class="bespoke-tier-badge-dot"></span>
+                        <span>Tallado a mano &middot; Pieza única</span>
+                    </div>
                     <h2 class="section-title">Hecha <em>para ti</em>,<br>o para quien amas</h2>
                     <p>¿Buscas algo único? Nuestra maestra artesana talla a mano obras exclusivas bajo pedido. Transforma una idea en una escultura de parafina tallada solo para ti.</p>
                     <p>Cuéntanos lo que tienes en mente — te respondemos en menos de 24 horas para empezar a crear tu pieza juntos.</p>
+
+                    <div class="bespoke-price-badge">
+                        <span class="price-nota" style="opacity:0.75; font-size:0.82rem; letter-spacing:0.04em;">El precio depende de cada pieza. Escríbenos y cotizamos sin compromiso.</span>
+                    </div>
 
                     <div class="bespoke-urgency">
                         <span class="urgency-dot"></span>
@@ -2429,6 +2524,14 @@
                         <div class="bespoke-form-msg" id="bespoke-msg"></div>
                         <button type="submit" class="btn-primary bespoke-submit" id="bespoke-btn">Enviar Consulta</button>
                     </form>
+
+                    <div style="margin-top:28px; padding-top:20px; border-top:1px solid rgba(184,134,69,0.15);">
+                        <p style="font-size:0.78rem; font-weight:300; color:var(--color-espresso-soft); margin-bottom:12px; letter-spacing:0.02em;">¿Eres empresa o gestor de eventos? Déjanos tu correo y te contactamos.</p>
+                        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                            <input type="email" id="bespoke-empresa-email" placeholder="tu@empresa.com" style="background:transparent; border:none; border-bottom:1px solid rgba(30,27,24,0.25); padding:10px 0; font-family:var(--font-cuerpo); font-size:0.85rem; font-weight:300; color:var(--color-espresso); outline:none; flex:1; min-width:180px; transition:border-color 0.3s; border-radius:0;" onfocus="this.style.borderBottomColor='var(--color-oro)'" onblur="this.style.borderBottomColor='rgba(30,27,24,0.25)'">
+                            <button onclick="(function(){var e=document.getElementById('bespoke-empresa-email');if(e&&e.value){window.location.href='mailto:albor.tallado@gmail.com?subject=Consulta%20empresa%20%2F%20evento&body='+encodeURIComponent(e.value);}else{e&&e.focus();}})()" style="font-family:var(--font-cuerpo); font-size:0.68rem; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-alabastro); background:var(--color-espresso); padding:10px 20px; border:1px solid var(--color-espresso); cursor:pointer; transition:background 0.3s, border-color 0.3s; white-space:nowrap;" onmouseover="this.style.background='var(--color-oro)';this.style.borderColor='var(--color-oro)'" onmouseout="this.style.background='var(--color-espresso)';this.style.borderColor='var(--color-espresso)'">Enviar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2479,11 +2582,11 @@
                     <div class="testimonio-stars">
                         <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
                     </div>
-                    <p class="testimonio-texto">Regalé el Ramo 01 a mi mamá el año pasado y todavía está en el centro de su sala. Llegó perfectamente empacado y la atención por WhatsApp fue rapidísima. Lo mejor es que nadie más tiene algo igual.</p>
+                    <p class="testimonio-texto">Lo pedí para el cumpleaños de mi mamá sin saber bien qué esperar. Cuando lo vio, no lo podía creer. Sigue en el centro de la sala.</p>
                     <div class="testimonio-autor">
                         <div>
-                            <strong>María Gabriela C.</strong>
-                            <span>Quito, Cumbayá</span>
+                            <strong>Sofia C.</strong>
+                            <span>Cumbayá</span>
                         </div>
                     </div>
                 </div>
@@ -2492,11 +2595,11 @@
                     <div class="testimonio-stars">
                         <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
                     </div>
-                    <p class="testimonio-texto">Busqué semanas el regalo perfecto para el Día de la Madre y nada me convencía. Una amiga me mostró Albor y en cinco minutos por WhatsApp ya tenía elegida la pieza. No podía ser más fácil.</p>
+                    <p class="testimonio-texto">Buscaba algo que no fuera lo de siempre. Llegó en una caja preciosa y la presentación ya era parte del regalo. Lo recomiendo sin dudarlo.</p>
                     <div class="testimonio-autor">
                         <div>
-                            <strong>Andrea P.</strong>
-                            <span>Quito, González Suárez</span>
+                            <strong>Andrés M.</strong>
+                            <span>Quito Norte</span>
                         </div>
                     </div>
                 </div>
@@ -2505,11 +2608,11 @@
                     <div class="testimonio-stars">
                         <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
                     </div>
-                    <p class="testimonio-texto">Me enviaron hasta Guayaquil y llegó impecable. Lo pedí personalizado y quedó exactamente como lo imaginé. Cada vez que alguien la ve en mi sala pregunta dónde la compré — siempre los recomiendo.</p>
+                    <p class="testimonio-texto">Pedí una pieza personalizada para mi boda. El resultado superó lo que imaginé — varios invitados preguntaron dónde conseguirla.</p>
                     <div class="testimonio-autor">
                         <div>
-                            <strong>Sofía R.</strong>
-                            <span>Guayaquil</span>
+                            <strong>Valeria T.</strong>
+                            <span>González Suárez</span>
                         </div>
                     </div>
                 </div>
@@ -2533,15 +2636,6 @@
                         </button>
                         <div class="faq-answer">
                             <p>Sí — pero los cupos son limitados. Si confirmas tu pedido antes del <strong>3 de mayo</strong>, garantizamos la entrega el 10 de mayo en Quito y Pichincha. Para otras ciudades coordinamos contigo. Escríbenos hoy para asegurar tu pieza.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            ¿Cuánto tiempo tarda una pieza personalizada?
-                            <span class="faq-icon"></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>El proceso bespoke completo toma entre 2 y 4 semanas, dependiendo de la complejidad de la obra. Proyectos de colección para eventos pueden requerir coordinación anticipada.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -2603,7 +2697,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <span class="logo-text">Albor Tallado</span>
-                    <p>Piezas decorativas talladas a mano en parafina. Para regalar, para decorar, para quedarse.</p>
+                    <p>Productos en parafina elaborados artesanalmente en Quito. Para regalar, para decorar, para quedarse.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegación</h4>
@@ -2674,12 +2768,6 @@
             </form>
         </div>
     </div>
-
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/593979323908?text=Hola%2C%20vi%20la%20web%20de%20Albor%20y%20quiero%20un%20regalo%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFQu%C3%A9%20tienen%20disponible%3F" class="float-wa" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
-        <span class="float-wa-label">Escríbenos ahora</span>
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-    </a>
 
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
