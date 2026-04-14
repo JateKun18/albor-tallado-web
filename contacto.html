@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacto Albor Tallado — WhatsApp, Instagram, correo. Taller boutique en Quito, Ecuador. Preguntas frecuentes y ubicación.">
+    <link rel="canonical" href="https://albortallado.com/contacto.html">
+    <link rel="icon" href="assets/img/logo-albor.png" type="image/png">
+    <title>Contacto — Albor Tallado | Taller Boutique Quito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-alabastro: #F4F1EB;
+            --color-oro: #B88645;
+            --color-espresso: #1E1B18;
+            --color-espresso-soft: #2e2a26;
+            --color-oro-light: #d4a55a;
+            --color-oro-dim: rgba(184, 134, 69, 0.15);
+            --font-titulo: 'Cormorant Garamond', serif;
+            --font-cuerpo: 'Outfit', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-cuerpo); background: var(--color-alabastro); color: var(--color-espresso); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--color-oro); z-index: 9999; width: 0%; }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; padding: 20px 0; transition: background 0.4s, padding 0.4s; }
+        nav.scrolled { background: rgba(244,241,235,0.96); backdrop-filter: blur(12px); padding: 14px 0; border-bottom: 1px solid rgba(184,134,69,0.18); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+        nav a.logo { text-decoration: none; color: inherit; display: flex; align-items: center; }
+        nav .logo img { height: 56px; width: auto; object-fit: contain; }
+        .logo-text { font-family: var(--font-titulo); font-size: 1.5rem; font-weight: 500; letter-spacing: 0.12em; color: var(--color-espresso); text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 36px; }
+        nav ul li a { font-family: var(--font-cuerpo); font-weight: 300; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-espresso); text-decoration: none; position: relative; transition: color 0.3s; }
+        nav ul li a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--color-oro); transition: width 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--color-oro); }
+        nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+        .nav-cta { font-family: var(--font-cuerpo); font-size: 0.73rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-alabastro); background: var(--color-espresso); padding: 10px 22px; border: 1px solid var(--color-espresso); text-decoration: none; transition: background 0.3s; }
+        .nav-cta:hover { background: var(--color-oro); border-color: var(--color-oro); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--color-espresso); transition: all 0.3s; }
+        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--color-alabastro); z-index: 150; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a { font-family: var(--font-titulo); font-size: 1.8rem; font-weight: 300; color: var(--color-espresso); text-decoration: none; letter-spacing: 0.06em; transition: color 0.3s; }
+        .mobile-menu a:hover { color: var(--color-oro); }
+        .mobile-menu-close { position: absolute; top: 24px; right: 32px; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--color-espresso); }
+
+        /* CONTACT HERO */
+        .contact-hero { padding: 160px 0 80px; position: relative; overflow: hidden; }
+        .contact-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+        .contact-hero-eyebrow { font-family: var(--font-cuerpo); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.32em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 20px; }
+        .contact-hero h1 { font-family: var(--font-titulo); font-size: clamp(4rem, 8vw, 9rem); font-weight: 300; color: var(--color-espresso); line-height: 1; letter-spacing: -0.02em; opacity: 0; animation: fadeInUp 0.9s ease 0.2s forwards; }
+        .contact-hero h1 em { font-style: italic; color: var(--color-oro); }
+        .contact-hero-right { padding-bottom: 12px; }
+        .contact-hero-sub { font-size: 1rem; font-weight: 300; color: var(--color-espresso-soft); line-height: 1.9; margin-bottom: 32px; opacity: 0; animation: fadeInUp 0.9s ease 0.45s forwards; }
+        .contact-hero-cta { opacity: 0; animation: fadeInUp 0.9s ease 0.65s forwards; }
+        .contact-divider { margin-top: 60px; width: 100%; height: 1px; background: rgba(184,134,69,0.2); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* CONTACT CARDS */
+        .contact-cards-section { padding: 80px 0 100px; }
+        .contact-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .contact-card { border: 1px solid rgba(184,134,69,0.18); padding: 44px 36px; position: relative; overflow: hidden; transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s; text-decoration: none; color: inherit; display: block; background: var(--color-alabastro); }
+        .contact-card::before { content: ''; position: absolute; inset: 0; background: var(--color-espresso); transform: scaleY(0); transform-origin: bottom; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); z-index: 0; }
+        .contact-card:hover::before { transform: scaleY(1); }
+        .contact-card:hover { border-color: var(--color-espresso); box-shadow: 0 20px 56px rgba(30,27,24,0.15); transform: translateY(-6px); }
+        .contact-card > * { position: relative; z-index: 1; transition: color 0.4s; }
+        .contact-card-icon { width: 48px; height: 48px; margin-bottom: 24px; }
+        .contact-card-icon svg { width: 100%; height: 100%; fill: none; stroke: var(--color-oro); stroke-width: 1.5; transition: stroke 0.4s; }
+        .contact-card:hover .contact-card-icon svg { stroke: var(--color-oro); }
+        .contact-card-label { font-family: var(--font-cuerpo); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 12px; }
+        .contact-card h3 { font-family: var(--font-titulo); font-size: 1.6rem; font-weight: 400; color: var(--color-espresso); margin-bottom: 10px; transition: color 0.4s; }
+        .contact-card:hover h3 { color: var(--color-alabastro); }
+        .contact-card p { font-size: 0.82rem; font-weight: 300; color: var(--color-espresso-soft); line-height: 1.75; margin-bottom: 28px; transition: color 0.4s; }
+        .contact-card:hover p { color: rgba(244,241,235,0.65); }
+        .contact-card-link { font-family: var(--font-cuerpo); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-oro); display: flex; align-items: center; gap: 8px; transition: gap 0.3s; }
+        .contact-card-link::after { content: '→'; font-size: 1rem; }
+        .contact-card:hover .contact-card-link { gap: 14px; }
+
+        /* HORARIOS + INFO */
+        .info-section { padding: 80px 0; background: #EDE9E1; }
+        .info-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(30,27,24,0.08); }
+        .info-block { background: #EDE9E1; padding: 48px 40px; }
+        .info-block-label { font-family: var(--font-cuerpo); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 20px; }
+        .info-block h3 { font-family: var(--font-titulo); font-size: 1.3rem; font-weight: 400; color: var(--color-espresso); margin-bottom: 14px; }
+        .info-block p, .info-block address { font-size: 0.85rem; font-weight: 300; color: var(--color-espresso-soft); line-height: 1.9; font-style: normal; }
+        .info-block a { color: var(--color-espresso-soft); text-decoration: none; transition: color 0.3s; }
+        .info-block a:hover { color: var(--color-oro); }
+
+        /* UBICACIÓN */
+        .ubicacion-section { padding: 100px 0; background: var(--color-espresso); }
+        .ubicacion-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .ubicacion-text .section-label { color: var(--color-oro); }
+        .ubicacion-text h2 { font-family: var(--font-titulo); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 300; color: var(--color-alabastro); line-height: 1.15; margin-bottom: 24px; }
+        .ubicacion-text h2 em { font-style: italic; color: var(--color-oro); }
+        .ubicacion-text p { font-size: 0.9rem; font-weight: 300; color: rgba(244,241,235,0.65); line-height: 1.95; margin-bottom: 36px; }
+        .ubicacion-badges { display: flex; flex-wrap: wrap; gap: 12px; }
+        .ubicacion-badge { display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(184,134,69,0.35); padding: 10px 20px; }
+        .ubicacion-badge span { font-size: 0.7rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-oro); }
+        .ubicacion-img-wrap { position: relative; }
+        .ubicacion-img-wrap img { width: 100%; height: 480px; object-fit: cover; display: block; }
+        .ubicacion-img-frame { position: absolute; top: 18px; left: 18px; right: -18px; bottom: -18px; border: 1px solid rgba(184,134,69,0.3); pointer-events: none; z-index: -1; }
+
+        /* FAQ */
+        .faq-section { padding: 100px 0; }
+        .faq-inner { display: grid; grid-template-columns: 1fr 1.8fr; gap: 80px; align-items: start; }
+        .faq-heading h2 { font-family: var(--font-titulo); font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; color: var(--color-espresso); }
+        .faq-heading h2 em { font-style: italic; color: var(--color-oro); }
+        .faq-heading p { font-size: 0.88rem; font-weight: 300; color: var(--color-espresso-soft); line-height: 1.9; margin-top: 20px; }
+        .faq-list { display: flex; flex-direction: column; }
+        .faq-item { border-bottom: 1px solid rgba(30,27,24,0.1); }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; cursor: pointer; font-size: 0.88rem; font-weight: 400; color: var(--color-espresso); gap: 16px; background: none; border: none; width: 100%; text-align: left; font-family: var(--font-cuerpo); transition: color 0.3s; }
+        .faq-question:hover { color: var(--color-oro); }
+        .faq-icon { width: 18px; height: 18px; flex-shrink: 0; position: relative; }
+        .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--color-oro); transition: transform 0.35s ease; }
+        .faq-icon::before { width: 14px; height: 1px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+        .faq-icon::after { width: 1px; height: 14px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+        .faq-item.open .faq-icon::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-answer p { font-size: 0.84rem; font-weight: 300; color: var(--color-espresso-soft); line-height: 1.9; padding: 0 0 22px; }
+        .faq-item.open .faq-answer { max-height: 280px; }
+
+        /* SECTION LABEL */
+        .section-label { font-family: var(--font-cuerpo); font-size: 0.65rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 12px; }
+
+        /* BUTTONS */
+        .btn-primary { font-family: var(--font-cuerpo); font-size: 0.74rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-alabastro); background: var(--color-espresso); padding: 16px 34px; border: 1px solid var(--color-espresso); text-decoration: none; transition: background 0.3s, border-color 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--color-oro); border-color: var(--color-oro); }
+        .btn-secondary { font-family: var(--font-cuerpo); font-size: 0.74rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-espresso); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s, gap 0.3s; }
+        .btn-secondary::after { content: '→'; font-size: 1rem; }
+        .btn-secondary:hover { color: var(--color-oro); gap: 14px; }
+
+        /* FOOTER */
+        footer { background: var(--color-espresso); padding: 56px 0 28px; }
+        .footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 44px; border-bottom: 1px solid rgba(244,241,235,0.1); margin-bottom: 28px; }
+        .footer-brand .logo-text { color: var(--color-alabastro); font-size: 1.35rem; display: block; margin-bottom: 14px; }
+        .footer-brand p { font-size: 0.8rem; font-weight: 300; color: rgba(244,241,235,0.4); line-height: 1.8; max-width: 240px; }
+        .footer-col h4 { font-family: var(--font-cuerpo); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 18px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 9px; }
+        .footer-col ul li a, .footer-col address { font-size: 0.8rem; font-weight: 300; color: rgba(244,241,235,0.5); text-decoration: none; transition: color 0.3s; font-style: normal; line-height: 1.9; }
+        .footer-col ul li a:hover { color: var(--color-oro); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { font-size: 0.7rem; font-weight: 300; color: rgba(244,241,235,0.28); }
+        .footer-social { display: flex; gap: 18px; }
+        .footer-social a { font-size: 0.7rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,241,235,0.32); text-decoration: none; transition: color 0.3s; }
+        .footer-social a:hover { color: var(--color-oro); }
+
+        /* WA FLOAT */
+        .wa-float { position: fixed; bottom: 32px; right: 32px; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 500; opacity: 0; transform: scale(0.8); transition: opacity 0.4s, transform 0.4s; box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+        .wa-float.visible { opacity: 1; transform: scale(1); }
+        .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+        /* CURSOR */
+        * { cursor: none !important; }
+        .cursor-dot { position: fixed; pointer-events: none; z-index: 9999; width: 8px; height: 8px; background: var(--color-espresso); border-radius: 50%; transform: translate(-50%,-50%); top: 0; left: 0; }
+        .cursor-ring { position: fixed; pointer-events: none; z-index: 9998; width: 36px; height: 36px; border: 1px solid rgba(30,27,24,0.45); border-radius: 50%; transform: translate(-50%,-50%); transition: width 0.25s, height 0.25s, border-color 0.25s; top: 0; left: 0; }
+        .cursor-ring.hover { width: 52px; height: 52px; border-color: var(--color-oro); }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+            .contact-hero-inner, .ubicacion-inner, .faq-inner { grid-template-columns: 1fr; }
+            .contact-cards-grid { grid-template-columns: 1fr; }
+            .info-inner { grid-template-columns: 1fr; gap: 0; }
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .contact-hero h1 { font-size: 4rem; }
+        }
+        @media (max-width: 480px) {
+            .footer-inner { grid-template-columns: 1fr; }
+            .container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-albor.png" alt="Albor Tallado" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="logo-text" style="display:none">Albor</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="bespoke.html">Bespoke</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+            <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20contactarme%20con%20Albor%20Tallado." class="nav-cta" target="_blank" rel="noopener">Escribir Ahora</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-close">&#10005;</button>
+    <a href="index.html" class="mobile-link">Inicio</a>
+    <a href="catalogo.html" class="mobile-link">Catálogo</a>
+    <a href="bespoke.html" class="mobile-link">Bespoke</a>
+    <a href="contacto.html" class="mobile-link">Contacto</a>
+    <a href="https://wa.me/593979323908" class="mobile-link" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<!-- HERO CONTACTO -->
+<section class="contact-hero">
+    <div class="container">
+        <div class="contact-hero-inner">
+            <div>
+                <p class="contact-hero-eyebrow">Albor Tallado</p>
+                <h1><em>Hable</em><br>mos</h1>
+            </div>
+            <div class="contact-hero-right">
+                <p class="contact-hero-sub">Cada comisión comienza con una conversación. Cuéntanos sobre tu espacio, tu idea, tu fecha — y te respondemos en menos de 24 horas.</p>
+                <div class="contact-hero-cta" style="display:flex; gap:16px; flex-wrap:wrap;">
+                    <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20las%20piezas%20Albor." class="btn-primary" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+                    <a href="catalogo.html" class="btn-secondary">Ver Catálogo</a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-divider"></div>
+    </div>
+</section>
+
+<!-- TARJETAS DE CONTACTO -->
+<section class="contact-cards-section">
+    <div class="container">
+        <div class="contact-cards-grid">
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20las%20piezas%20Albor." class="contact-card tilt-card reveal" target="_blank" rel="noopener">
+                <div class="contact-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z" stroke="none" fill="currentColor"/></svg>
+                </div>
+                <p class="contact-card-label">Canal Principal</p>
+                <h3>WhatsApp</h3>
+                <p>El canal más rápido para consultas, pedidos y comisiones. Respondemos en horario de taller.</p>
+                <span class="contact-card-link">+593 979 323 908</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/albortallado" class="contact-card tilt-card reveal" data-delay="120" target="_blank" rel="noopener">
+                <div class="contact-card-icon">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+                <p class="contact-card-label">Galería y Proceso</p>
+                <h3>Instagram</h3>
+                <p>Seguinos para ver el proceso del taller, nuevas piezas, y el detrás de escena de cada creación.</p>
+                <span class="contact-card-link">@albortallado</span>
+            </a>
+
+            <!-- Correo -->
+            <a href="mailto:albor.tallado@gmail.com" class="contact-card tilt-card reveal" data-delay="240">
+                <div class="contact-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <p class="contact-card-label">Consultas Formales</p>
+                <h3>Correo</h3>
+                <p>Para cotizaciones corporativas, eventos y proyectos de interiorismo que requieren propuesta formal.</p>
+                <span class="contact-card-link">albor.tallado@gmail.com</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- INFO BLOQUE: HORARIOS, ZONA, PEDIDOS -->
+<section class="info-section">
+    <div class="container">
+        <div class="info-inner">
+            <div class="info-block reveal">
+                <p class="info-block-label">Horario de Atención</p>
+                <h3>Lunes a Sábado</h3>
+                <p>09:00 — 18:00 (hora Ecuador)<br><br>Respondemos WhatsApp dentro del horario de taller. Consultas enviadas fuera de horario son atendidas al siguiente día hábil.</p>
+            </div>
+            <div class="info-block reveal" data-delay="100">
+                <p class="info-block-label">Zona de Entrega</p>
+                <h3>Quito y Provincias</h3>
+                <p>Entregamos en toda la ciudad de Quito y valles (Cumbayá, Tumbaco, Los Chillos). Envíos a todo el Ecuador por servicio de courier. Costo de envío a convenir según destino.</p>
+            </div>
+            <div class="info-block reveal" data-delay="200">
+                <p class="info-block-label">Tiempos de Pedido</p>
+                <h3>Catálogo y Bespoke</h3>
+                <p><strong>Catálogo estándar:</strong> disponible para entrega inmediata<br><br><strong>Piezas bespoke:</strong> 7–10 días hábiles desde la aprobación del diseño<br><br><strong>Pedidos en volumen:</strong> cotizar plazos específicos</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="ubicacion-section">
+    <div class="container">
+        <div class="ubicacion-inner">
+            <div class="ubicacion-text reveal">
+                <p class="section-label">Nuestro Taller</p>
+                <h2>Hecho en<br><em>Quito</em>, Ecuador</h2>
+                <p>Cada pieza sale de nuestro taller boutique en Quito. Trabajamos con materiales de alta calidad y dedicamos el tiempo necesario para que cada creación sea exactamente lo que imaginaste.</p>
+                <div class="ubicacion-badges">
+                    <div class="ubicacion-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-oro)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Quito, Ecuador</span>
+                    </div>
+                    <div class="ubicacion-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-oro)" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        <span>Envíos Nacionales</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ubicacion-img-wrap reveal" data-delay="120">
+                <img src="assets/img/producto-albor.png" alt="Taller Albor Tallado — Quito">
+                <div class="ubicacion-img-frame"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-inner">
+            <div class="faq-heading reveal">
+                <p class="section-label">Preguntas Frecuentes</p>
+                <h2>Todo lo que<br>necesitas <em>saber</em></h2>
+                <p>Si tu duda no está aquí, escríbenos directamente — con gusto te respondemos.</p>
+            </div>
+            <div class="faq-list reveal" data-delay="100">
+                <div class="faq-item">
+                    <button class="faq-question">¿Qué son las piezas Albor?<span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>Son productos en parafina elaborados artesanalmente en nuestro taller boutique en Quito. No son velas de consumo — son piezas decorativas de alta gama diseñadas para perdurar y transformar los espacios donde viven.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Cuánto duran las piezas?<span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>Indefinidamente. Las piezas Albor están concebidas para ser decorativas y permanentes — no para consumirse. Si cuidas la pieza alejada del calor directo y la luz solar intensa, durará años en perfectas condiciones.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Cómo pago mi pedido?<span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>Para catálogo estándar, coordinamos el pago por transferencia bancaria o plataformas digitales antes del despacho. Para piezas bespoke, el pago es 50% al confirmar y 50% antes de la entrega.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Envían a otras ciudades del Ecuador?<span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>Sí, enviamos a todo el Ecuador a través de servicios de courier. El costo de envío se cotiza según la ciudad de destino y el tamaño del pedido.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Tienen descuentos para pedidos en volumen?<span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>Sí. Para pedidos de bodas, eventos corporativos y decoración de interiores tenemos precios especiales a partir de 20 unidades. Escríbenos para cotizar.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Puedo visitar el taller?<span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>El taller funciona principalmente por cita previa para clientes bespoke. Escríbenos por WhatsApp para coordinar una visita si quieres ver el proceso en persona.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Hacen facturas?<span class="faq-icon"></span></button>
+                    <div class="faq-answer"><p>Sí, emitimos factura electrónica para todos los pedidos que la requieran. Indícalo al momento de confirmar tu compra y ten a mano tu RUC o cédula.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Albor Tallado</span>
+                <p>Productos en parafina elaborados artesanalmente en Quito. Para regalar, para decorar, para quedarse.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Páginas</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="bespoke.html">Bespoke</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Colección</h4>
+                <ul>
+                    <li><a href="catalogo.html">Ramo 01 — $25</a></li>
+                    <li><a href="catalogo.html">Ramo 02 — $25</a></li>
+                    <li><a href="catalogo.html">Ramo 03 — $25</a></li>
+                    <li><a href="catalogo.html">Ramo 04 — $30</a></li>
+                    <li><a href="bespoke.html">Bespoke — desde $50</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <address>Taller Boutique<br>Quito, Ecuador<br><br>
+                    <a href="https://instagram.com/albortallado" style="color:inherit" target="_blank">@albortallado</a><br>
+                    <a href="https://wa.me/593979323908" style="color:inherit" target="_blank">+593 979 323 908</a>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Albor Tallado. Todos los derechos reservados.</p>
+            <div class="footer-social">
+                <a href="https://instagram.com/albortallado" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://wa.me/593979323908" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/593979323908?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20contacto%20y%20quiero%20saber%20m%C3%A1s." class="wa-float" id="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+</a>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<script src="assets/js/animations.js"></script>
+</body>
+</html>

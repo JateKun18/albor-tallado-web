@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo Albor Tallado — Piezas en parafina elaboradas artesanalmente en Quito. Ramos 01 al 04 desde $25. Edición Día de la Madre.">
+    <link rel="canonical" href="https://albortallado.com/catalogo.html">
+    <link rel="icon" href="assets/img/logo-albor.png" type="image/png">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Catálogo — Albor Tallado | Piezas en Parafina desde $25">
+    <meta property="og:description" content="Colección 2026: ramos en parafina elaborados artesanalmente. Desde $25. Entrega en Quito.">
+    <meta property="og:image" content="https://albortallado.com/assets/img/producto-albor.png">
+    <title>Catálogo 2026 — Albor Tallado | Piezas en Parafina desde $25</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-alabastro: #F4F1EB;
+            --color-oro: #B88645;
+            --color-espresso: #1E1B18;
+            --color-espresso-soft: #2e2a26;
+            --color-oro-light: #d4a55a;
+            --color-oro-dim: rgba(184, 134, 69, 0.15);
+            --font-titulo: 'Cormorant Garamond', serif;
+            --font-cuerpo: 'Outfit', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-cuerpo); background: var(--color-alabastro); color: var(--color-espresso); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+        /* SCROLL PROGRESS */
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--color-oro); z-index: 9999; width: 0%; transition: width 0.1s linear; }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; padding: 20px 0; transition: background 0.4s, padding 0.4s; }
+        nav.scrolled { background: rgba(244,241,235,0.96); backdrop-filter: blur(12px); padding: 14px 0; border-bottom: 1px solid rgba(184,134,69,0.18); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+        nav a.logo { text-decoration: none; color: inherit; display: flex; align-items: center; }
+        nav .logo img { height: 56px; width: auto; object-fit: contain; }
+        .logo-text { font-family: var(--font-titulo); font-size: 1.5rem; font-weight: 500; letter-spacing: 0.12em; color: var(--color-espresso); text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 36px; }
+        nav ul li a { font-family: var(--font-cuerpo); font-weight: 300; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-espresso); text-decoration: none; position: relative; transition: color 0.3s; }
+        nav ul li a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--color-oro); transition: width 0.3s ease; }
+        nav ul li a:hover, nav ul li a.active { color: var(--color-oro); }
+        nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+        .nav-cta { font-family: var(--font-cuerpo); font-size: 0.73rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-alabastro); background: var(--color-espresso); padding: 10px 22px; border: 1px solid var(--color-espresso); text-decoration: none; transition: background 0.3s, color 0.3s; }
+        .nav-cta:hover { background: var(--color-oro); border-color: var(--color-oro); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--color-espresso); transition: all 0.3s; }
+        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--color-alabastro); z-index: 150; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a { font-family: var(--font-titulo); font-size: 1.8rem; font-weight: 300; color: var(--color-espresso); text-decoration: none; letter-spacing: 0.06em; transition: color 0.3s; }
+        .mobile-menu a:hover { color: var(--color-oro); }
+        .mobile-menu-close { position: absolute; top: 24px; right: 32px; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--color-espresso); }
+
+        /* CATALOG HERO */
+        .catalog-hero { padding: 160px 0 80px; text-align: center; position: relative; overflow: hidden; border-bottom: 1px solid rgba(184,134,69,0.14); }
+        .catalog-hero-bg { position: absolute; inset: 0; background: url('assets/img/textura-albor.png') center/cover no-repeat; opacity: 0.07; pointer-events: none; }
+        .catalog-hero-eyebrow { font-family: var(--font-cuerpo); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.32em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 14px; }
+        .catalog-hero-eyebrow::before, .catalog-hero-eyebrow::after { content: ''; display: block; width: 40px; height: 1px; background: var(--color-oro); }
+        .catalog-hero h1 { font-family: var(--font-titulo); font-size: clamp(3rem, 6vw, 6rem); font-weight: 300; line-height: 1.05; color: var(--color-espresso); margin-bottom: 24px; }
+        .catalog-hero h1 em { font-style: italic; color: var(--color-oro); }
+        .catalog-hero-sub { font-size: 0.92rem; font-weight: 300; color: var(--color-espresso-soft); max-width: 480px; margin: 0 auto 40px; line-height: 1.8; }
+        .dia-madre-banner { display: inline-flex; align-items: center; gap: 14px; background: var(--color-espresso); color: var(--color-alabastro); padding: 12px 28px; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; }
+        .dia-madre-banner strong { color: var(--color-oro); }
+
+        /* STRIP */
+        .strip { background: var(--color-espresso); padding: 14px 0; overflow: hidden; }
+        .strip-track { display: flex; gap: 52px; animation: marquee 22s linear infinite; white-space: nowrap; }
+        .strip-track span { font-family: var(--font-titulo); font-size: 0.88rem; font-weight: 300; font-style: italic; letter-spacing: 0.12em; color: var(--color-oro); flex-shrink: 0; }
+        .strip-track span.dot { color: rgba(244,241,235,0.25); font-style: normal; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* FILTER BAR */
+        .filter-section { padding: 56px 0 40px; }
+        .filter-bar { display: flex; gap: 4px; flex-wrap: wrap; }
+        .filter-btn { font-family: var(--font-cuerpo); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; padding: 10px 24px; border: 1px solid rgba(30,27,24,0.2); background: transparent; color: var(--color-espresso); cursor: pointer; transition: all 0.3s; }
+        .filter-btn:hover, .filter-btn.active { background: var(--color-espresso); color: var(--color-alabastro); border-color: var(--color-espresso); }
+        .filter-btn.active-gold { background: var(--color-oro); color: var(--color-alabastro); border-color: var(--color-oro); }
+        .filter-count { font-size: 0.62rem; opacity: 0.55; margin-left: 6px; }
+
+        /* PRODUCTS GRID */
+        .products-section { padding-bottom: 120px; }
+        .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        @media (max-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 560px) { .products-grid { grid-template-columns: 1fr; } }
+
+        /* PRODUCT CARD */
+        .product-card { background: var(--color-alabastro); border: 1px solid rgba(184,134,69,0.14); overflow: hidden; transition: box-shadow 0.4s, transform 0.4s; position: relative; }
+        .product-card:hover { box-shadow: 0 24px 64px rgba(30,27,24,0.12); transform: translateY(-6px); }
+        .product-card.featured-gold { border-color: rgba(184,134,69,0.5); }
+
+        .product-badge { position: absolute; top: 16px; left: 16px; z-index: 3; font-family: var(--font-cuerpo); font-size: 0.58rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; padding: 5px 12px; }
+        .product-badge.badge-popular { background: var(--color-espresso); color: var(--color-oro); }
+        .product-badge.badge-edicion { background: var(--color-oro); color: var(--color-alabastro); }
+        .product-badge.badge-limitado { background: rgba(30,27,24,0.85); color: rgba(244,241,235,0.8); }
+        .product-badge.badge-bespoke { background: transparent; border: 1px solid var(--color-oro); color: var(--color-oro); }
+
+        /* VISOR DE IMÁGENES */
+        .product-visor { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #ede9e0; cursor: zoom-in; }
+        .product-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.85s cubic-bezier(0.4,0,0.2,1); }
+        .product-slide.active { opacity: 1; }
+        .product-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .visor-nav { position: absolute; bottom: 0; left: 0; right: 0; display: flex; z-index: 4; }
+        .visor-nav-btn { flex: 1; height: 36px; background: transparent; border: none; cursor: pointer; transition: background 0.3s; }
+        .visor-nav-btn:hover { background: rgba(184,134,69,0.1); }
+        .visor-dots { position: absolute; top: 14px; right: 14px; display: flex; gap: 5px; z-index: 3; }
+        .visor-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(244,241,235,0.5); border: 1px solid rgba(244,241,235,0.3); cursor: pointer; transition: background 0.3s, transform 0.3s; }
+        .visor-dot.active { background: var(--color-oro); transform: scale(1.3); }
+        .visor-zoom { position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s; background: linear-gradient(to top, rgba(30,27,24,0.5) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 18px; pointer-events: none; }
+        .product-visor:hover .visor-zoom { opacity: 1; }
+        .visor-zoom-label { font-family: var(--font-titulo); font-size: 0.82rem; font-style: italic; color: var(--color-alabastro); letter-spacing: 0.06em; }
+
+        /* PRODUCT INFO */
+        .product-info { padding: 22px 24px 0; }
+        .product-name { font-family: var(--font-titulo); font-size: 1.25rem; font-weight: 400; letter-spacing: 0.06em; color: var(--color-espresso); margin-bottom: 4px; }
+        .product-sub { font-family: var(--font-cuerpo); font-size: 0.65rem; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 10px; }
+        .product-desc { font-size: 0.8rem; font-weight: 300; color: var(--color-espresso-soft); line-height: 1.75; margin-bottom: 16px; }
+        .product-bottom { display: flex; align-items: center; justify-content: space-between; padding: 14px 0 18px; border-top: 1px solid rgba(184,134,69,0.12); margin-top: auto; }
+        .product-price { font-family: var(--font-titulo); font-size: 1.6rem; font-weight: 400; color: var(--color-oro); line-height: 1; }
+        .product-price-desde { font-size: 0.6rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-espresso); opacity: 0.5; display: block; margin-bottom: 2px; }
+        .product-cta { font-family: var(--font-cuerpo); font-size: 0.65rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-alabastro); background: var(--color-espresso); padding: 10px 18px; border: 1px solid var(--color-espresso); text-decoration: none; transition: background 0.3s, border-color 0.3s; display: inline-block; }
+        .product-cta:hover { background: var(--color-oro); border-color: var(--color-oro); }
+        .product-cta.cta-gold { background: var(--color-oro); border-color: var(--color-oro); }
+        .product-cta.cta-gold:hover { background: var(--color-espresso); border-color: var(--color-espresso); }
+
+        /* BESPOKE CARD ESPECIAL */
+        .bespoke-card .product-visor { background: var(--color-espresso); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .bespoke-visual { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative; }
+        .bespoke-bg-letter { font-family: var(--font-titulo); font-size: 14vw; font-weight: 300; color: transparent; -webkit-text-stroke: 1px rgba(184,134,69,0.2); position: absolute; user-select: none; }
+        .bespoke-center-icon { width: 80px; height: 80px; border: 1px solid rgba(184,134,69,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; }
+        .bespoke-center-icon svg { width: 36px; height: 36px; fill: none; stroke: var(--color-oro); stroke-width: 1; }
+        .bespoke-orbit { position: absolute; width: 160px; height: 160px; border: 1px solid rgba(184,134,69,0.12); border-radius: 50%; animation: orbitSpin 12s linear infinite; }
+        .bespoke-orbit::before { content: ''; position: absolute; top: -3px; left: 50%; width: 6px; height: 6px; background: var(--color-oro); border-radius: 50%; transform: translateX(-50%); }
+        @keyframes orbitSpin { to { transform: rotate(360deg); } }
+
+        /* DÍA DE LA MADRE SECTION */
+        .dia-section { margin: 0 0 60px; background: var(--color-espresso); padding: 56px 0; position: relative; overflow: hidden; }
+        .dia-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(184,134,69,0.12) 0%, transparent 70%); pointer-events: none; }
+        .dia-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .dia-text .section-label { color: var(--color-oro); margin-bottom: 14px; }
+        .dia-text h2 { font-family: var(--font-titulo); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 300; color: var(--color-alabastro); line-height: 1.15; margin-bottom: 24px; }
+        .dia-text h2 em { font-style: italic; color: var(--color-oro); }
+        .dia-text p { font-size: 0.9rem; font-weight: 300; color: rgba(244,241,235,0.65); line-height: 1.9; margin-bottom: 32px; }
+        .dia-urgency { display: flex; flex-direction: column; gap: 12px; }
+        .urgency-item { display: flex; align-items: center; gap: 12px; font-size: 0.82rem; font-weight: 300; color: rgba(244,241,235,0.7); }
+        .urgency-dot { width: 5px; height: 5px; background: var(--color-oro); border-radius: 50%; flex-shrink: 0; }
+        .urgency-item strong { color: var(--color-oro); font-weight: 500; }
+        .dia-img { position: relative; }
+        .dia-img img { width: 100%; height: 400px; object-fit: cover; display: block; }
+        .dia-img-frame { position: absolute; top: 16px; left: 16px; right: -16px; bottom: -16px; border: 1px solid rgba(184,134,69,0.3); pointer-events: none; z-index: -1; }
+
+        /* SECTION LABEL */
+        .section-label { font-family: var(--font-cuerpo); font-size: 0.65rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 12px; }
+
+        /* CTA FINAL */
+        .cta-section { padding: 100px 0; text-align: center; position: relative; }
+        .cta-section::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--color-oro)); }
+        .cta-section h2 { font-family: var(--font-titulo); font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 300; color: var(--color-espresso); max-width: 660px; margin: 0 auto 44px; line-height: 1.2; }
+        .cta-section h2 em { font-style: italic; color: var(--color-oro); }
+        .cta-actions { display: flex; gap: 18px; justify-content: center; align-items: center; flex-wrap: wrap; }
+
+        /* BUTTONS */
+        .btn-primary { font-family: var(--font-cuerpo); font-size: 0.74rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-alabastro); background: var(--color-espresso); padding: 16px 34px; border: 1px solid var(--color-espresso); text-decoration: none; transition: background 0.3s, color 0.3s, border-color 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--color-oro); border-color: var(--color-oro); }
+        .btn-secondary { font-family: var(--font-cuerpo); font-size: 0.74rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-espresso); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s, gap 0.3s; }
+        .btn-secondary::after { content: '→'; font-size: 1rem; }
+        .btn-secondary:hover { color: var(--color-oro); gap: 14px; }
+
+        /* FOOTER */
+        footer { background: var(--color-espresso); padding: 56px 0 28px; }
+        .footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 44px; border-bottom: 1px solid rgba(244,241,235,0.1); margin-bottom: 28px; }
+        .footer-brand .logo-text { color: var(--color-alabastro); font-size: 1.35rem; display: block; margin-bottom: 14px; }
+        .footer-brand p { font-size: 0.8rem; font-weight: 300; color: rgba(244,241,235,0.4); line-height: 1.8; max-width: 240px; }
+        .footer-col h4 { font-family: var(--font-cuerpo); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-oro); margin-bottom: 18px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 9px; }
+        .footer-col ul li a, .footer-col address { font-size: 0.8rem; font-weight: 300; color: rgba(244,241,235,0.5); text-decoration: none; transition: color 0.3s; font-style: normal; line-height: 1.9; }
+        .footer-col ul li a:hover { color: var(--color-oro); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { font-size: 0.7rem; font-weight: 300; color: rgba(244,241,235,0.28); }
+        .footer-social { display: flex; gap: 18px; }
+        .footer-social a { font-size: 0.7rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,241,235,0.32); text-decoration: none; transition: color 0.3s; }
+        .footer-social a:hover { color: var(--color-oro); }
+
+        /* WA FLOAT */
+        .wa-float { position: fixed; bottom: 32px; right: 32px; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 500; opacity: 0; transform: scale(0.8); transition: opacity 0.4s, transform 0.4s; box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+        .wa-float.visible { opacity: 1; transform: scale(1); }
+        .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+        /* CURSOR */
+        * { cursor: none !important; }
+        .cursor-dot { position: fixed; pointer-events: none; z-index: 9999; width: 8px; height: 8px; background: var(--color-espresso); border-radius: 50%; transform: translate(-50%,-50%); transition: background 0.2s; top: 0; left: 0; }
+        .cursor-ring { position: fixed; pointer-events: none; z-index: 9998; width: 36px; height: 36px; border: 1px solid rgba(30,27,24,0.5); border-radius: 50%; transform: translate(-50%,-50%); transition: width 0.25s, height 0.25s, border-color 0.25s; top: 0; left: 0; }
+        .cursor-ring.hover { width: 52px; height: 52px; border-color: var(--color-oro); }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* LIGHTBOX */
+        .lightbox { position: fixed; inset: 0; background: rgba(30,27,24,0.92); z-index: 300; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0.4s; backdrop-filter: blur(8px); }
+        .lightbox.active { opacity: 1; visibility: visible; }
+        .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; }
+        .lightbox-close { position: absolute; top: 24px; right: 28px; background: none; border: none; color: var(--color-alabastro); font-size: 1.6rem; cursor: pointer; opacity: 0.7; transition: opacity 0.3s; }
+        .lightbox-close:hover { opacity: 1; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul, .nav-cta { display: none; }
+            .hamburger { display: flex; }
+            .catalog-hero { padding: 130px 0 60px; }
+            .dia-inner { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .filter-section { padding: 40px 0 28px; }
+        }
+        @media (max-width: 480px) {
+            .footer-inner { grid-template-columns: 1fr; }
+            .container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-albor.png" alt="Albor Tallado" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <span class="logo-text" style="display:none">Albor</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html" class="active">Catálogo</a></li>
+                <li><a href="bespoke.html">Bespoke</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20elegir%20una%20pieza%20del%20cat%C3%A1logo%20Albor." class="nav-cta" target="_blank" rel="noopener">Pedir Ahora</a>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-close">&#10005;</button>
+    <a href="index.html" class="mobile-link">Inicio</a>
+    <a href="catalogo.html" class="mobile-link">Catálogo</a>
+    <a href="bespoke.html" class="mobile-link">Bespoke</a>
+    <a href="contacto.html" class="mobile-link">Contacto</a>
+    <a href="https://wa.me/593979323908" class="mobile-link" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="catalog-hero">
+    <div class="catalog-hero-bg"></div>
+    <div class="container">
+        <p class="catalog-hero-eyebrow">Colección 2026</p>
+        <h1>Piezas en <em>Parafina</em><br>para el Hogar</h1>
+        <p class="catalog-hero-sub">Elaboradas artesanalmente en nuestro taller de Quito. Cada pieza, única. Cada entrega, especial.</p>
+        <div class="dia-madre-banner">
+            Día de la Madre &mdash; <strong>Reservas hasta el 3 de mayo</strong> &mdash; Entrega garantizada antes del 10
+        </div>
+    </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+    <div class="strip-track">
+        <span>Ramo Albor 01</span><span class="dot">·</span>
+        <span>Ramo Albor 02</span><span class="dot">·</span>
+        <span>Ramo Albor 03</span><span class="dot">·</span>
+        <span>Ramo Albor 04 — Edición Especial</span><span class="dot">·</span>
+        <span>Bespoke desde $50</span><span class="dot">·</span>
+        <span>Elaborado Artesanalmente en Quito</span><span class="dot">·</span>
+        <span>Ramo Albor 01</span><span class="dot">·</span>
+        <span>Ramo Albor 02</span><span class="dot">·</span>
+        <span>Ramo Albor 03</span><span class="dot">·</span>
+        <span>Ramo Albor 04 — Edición Especial</span><span class="dot">·</span>
+        <span>Bespoke desde $50</span><span class="dot">·</span>
+        <span>Elaborado Artesanalmente en Quito</span><span class="dot">·</span>
+    </div>
+</div>
+
+<!-- FILTER BAR -->
+<section class="filter-section">
+    <div class="container">
+        <div class="filter-bar" id="filter-bar">
+            <button class="filter-btn active" data-filter="all">Todos <span class="filter-count">(5)</span></button>
+            <button class="filter-btn" data-filter="coleccion">Colección <span class="filter-count">(4)</span></button>
+            <button class="filter-btn" data-filter="dia-madre">Día de la Madre <span class="filter-count">(4)</span></button>
+            <button class="filter-btn" data-filter="bespoke">Bespoke <span class="filter-count">(1)</span></button>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="products-section">
+    <div class="container">
+        <div class="products-grid" id="products-grid">
+
+            <!-- RAMO 01 -->
+            <div class="product-card tilt-card reveal" data-category="coleccion dia-madre">
+                <div class="product-badge badge-popular">Más Pedido</div>
+                <div class="product-visor" id="visor-1">
+                    <div class="product-slide active"><img src="assets/img/catalogo/1/frontal1.png" alt="Ramo Albor 01 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.png'"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/1/detalle1.png" alt="Ramo Albor 01 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.png'"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/1/cenital1.png" alt="Ramo Albor 01 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.png'"></div>
+                    <div class="visor-dots">
+                        <div class="visor-dot active" data-visor="visor-1" data-idx="0"></div>
+                        <div class="visor-dot" data-visor="visor-1" data-idx="1"></div>
+                        <div class="visor-dot" data-visor="visor-1" data-idx="2"></div>
+                    </div>
+                    <div class="visor-zoom"><span class="visor-zoom-label">Ver en detalle</span></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ramo Albor 01</h3>
+                    <p class="product-sub">Elaborado Artesanalmente</p>
+                    <p class="product-desc">El más pedido del taller. Presencia real, flores que no se marchitan — para una mamá que merece algo que dure.</p>
+                    <div class="product-bottom">
+                        <div>
+                            <span class="product-price">$25</span>
+                        </div>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20me%20interesa%20el%20Ramo%20Albor%2001%20a%20%2425." class="product-cta" target="_blank" rel="noopener">Pedir →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RAMO 02 -->
+            <div class="product-card tilt-card reveal" data-category="coleccion dia-madre" data-delay="80">
+                <div class="product-visor" id="visor-2">
+                    <div class="product-slide active"><img src="assets/img/catalogo/2/frontal2.png" alt="Ramo Albor 02 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.png'"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/2/detalle2.png" alt="Ramo Albor 02 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.png'"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/2/cenital2.png" alt="Ramo Albor 02 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.png'"></div>
+                    <div class="visor-dots">
+                        <div class="visor-dot active" data-visor="visor-2" data-idx="0"></div>
+                        <div class="visor-dot" data-visor="visor-2" data-idx="1"></div>
+                        <div class="visor-dot" data-visor="visor-2" data-idx="2"></div>
+                    </div>
+                    <div class="visor-zoom"><span class="visor-zoom-label">Ver en detalle</span></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ramo Albor 02</h3>
+                    <p class="product-sub">Elaborado Artesanalmente</p>
+                    <p class="product-desc">Elegante y lista para regalar. Llega embalada — no necesita nada más para sorprender a quien la recibe.</p>
+                    <div class="product-bottom">
+                        <div><span class="product-price">$25</span></div>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20me%20interesa%20el%20Ramo%20Albor%2002%20a%20%2425." class="product-cta" target="_blank" rel="noopener">Pedir →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RAMO 03 -->
+            <div class="product-card tilt-card reveal" data-category="coleccion dia-madre" data-delay="160">
+                <div class="product-visor" id="visor-3">
+                    <div class="product-slide active"><img src="assets/img/catalogo/3/frontal3.png" alt="Ramo Albor 03 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.png'"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/3/detalle3.png" alt="Ramo Albor 03 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.png'"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/3/cenital3.png" alt="Ramo Albor 03 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.png'"></div>
+                    <div class="visor-dots">
+                        <div class="visor-dot active" data-visor="visor-3" data-idx="0"></div>
+                        <div class="visor-dot" data-visor="visor-3" data-idx="1"></div>
+                        <div class="visor-dot" data-visor="visor-3" data-idx="2"></div>
+                    </div>
+                    <div class="visor-zoom"><span class="visor-zoom-label">Ver en detalle</span></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ramo Albor 03</h3>
+                    <p class="product-sub">Elaborado Artesanalmente</p>
+                    <p class="product-desc">Forma minimalista, impacto máximo. Para el espacio que necesita un punto de atención sin perder la calma.</p>
+                    <div class="product-bottom">
+                        <div><span class="product-price">$25</span></div>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20me%20interesa%20el%20Ramo%20Albor%2003%20a%20%2425." class="product-cta" target="_blank" rel="noopener">Pedir →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RAMO 04 — EDICIÓN ESPECIAL -->
+            <div class="product-card featured-gold tilt-card reveal" data-category="coleccion dia-madre" data-delay="240">
+                <div class="product-badge badge-edicion">Edición Especial</div>
+                <div class="product-visor" id="visor-4">
+                    <div class="product-slide active"><img src="assets/img/catalogo/4/frontal4.png" alt="Ramo Albor 04 — Edición Especial" loading="lazy" onerror="this.src='assets/img/producto-albor.png'"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/4/detalle4.png" alt="Ramo Albor 04 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.png'"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/4/cenital4.png" alt="Ramo Albor 04 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.png'"></div>
+                    <div class="visor-dots">
+                        <div class="visor-dot active" data-visor="visor-4" data-idx="0"></div>
+                        <div class="visor-dot" data-visor="visor-4" data-idx="1"></div>
+                        <div class="visor-dot" data-visor="visor-4" data-idx="2"></div>
+                    </div>
+                    <div class="visor-zoom"><span class="visor-zoom-label">Ver en detalle</span></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ramo Albor 04</h3>
+                    <p class="product-sub" style="color: var(--color-oro)">Edición Especial · Elaborado artesanalmente</p>
+                    <p class="product-desc">La pieza más elaborada del catálogo. Detalle superior, embalaje premium — el regalo que se recuerda por años.</p>
+                    <div class="product-bottom">
+                        <div><span class="product-price">$30</span></div>
+                        <a href="https://wa.me/593979323908?text=Hola%2C%20me%20interesa%20el%20Ramo%20Albor%2004%20Edici%C3%B3n%20Especial%20a%20%2430." class="product-cta cta-gold" target="_blank" rel="noopener">Pedir →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BESPOKE CARD -->
+            <div class="product-card bespoke-card tilt-card reveal" data-category="bespoke" data-delay="320" style="grid-column: span 2;">
+                <div style="display:grid; grid-template-columns: 1fr 1fr; height: 100%;">
+                    <div class="product-visor" style="cursor: pointer; aspect-ratio: unset; height: 100%;">
+                        <div class="bespoke-visual">
+                            <span class="bespoke-bg-letter">B</span>
+                            <div class="bespoke-orbit"></div>
+                            <div class="bespoke-center-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info" style="display: flex; flex-direction: column; justify-content: center; background: var(--color-espresso); padding: 40px 36px;">
+                        <p class="product-sub" style="color: var(--color-oro)">Tallado a Mano · Pieza Única</p>
+                        <h3 class="product-name" style="color: var(--color-alabastro); font-size: 1.8rem; margin-bottom: 16px;">Pieza Bespoke</h3>
+                        <p class="product-desc" style="color: rgba(244,241,235,0.65);">Diseñada exclusivamente para tu espacio. Cuéntanos tu visión — colores, forma, textura — y la hacemos realidad desde el taller.</p>
+                        <div class="product-bottom" style="border-top-color: rgba(184,134,69,0.2); margin-top: 24px;">
+                            <div>
+                                <span class="product-price-desde">Desde</span>
+                                <span class="product-price">$50</span>
+                            </div>
+                            <a href="bespoke.html" class="product-cta cta-gold">Conocer más →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- DÍA DE LA MADRE SECTION -->
+<section class="dia-section">
+    <div class="container">
+        <div class="dia-inner">
+            <div class="dia-text reveal">
+                <p class="section-label">Edición Especial</p>
+                <h2>El regalo que mamá<br>va a <em>recordar siempre</em></h2>
+                <p>Cada pieza sale de nuestro taller directamente a tu puerta. Embalaje de lujo incluido — el primer momento ya es parte del regalo.</p>
+                <div class="dia-urgency">
+                    <div class="urgency-item"><div class="urgency-dot"></div><span>Pedidos abiertos hasta el <strong>3 de mayo</strong></span></div>
+                    <div class="urgency-item"><div class="urgency-dot"></div><span>Entrega garantizada antes del <strong>10 de mayo</strong></span></div>
+                    <div class="urgency-item"><div class="urgency-dot"></div><span>Cupos <strong>limitados</strong> — producción artesanal</span></div>
+                </div>
+                <br>
+                <a href="https://wa.me/593979323908?text=Hola%2C%20quiero%20asegurar%20mi%20pieza%20para%20el%20D%C3%ADa%20de%20la%20Madre." class="btn-primary" target="_blank" rel="noopener" style="background: var(--color-oro); border-color: var(--color-oro);">Asegurar mi Pieza</a>
+            </div>
+            <div class="dia-img reveal" data-delay="120">
+                <img src="assets/img/producto-albor.png" alt="Pieza Albor para el Día de la Madre">
+                <div class="dia-img-frame"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BESPOKE -->
+<section class="cta-section">
+    <div class="container">
+        <p class="section-label reveal">¿Buscas algo más exclusivo?</p>
+        <h2 class="reveal">Una pieza diseñada<br>solo <em>para ti</em></h2>
+        <div class="cta-actions reveal">
+            <a href="bespoke.html" class="btn-primary">Explorar Bespoke</a>
+            <a href="contacto.html" class="btn-secondary">Hablar con nosotros</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Albor Tallado</span>
+                <p>Productos en parafina elaborados artesanalmente en Quito. Para regalar, para decorar, para quedarse.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Páginas</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="bespoke.html">Bespoke</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Colección</h4>
+                <ul>
+                    <li><a href="catalogo.html">Ramo 01 — $25</a></li>
+                    <li><a href="catalogo.html">Ramo 02 — $25</a></li>
+                    <li><a href="catalogo.html">Ramo 03 — $25</a></li>
+                    <li><a href="catalogo.html">Ramo 04 — $30</a></li>
+                    <li><a href="bespoke.html">Bespoke — desde $50</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <address>Taller Boutique<br>Quito, Ecuador<br><br>
+                    <a href="https://instagram.com/albortallado" style="color:inherit" target="_blank">@albortallado</a><br>
+                    <a href="https://wa.me/593979323908" style="color:inherit" target="_blank">+593 979 323 908</a>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Albor Tallado. Todos los derechos reservados.</p>
+            <div class="footer-social">
+                <a href="https://instagram.com/albortallado" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://wa.me/593979323908" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/593979323908?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20y%20quiero%20saber%20m%C3%A1s." class="wa-float" id="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.112.549 4.092 1.508 5.814L0 24l6.335-1.486A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.36-.213-3.72.873.936-3.619-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&#10005;</button>
+    <img src="" alt="" id="lightbox-img">
+</div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<script src="assets/js/animations.js"></script>
+<script>
+// VISOR DE PRODUCTOS — nav por puntos
+(function () {
+    const INTERVAL = 3800;
+    document.querySelectorAll('.product-visor').forEach(function (visor) {
+        var slides = visor.querySelectorAll('.product-slide');
+        var dots = visor.querySelectorAll('.visor-dot');
+        if (!slides.length) return;
+        var current = 0, timer = null, paused = false;
+
+        function goTo(idx) {
+            slides[current].classList.remove('active');
+            if (dots[current]) dots[current].classList.remove('active');
+            current = (idx + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            if (dots[current]) dots[current].classList.add('active');
+        }
+        function tick() { if (!paused) goTo(current + 1); }
+        function reset() { clearInterval(timer); timer = setInterval(tick, INTERVAL); }
+
+        dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); reset(); }); });
+        visor.addEventListener('mouseenter', function () { paused = true; });
+        visor.addEventListener('mouseleave', function () { paused = false; });
+
+        // Lightbox al click
+        visor.addEventListener('click', function () {
+            var activeSlide = visor.querySelector('.product-slide.active img');
+            if (!activeSlide) return;
+            var lb = document.getElementById('lightbox');
+            var lbImg = document.getElementById('lightbox-img');
+            if (!lb || !lbImg) return;
+            lbImg.src = activeSlide.src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        reset();
+    });
+
+    // Lightbox close
+    var lb = document.getElementById('lightbox');
+    var lbClose = document.getElementById('lightbox-close');
+    if (lb) {
+        function closeLb() { lb.classList.remove('active'); document.body.style.overflow = ''; }
+        if (lbClose) lbClose.addEventListener('click', closeLb);
+        lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+    }
+})();
+
+// FILTER
+(function () {
+    var btns = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('#products-grid .product-card');
+    btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            btns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var filter = btn.dataset.filter;
+            cards.forEach(function (card) {
+                var cat = card.dataset.category || '';
+                var show = filter === 'all' || cat.includes(filter);
+                card.style.display = show ? '' : 'none';
+                card.style.opacity = show ? '1' : '0';
+            });
+        });
+    });
+})();
+</script>
+</body>
+</html>
