@@ -1,40 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+  <!-- ═══════════════════════════════════════════
+       HOME — Prioridad máxima · Día de la Madre
+  ═══════════════════════════════════════════ -->
   <url>
     <loc>https://albortallado.com/</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/producto-albor.png</image:loc>
+      <image:title>Ramos en parafina artesanales Quito — Regalos Día de la Madre 2026 · Albor Tallado</image:title>
+      <image:caption>Velas artesanales y ramos en parafina tallados a mano en Quito. El regalo que tu mamá recordará. Desde $25. Entrega en Quito y provincia.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/cenital-albor.png</image:loc>
+      <image:title>Vista cenital ramo de flores en parafina Quito — regalo artesanal mamá</image:title>
+      <image:caption>Ramo artesanal en parafina vista desde arriba. Elaborado a mano en Quito, Ecuador. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
   </url>
 
+  <!-- ═══════════════════════════════════════════
+       CATÁLOGO — Keywords: comprar, precios, ramos
+  ═══════════════════════════════════════════ -->
   <url>
-    <loc>https://albortallado.com/#galeria</loc>
-    <lastmod>2026-04-07</lastmod>
+    <loc>https://albortallado.com/catalogo.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+
+    <!-- Ramo 01 · $25 -->
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/1/frontal1.png</image:loc>
+      <image:title>Ramo 01 Parafina Quito $25 — regalo Día de la Madre · velas artesanales Ecuador</image:title>
+      <image:caption>Ramo en parafina Nro. 1 elaborado a mano en Quito. Precio: $25. Regalo perfecto para el Día de la Madre 2026.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/1/detalle1.png</image:loc>
+      <image:title>Detalle flores parafina artesanal Quito — regalos originales mamá</image:title>
+      <image:caption>Detalle artesanal de flores en parafina talladas a mano. Regalos únicos para mamá en Quito, Ecuador.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/1/cenital1.png</image:loc>
+      <image:title>Vista aérea Ramo 01 parafina — velas artesanales Quito Ecuador</image:title>
+      <image:caption>Vista superior ramo de velas en parafina Nro. 1. Albor Tallado. Regalo artesanal Día de la Madre 2026.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
+    <!-- Ramo 02 · $25 -->
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/2/frontal2.png</image:loc>
+      <image:title>Ramo 02 Flores Parafina Quito $25 — comprar regalo original para mamá</image:title>
+      <image:caption>Ramo en parafina Nro. 2. Hecho artesanalmente en Quito. $25. Entrega a domicilio. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/2/detalle2.png</image:loc>
+      <image:title>Detalle ramo parafina hecho a mano Quito — velas decorativas regalo</image:title>
+      <image:caption>Flores de parafina elaboradas a mano en Quito. Regalos artesanales Ecuador. Día de la Madre.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/2/cenital2.png</image:loc>
+      <image:title>Vista cenital Ramo 02 parafina artesanal — regalos Quito Ecuador</image:title>
+      <image:caption>Vista superior ramo 2 en parafina. Albor Tallado Quito. Regalo original para el Día de la Madre.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
+    <!-- Ramo 03 · $25 -->
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/3/frontal3.png</image:loc>
+      <image:title>Ramo 03 Velas Parafina Artesanales Quito $25 — regalo Día de la Madre Ecuador</image:title>
+      <image:caption>Ramo en parafina Nro. 3. Artesanal, elaborado a mano en Quito. Perfecto para regalar el Día de la Madre 2026.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/3/detalle3.png</image:loc>
+      <image:title>Detalle artesanal ramo parafina Quito — flores de vela regalo mamá</image:title>
+      <image:caption>Detalle de flores de parafina talladas a mano. Regalos únicos en Quito para mamá. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/3/cenital3.png</image:loc>
+      <image:title>Vista aérea Ramo 03 parafina — velas artesanales decorativas Quito</image:title>
+      <image:caption>Ramo 3 artesanal en parafina visto desde arriba. Albor Tallado. Quito Ecuador.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
+    <!-- Ramo 04 · $30 Premium -->
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/4/frontal4.png</image:loc>
+      <image:title>Ramo 04 Premium Parafina Quito $30 — regalo exclusivo Día de la Madre 2026</image:title>
+      <image:caption>Ramo premium en parafina Nro. 4. El más completo de la colección. $30. Elaborado a mano en Quito. Regalo que se queda para siempre.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/4/detalle4.png</image:loc>
+      <image:title>Detalle Ramo 04 premium flores parafina Quito — regalo exclusivo mamá</image:title>
+      <image:caption>Detalle de ramo premium en parafina. Regalo exclusivo Día de la Madre. Albor Tallado Quito Ecuador.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/4/cenital4.png</image:loc>
+      <image:title>Vista cenital Ramo 04 premium parafina — velas decorativas regalo Quito</image:title>
+      <image:caption>Vista superior ramo 4 premium artesanal en parafina. Albor Tallado. Regalo mamá Quito 2026.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       BESPOKE — Keywords: personalizado, exclusivo, único
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://albortallado.com/bespoke.html</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/FRONTAL.png</image:loc>
+      <image:title>Ramo Bespoke Personalizado Parafina Quito — regalo exclusivo artesanal desde $50</image:title>
+      <image:caption>Ramo bespoke en parafina diseñado a medida en Quito. El regalo más exclusivo. Desde $50. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/DETALLE.png</image:loc>
+      <image:title>Detalle vela bespoke parafina Quito — regalo personalizado artesanal Ecuador</image:title>
+      <image:caption>Detalle de pieza bespoke en parafina tallada a mano. Albor Tallado. Regalos personalizados Quito.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/MANO%20Y%20PRODUCTO.png</image:loc>
+      <image:title>Proceso artesanal tallado velas parafina Quito — Albor Tallado bespoke hecho a mano</image:title>
+      <image:caption>Manos del artesano tallando una pieza en parafina en Quito. Proceso 100% artesanal. Albor Tallado Ecuador.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/CENITAL%20LATERAL.png</image:loc>
+      <image:title>Vista lateral ramo bespoke parafina — regalo personalizado Quito Ecuador</image:title>
+      <image:caption>Vista lateral de ramo bespoke artesanal en parafina. Personalizado en Quito, Ecuador. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/LATREAL.png</image:loc>
+      <image:title>Ramo parafina bespoke perfil lateral — regalo artesanal exclusivo Quito</image:title>
+      <image:caption>Ramo bespoke en parafina, perfil lateral. Regalo artesanal exclusivo. Albor Tallado, Quito, Ecuador.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
   </url>
 
+  <!-- ═══════════════════════════════════════════
+       CONTACTO — Keywords: dónde comprar, WhatsApp, Quito
+  ═══════════════════════════════════════════ -->
   <url>
-    <loc>https://albortallado.com/#bespoke</loc>
-    <lastmod>2026-04-07</lastmod>
+    <loc>https://albortallado.com/contacto.html</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://albortallado.com/#proceso</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://albortallado.com/#ubicacion</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
 
 </urlset>
