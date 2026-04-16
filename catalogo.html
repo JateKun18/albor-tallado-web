@@ -174,7 +174,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap"></noscript>
     <style>
         :root {
             --color-alabastro: #F4F1EB;
@@ -572,7 +573,7 @@
     <div class="container">
         <div class="nav-inner">
             <a href="index.html" class="logo">
-                <img src="assets/img/logo-albor.png" alt="Albor Tallado" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                <img src="assets/img/logo-albor.webp" alt="Albor Tallado" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" width="400" height="229">
                 <span class="logo-text" style="display:none">Albor</span>
             </a>
             <ul>
@@ -650,9 +651,9 @@
             <div class="product-card tilt-card reveal" data-category="coleccion dia-madre">
                 <div class="product-badge badge-popular">Más Pedido</div>
                 <div class="product-visor" id="visor-1">
-                    <div class="product-slide active"><img src="assets/img/catalogo/1/frontal1.png" alt="Ramo Albor 01 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.png'" style="object-fit:contain; background:#F4F1EB;"></div>
-                    <div class="product-slide"><img src="assets/img/catalogo/1/detalle1.png" alt="Ramo Albor 01 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.png'"></div>
-                    <div class="product-slide"><img src="assets/img/catalogo/1/cenital1.png" alt="Ramo Albor 01 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.png'"></div>
+                    <div class="product-slide active"><img src="assets/img/catalogo/1/frontal1.webp" alt="Ramo Albor 01 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.webp'" style="object-fit:contain; background:#F4F1EB;" width="1200" height="675"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/1/detalle1.webp" alt="Ramo Albor 01 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.webp'" width="900" height="514"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/1/cenital1.webp" alt="Ramo Albor 01 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.webp'" width="900" height="514"></div>
                     <div class="visor-dots">
                         <div class="visor-dot active" data-visor="visor-1" data-idx="0"></div>
                         <div class="visor-dot" data-visor="visor-1" data-idx="1"></div>
@@ -676,9 +677,9 @@
             <!-- RAMO 02 -->
             <div class="product-card tilt-card reveal" data-category="coleccion dia-madre" data-delay="80">
                 <div class="product-visor" id="visor-2">
-                    <div class="product-slide active"><img src="assets/img/catalogo/3/frontal3.png" alt="Ramo Albor 02 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.png'" style="object-fit:contain; background:#F4F1EB;"></div>
-                    <div class="product-slide"><img src="assets/img/catalogo/3/detalle3.png" alt="Ramo Albor 02 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.png'"></div>
-                    <div class="product-slide"><img src="assets/img/catalogo/3/cenital3.png" alt="Ramo Albor 02 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.png'"></div>
+                    <div class="product-slide active"><img src="assets/img/catalogo/3/frontal3.webp" alt="Ramo Albor 02 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.webp'" style="object-fit:contain; background:#F4F1EB;" width="1200" height="675"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/3/detalle3.webp" alt="Ramo Albor 02 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.webp'" width="900" height="514"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/3/cenital3.webp" alt="Ramo Albor 02 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.webp'" width="900" height="514"></div>
                     <div class="visor-dots">
                         <div class="visor-dot active" data-visor="visor-2" data-idx="0"></div>
                         <div class="visor-dot" data-visor="visor-2" data-idx="1"></div>
@@ -703,9 +704,9 @@
             <!-- RAMO 03 -->
             <div class="product-card tilt-card reveal" data-category="coleccion dia-madre" data-delay="160">
                 <div class="product-visor" id="visor-3">
-                    <div class="product-slide active"><img src="assets/img/catalogo/2/frontal2.png" alt="Ramo Albor 03 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.png'" style="object-fit:contain; background:#F4F1EB;"></div>
-                    <div class="product-slide"><img src="assets/img/catalogo/2/detalle2.png" alt="Ramo Albor 03 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.png'"></div>
-                    <div class="product-slide"><img src="assets/img/catalogo/2/cenital2.png" alt="Ramo Albor 03 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.png'"></div>
+                    <div class="product-slide active"><img src="assets/img/catalogo/2/frontal2.webp" alt="Ramo Albor 03 — vista frontal" loading="lazy" onerror="this.src='assets/img/producto-albor.webp'" style="object-fit:contain; background:#F4F1EB;" width="1200" height="675"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/2/detalle2.webp" alt="Ramo Albor 03 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.webp'" width="900" height="514"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/2/cenital2.webp" alt="Ramo Albor 03 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.webp'" width="900" height="514"></div>
                     <div class="visor-dots">
                         <div class="visor-dot active" data-visor="visor-3" data-idx="0"></div>
                         <div class="visor-dot" data-visor="visor-3" data-idx="1"></div>
@@ -728,9 +729,9 @@
             <div class="product-card featured-gold tilt-card reveal" data-category="coleccion dia-madre" data-delay="240">
                 <div class="product-badge badge-edicion">Edición Especial</div>
                 <div class="product-visor" id="visor-4">
-                    <div class="product-slide active"><img src="assets/img/catalogo/4/frontal4.png" alt="Ramo Albor 04 — Edición Especial" loading="lazy" onerror="this.src='assets/img/producto-albor.png'" style="object-fit:contain; background:#F4F1EB;"></div>
-                    <div class="product-slide"><img src="assets/img/catalogo/4/detalle4.png" alt="Ramo Albor 04 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.png'"></div>
-                    <div class="product-slide"><img src="assets/img/catalogo/4/cenital4.png" alt="Ramo Albor 04 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.png'"></div>
+                    <div class="product-slide active"><img src="assets/img/catalogo/4/frontal4.webp" alt="Ramo Albor 04 — Edición Especial" loading="lazy" onerror="this.src='assets/img/producto-albor.webp'" style="object-fit:contain; background:#F4F1EB;" width="1200" height="686"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/4/detalle4.webp" alt="Ramo Albor 04 — detalle" loading="lazy" onerror="this.src='assets/img/textura-albor.webp'" width="900" height="514"></div>
+                    <div class="product-slide"><img src="assets/img/catalogo/4/cenital4.webp" alt="Ramo Albor 04 — vista aérea" loading="lazy" onerror="this.src='assets/img/cenital-albor.webp'" width="900" height="506"></div>
                     <div class="visor-dots">
                         <div class="visor-dot active" data-visor="visor-4" data-idx="0"></div>
                         <div class="visor-dot" data-visor="visor-4" data-idx="1"></div>
@@ -770,7 +771,7 @@
                 <a href="https://wa.me/593987884988?text=Hola%2C%20quiero%20asegurar%20mi%20pieza%20para%20el%20D%C3%ADa%20de%20la%20Madre." class="btn-primary" target="_blank" rel="noopener" style="background: var(--color-oro); border-color: var(--color-oro);">Asegurar mi Pieza</a>
             </div>
             <div class="dia-img reveal" data-delay="120">
-                <img src="assets/img/catalogo/4/frontal4.png" alt="Pieza Albor para el Día de la Madre" style="object-fit:contain; background:#F4F1EB;">
+                <img src="assets/img/catalogo/4/frontal4.webp" alt="Pieza Albor para el Día de la Madre" style="object-fit:contain; background:#F4F1EB;" width="1200" height="686">
                 <div class="dia-img-frame"></div>
             </div>
         </div>

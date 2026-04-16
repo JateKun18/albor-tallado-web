@@ -222,10 +222,11 @@
       ]
     }
     </script>
-    <link rel="preload" href="assets/img/producto-albor.png" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/img/producto-albor.webp" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap"></noscript>
     <style>
         :root {
             --color-alabastro: #F4F1EB;
@@ -403,11 +404,12 @@
         /* Text split — cada .word entra por separado */
         .hero h1 .word {
             display: inline-block; opacity: 0;
+            will-change: transform, opacity, filter;
             animation: wordBlurIn 0.7s ease forwards;
         }
         @keyframes wordBlurIn {
             from { opacity: 0; filter: blur(8px); transform: translateY(16px); }
-            to   { opacity: 1; filter: blur(0); transform: translateY(0); }
+            to   { opacity: 1; filter: blur(0px); transform: translateY(0); }
         }
         .hero-description {
             font-size: 1rem; font-weight: 300; color: var(--color-espresso-soft);
@@ -866,7 +868,7 @@
     <div class="container">
         <div class="nav-inner">
             <a href="index.html" class="logo">
-                <img src="assets/img/logo-albor.png" alt="Albor Tallado" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                <img src="assets/img/logo-albor.webp" alt="Albor Tallado" width="160" height="64" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
                 <span class="logo-text" style="display:none">Albor</span>
             </a>
             <ul>
@@ -916,7 +918,7 @@
         </div>
     </div>
     <div class="hero-image" id="hero-img-wrap">
-        <img src="assets/img/producto-albor.png" alt="Pieza en parafina elaborada artesanalmente — Albor Tallado Quito" id="hero-img" fetchpriority="high" loading="eager">
+        <img src="assets/img/producto-albor.webp" alt="Pieza en parafina elaborada artesanalmente — Albor Tallado Quito" id="hero-img" width="900" height="1125" fetchpriority="high" loading="eager">
         <div class="hero-image-overlay"></div>
     </div>
     <div class="hero-scroll-indicator">
@@ -985,20 +987,20 @@
             <a href="catalogo.html" class="galeria-link">Ver catálogo completo</a>
         </div>
         <div class="galeria-grid">
-            <div class="galeria-item span-col reveal" data-lightbox="assets/img/catalogo/1/frontal1.png">
-                <img src="assets/img/catalogo/1/frontal1.png" alt="Ramo Albor 01 — Colección 2026" loading="lazy">
+            <div class="galeria-item span-col reveal" data-lightbox="assets/img/catalogo/1/frontal1.webp">
+                <img src="assets/img/catalogo/1/frontal1.webp" alt="Ramo Albor 01 — Colección 2026" width="900" height="1125" loading="lazy">
                 <div class="galeria-item-overlay">
                     <span class="galeria-item-caption">Ramo Albor 01</span>
                 </div>
             </div>
-            <div class="galeria-item reveal" data-lightbox="assets/img/catalogo/2/frontal2.png">
-                <img src="assets/img/catalogo/2/frontal2.png" alt="Ramo Albor 02 — parafina artesanal" loading="lazy">
+            <div class="galeria-item reveal" data-lightbox="assets/img/catalogo/2/frontal2.webp">
+                <img src="assets/img/catalogo/2/frontal2.webp" alt="Ramo Albor 02 — parafina artesanal" width="900" height="1125" loading="lazy">
                 <div class="galeria-item-overlay">
                     <span class="galeria-item-caption">Ramo Albor 02</span>
                 </div>
             </div>
-            <div class="galeria-item reveal" data-lightbox="assets/img/catalogo/3/frontal3.png">
-                <img src="assets/img/catalogo/3/frontal3.png" alt="Ramo Albor 03 — pieza en parafina" loading="lazy">
+            <div class="galeria-item reveal" data-lightbox="assets/img/catalogo/3/frontal3.webp">
+                <img src="assets/img/catalogo/3/frontal3.webp" alt="Ramo Albor 03 — pieza en parafina" width="900" height="1125" loading="lazy">
                 <div class="galeria-item-overlay">
                     <span class="galeria-item-caption">Ramo Albor 03</span>
                 </div>
@@ -1019,7 +1021,7 @@
             <div class="featured-card tilt-card reveal">
                 <div class="featured-img">
                     <span class="featured-badge">Mas Pedido</span>
-                    <img src="assets/img/catalogo/1/frontal1.png" alt="Ramo Albor 01" loading="lazy" onerror="this.src='assets/img/producto-albor.png'">
+                    <img src="assets/img/catalogo/1/frontal1.webp" alt="Ramo Albor 01" width="480" height="600" loading="lazy" onerror="this.src='assets/img/producto-albor.webp'">
                 </div>
                 <div class="featured-info">
                     <h3 class="featured-name">Ramo Albor 01</h3>
@@ -1034,7 +1036,7 @@
             <!-- Ramo 02 -->
             <div class="featured-card tilt-card reveal">
                 <div class="featured-img">
-                    <img src="assets/img/catalogo/2/frontal2.png" alt="Ramo Albor 02" loading="lazy" onerror="this.src='assets/img/producto-albor.png'">
+                    <img src="assets/img/catalogo/2/frontal2.webp" alt="Ramo Albor 02" width="480" height="600" loading="lazy" onerror="this.src='assets/img/producto-albor.webp'">
                 </div>
                 <div class="featured-info">
                     <h3 class="featured-name">Ramo Albor 02</h3>
@@ -1049,7 +1051,7 @@
             <!-- Bespoke teaser -->
             <div class="featured-card tilt-card reveal">
                 <div class="featured-img">
-                    <img src="assets/img/BESPOKE/FRONTAL.png" alt="Pieza Bespoke Albor" loading="lazy" onerror="this.src='assets/img/producto-albor.png'">
+                    <img src="assets/img/BESPOKE/FRONTAL.webp" alt="Pieza Bespoke Albor" width="480" height="600" loading="lazy" onerror="this.src='assets/img/producto-albor.webp'">
                 </div>
                 <div class="featured-info">
                     <h3 class="featured-name">Pieza Bespoke</h3>
@@ -1078,19 +1080,19 @@
         </div>
         <div class="instagram-grid">
             <a href="https://instagram.com/albortallado" class="instagram-post reveal" target="_blank" rel="noopener">
-                <img src="assets/img/catalogo/1/frontal1.png" alt="Albor en Instagram" loading="lazy">
+                <img src="assets/img/catalogo/1/frontal1.webp" alt="Albor en Instagram" loading="lazy" width="1200" height="675">
                 <div class="instagram-post-overlay"><span>Ver en Instagram</span></div>
             </a>
             <a href="https://instagram.com/albortallado" class="instagram-post reveal" target="_blank" rel="noopener">
-                <img src="assets/img/catalogo/2/detalle2.png" alt="Albor en Instagram" loading="lazy">
+                <img src="assets/img/catalogo/2/detalle2.webp" alt="Albor en Instagram" loading="lazy" width="900" height="514">
                 <div class="instagram-post-overlay"><span>Ver en Instagram</span></div>
             </a>
             <a href="https://instagram.com/albortallado" class="instagram-post reveal" target="_blank" rel="noopener">
-                <img src="assets/img/catalogo/3/cenital3.png" alt="Albor en Instagram" loading="lazy">
+                <img src="assets/img/catalogo/3/cenital3.webp" alt="Albor en Instagram" loading="lazy" width="900" height="514">
                 <div class="instagram-post-overlay"><span>Ver en Instagram</span></div>
             </a>
             <a href="https://instagram.com/albortallado" class="instagram-post reveal" target="_blank" rel="noopener">
-                <img src="assets/img/BESPOKE/MANO%20Y%20PRODUCTO.png" alt="Albor en Instagram" loading="lazy" onerror="this.src='assets/img/catalogo/4/frontal4.png'">
+                <img src="assets/img/BESPOKE/MANO%20Y%20PRODUCTO.webp" alt="Albor en Instagram" loading="lazy" onerror="this.src='assets/img/catalogo/4/frontal4.webp'" width="1200" height="686">
                 <div class="instagram-post-overlay"><span>Ver en Instagram</span></div>
             </a>
         </div>
@@ -1148,19 +1150,19 @@
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; max-width:1000px; margin:0 auto;">
             <a href="novedades/regalos-dia-madre-quito-2026.html" style="text-decoration:none; color:inherit; display:block;">
-                <img src="assets/img/catalogo/4/frontal4.png" alt="Regalos día de la madre Quito 2026" loading="lazy" style="width:100%; height:220px; object-fit:cover; border-radius:2px; margin-bottom:1rem;">
+                <img src="assets/img/catalogo/4/frontal4.webp" alt="Regalos día de la madre Quito 2026" loading="lazy" style="width:100%; height:220px; object-fit:cover; border-radius:2px; margin-bottom:1rem;" width="1200" height="686">
                 <span style="font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-oro);">Día de la Madre</span>
                 <h3 style="font-family:var(--font-titulo); font-size:1.25rem; font-weight:600; margin:0.4rem 0 0.5rem; line-height:1.3;">5 Regalos Originales para el Día de la Madre en Quito 2026</h3>
                 <span style="font-size:0.8rem; color:var(--color-oro); border-bottom:1px solid var(--color-oro); padding-bottom:2px; letter-spacing:0.08em; text-transform:uppercase;">Leer →</span>
             </a>
             <a href="novedades/velas-bodas-quito.html" style="text-decoration:none; color:inherit; display:block;">
-                <img src="assets/img/BESPOKE/DETALLE.png" alt="Velas para bodas Quito" loading="lazy" style="width:100%; height:220px; object-fit:cover; border-radius:2px; margin-bottom:1rem;" onerror="this.src='assets/img/catalogo/2/detalle2.png'">
+                <img src="assets/img/BESPOKE/DETALLE.webp" alt="Velas para bodas Quito" loading="lazy" style="width:100%; height:220px; object-fit:cover; border-radius:2px; margin-bottom:1rem;" onerror="this.src='assets/img/catalogo/2/detalle2.webp'" width="900" height="514">
                 <span style="font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-oro);">Bodas &amp; Eventos</span>
                 <h3 style="font-family:var(--font-titulo); font-size:1.25rem; font-weight:600; margin:0.4rem 0 0.5rem; line-height:1.3;">Velas y Detalles en Parafina para Bodas en Quito</h3>
                 <span style="font-size:0.8rem; color:var(--color-oro); border-bottom:1px solid var(--color-oro); padding-bottom:2px; letter-spacing:0.08em; text-transform:uppercase;">Leer →</span>
             </a>
             <a href="novedades/ramos-parafina-quito.html" style="text-decoration:none; color:inherit; display:block;">
-                <img src="assets/img/catalogo/3/detalle3.png" alt="Ramos de parafina Quito" loading="lazy" style="width:100%; height:220px; object-fit:cover; border-radius:2px; margin-bottom:1rem;">
+                <img src="assets/img/catalogo/3/detalle3.webp" alt="Ramos de parafina Quito" loading="lazy" style="width:100%; height:220px; object-fit:cover; border-radius:2px; margin-bottom:1rem;" width="900" height="514">
                 <span style="font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-oro);">Ramos de Parafina</span>
                 <h3 style="font-family:var(--font-titulo); font-size:1.25rem; font-weight:600; margin:0.4rem 0 0.5rem; line-height:1.3;">Ramos de Parafina: El Regalo que no se Marchita</h3>
                 <span style="font-size:0.8rem; color:var(--color-oro); border-bottom:1px solid var(--color-oro); padding-bottom:2px; letter-spacing:0.08em; text-transform:uppercase;">Leer →</span>
@@ -1180,22 +1182,22 @@
         <div id="ig-grid" style="display:grid; grid-template-columns:repeat(6,1fr); gap:4px; max-width:1100px; margin:0 auto;">
             <!-- Se llena dinámicamente. Fallback: imágenes del catálogo -->
             <a href="https://instagram.com/albortallado" target="_blank" rel="noopener" class="ig-item" style="aspect-ratio:1; overflow:hidden; display:block; background:var(--color-alabastro);">
-                <img src="assets/img/catalogo/1/frontal1.png" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;">
+                <img src="assets/img/catalogo/1/frontal1.webp" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" width="1200" height="675">
             </a>
             <a href="https://instagram.com/albortallado" target="_blank" rel="noopener" class="ig-item" style="aspect-ratio:1; overflow:hidden; display:block; background:var(--color-alabastro);">
-                <img src="assets/img/catalogo/2/frontal2.png" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;">
+                <img src="assets/img/catalogo/2/frontal2.webp" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" width="1200" height="675">
             </a>
             <a href="https://instagram.com/albortallado" target="_blank" rel="noopener" class="ig-item" style="aspect-ratio:1; overflow:hidden; display:block; background:var(--color-alabastro);">
-                <img src="assets/img/catalogo/3/frontal3.png" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;">
+                <img src="assets/img/catalogo/3/frontal3.webp" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" width="1200" height="675">
             </a>
             <a href="https://instagram.com/albortallado" target="_blank" rel="noopener" class="ig-item" style="aspect-ratio:1; overflow:hidden; display:block; background:var(--color-alabastro);">
-                <img src="assets/img/catalogo/4/frontal4.png" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;">
+                <img src="assets/img/catalogo/4/frontal4.webp" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" width="1200" height="686">
             </a>
             <a href="https://instagram.com/albortallado" target="_blank" rel="noopener" class="ig-item" style="aspect-ratio:1; overflow:hidden; display:block; background:var(--color-alabastro);">
-                <img src="assets/img/catalogo/1/cenital1.png" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;">
+                <img src="assets/img/catalogo/1/cenital1.webp" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" width="900" height="514">
             </a>
             <a href="https://instagram.com/albortallado" target="_blank" rel="noopener" class="ig-item" style="aspect-ratio:1; overflow:hidden; display:block; background:var(--color-alabastro);">
-                <img src="assets/img/catalogo/2/detalle2.png" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;">
+                <img src="assets/img/catalogo/2/detalle2.webp" alt="Albor Tallado en Instagram" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" width="900" height="514">
             </a>
         </div>
         <div style="text-align:center; margin-top:2rem;">

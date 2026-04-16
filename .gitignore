@@ -1,1 +1,13 @@
 .claude/
+
+.vercel
+
+# Original PNG (oversized — usar WebP)
+assets/img/**/*.png
+assets/img/*.png
+# Build/dev tools
+node_modules/
+optimize-images.js
+update-img-refs.js
+add-img-dimensions.js
+package*.json
