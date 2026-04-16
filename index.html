@@ -187,10 +187,10 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "¿Qué son los ramos de parafina?",
+              "name": "¿Qué son los arreglos de parafina?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Los ramos de parafina son flores y ramos artesanales elaborados con parafina (cera) tallada a mano, que imitan la belleza de los ramos naturales pero duran para siempre. Albor Tallado los elabora uno por uno en Quito, Ecuador."
+                "text": "Los arreglos de parafina son piezas decorativas artesanales elaboradas con parafina (cera) tallada a mano. No son flores reales — son piezas de parafina que duran para siempre sin marchitarse. Albor Tallado las elabora una por una en Quito, Ecuador."
               }
             },
             {
@@ -203,10 +203,10 @@
             },
             {
               "@type": "Question",
-              "name": "¿Cuánto cuestan los ramos de parafina en Quito?",
+              "name": "¿Cuánto cuestan los arreglos de parafina en Quito?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Los ramos de parafina de Albor Tallado tienen un precio desde $25 (Ramos 01, 02 y 03) y $30 (Ramo 04 premium). Los ramos bespoke personalizados parten desde $50."
+                "text": "Los arreglos de parafina de Albor Tallado tienen un precio desde $25 (Ramos 01, 02 y 03) y $30 (Ramo 04 premium). Las piezas bespoke personalizadas parten desde $50."
               }
             },
             {
@@ -796,10 +796,17 @@
             #announcement-bar { height: auto; min-height: 46px; padding: 8px 20px; }
             .announcement-inner { flex-wrap: wrap; white-space: normal; gap: 8px; justify-content: center; text-align: center; font-size: 0.6rem; }
             .announcement-cta { display: none; }
-            nav { top: auto !important; }
         }
         @media (max-width: 1024px) {
             .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 320px 220px; }
+            .featured-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonios-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+            #ig-grid { grid-template-columns: repeat(4, 1fr) !important; }
+        }
+        @media (pointer: coarse) {
+            .cursor-dot, .cursor-ring { display: none !important; }
+            * { cursor: auto !important; }
         }
     </style>
     <!-- Meta Pixel Code -->
@@ -1005,7 +1012,7 @@
     <div class="container">
         <div class="featured-header reveal">
             <p class="section-label">Piezas Destacadas</p>
-            <h2 class="section-title">Lo más <em>pedido</em> del taller</h2>
+            <h2 class="section-title">Lo más <em>pedido</em></h2>
         </div>
         <div class="featured-grid">
             <!-- Ramo 01 -->
@@ -1017,7 +1024,7 @@
                 <div class="featured-info">
                     <h3 class="featured-name">Ramo Albor 01</h3>
                     <p class="featured-sub">Elaborado artesanalmente</p>
-                    <p class="featured-desc">El más pedido del taller. Presencia real, flores que no se marchitan — para una mamá que merece algo que dure.</p>
+                    <p class="featured-desc">El más pedido. Arreglo en parafina con presencia real — para una mamá que merece algo que dure para siempre.</p>
                     <div class="featured-bottom">
                         <span class="featured-price">$25</span>
                         <a href="https://wa.me/593987884988?text=Hola%2C%20me%20interesa%20el%20Ramo%20Albor%2001." class="featured-cta" target="_blank" rel="noopener">Pedirlo →</a>
@@ -1032,9 +1039,9 @@
                 <div class="featured-info">
                     <h3 class="featured-name">Ramo Albor 02</h3>
                     <p class="featured-sub">Elaborado artesanalmente</p>
-                    <p class="featured-desc">Elegante y lista para regalar. Llega embalada — no necesita nada más para sorprender a quien la recibe.</p>
+                    <p class="featured-desc">Elegante y lista para regalar. Una pieza de parafina que sorprende a quien la recibe.</p>
                     <div class="featured-bottom">
-                        <span class="featured-price">$30</span>
+                        <span class="featured-price">$25</span>
                         <a href="https://wa.me/593987884988?text=Hola%2C%20me%20interesa%20el%20Ramo%20Albor%2002." class="featured-cta" target="_blank" rel="noopener">Pedirlo →</a>
                     </div>
                 </div>
@@ -1047,7 +1054,7 @@
                 <div class="featured-info">
                     <h3 class="featured-name">Pieza Bespoke</h3>
                     <p class="featured-sub" style="color:rgba(212,165,90,0.8)">Tallado a mano &middot; Pieza única</p>
-                    <p class="featured-desc">Diseñada exclusivamente para ti. Cuéntanos tu idea y la hacemos realidad desde nuestro taller.</p>
+                    <p class="featured-desc">Diseñada exclusivamente para ti. Cuéntanos tu idea y la hacemos realidad en parafina artesanal.</p>
                     <div class="featured-bottom">
                         <span class="featured-price" style="font-size:0.85rem; letter-spacing:0.04em;">Escríbenos para cotizar</span>
                         <a href="bespoke.html" class="featured-cta">Conocer más →</a>
@@ -1107,7 +1114,7 @@
             <div class="testimonio-card reveal">
                 <span class="testimonio-quote-mark">"</span>
                 <div class="testimonio-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-                <p class="testimonio-texto">Buscaba algo que no fuera lo de siempre. Llegó en una caja preciosa y la presentación ya era parte del regalo. Lo recomiendo sin dudarlo.</p>
+                <p class="testimonio-texto">Buscaba algo que no fuera lo de siempre. La pieza superó todas mis expectativas — lo recomiendo sin dudarlo.</p>
                 <div class="testimonio-autor"><strong>Andrés M.</strong><span>Quito Norte</span></div>
             </div>
             <div class="testimonio-card reveal">
@@ -1136,7 +1143,7 @@
 <section style="background: var(--color-alabastro); padding: 5rem 0; border-top: 1px solid rgba(30,27,24,0.08);">
     <div class="container">
         <div style="text-align:center; margin-bottom: 3rem;">
-            <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-oro); display:block; margin-bottom:0.75rem;">Del Taller</span>
+            <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-oro); display:block; margin-bottom:0.75rem;">Artículos</span>
             <h2 style="font-family:var(--font-titulo); font-size:clamp(2rem,4vw,2.8rem); font-weight:600;">Novedades</h2>
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; max-width:1000px; margin:0 auto;">
@@ -1266,7 +1273,6 @@
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/pencil.js@latest/dist/pencil.min.js" defer></script>
 <script src="assets/js/animations.js" defer></script>
 <script>
     // COUNTDOWN
