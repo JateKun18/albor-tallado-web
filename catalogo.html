@@ -280,6 +280,23 @@
         .product-visor:hover .visor-zoom { opacity: 1; }
         .visor-zoom-label { font-family: var(--font-titulo); font-size: 0.82rem; font-style: italic; color: var(--color-alabastro); letter-spacing: 0.06em; }
 
+        /* FLECHAS DE NAVEGACIÓN */
+        .visor-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            z-index: 5; width: 36px; height: 36px;
+            background: rgba(20,18,16,0.55); border: 1px solid rgba(184,134,69,0.4);
+            color: var(--color-alabastro); font-size: 1.2rem; line-height: 1;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; opacity: 0; transition: opacity 0.3s, background 0.3s, transform 0.3s;
+            backdrop-filter: blur(4px);
+        }
+        .visor-arrow:hover { background: var(--color-oro); border-color: var(--color-oro); }
+        .visor-arrow-prev { left: 10px; }
+        .visor-arrow-next { right: 10px; }
+        .product-visor:hover .visor-arrow { opacity: 1; }
+        .visor-arrow-prev:hover { transform: translateY(-50%) translateX(-2px); }
+        .visor-arrow-next:hover { transform: translateY(-50%) translateX(2px); }
+
         /* PRODUCT INFO */
         .product-info { padding: 22px 24px 0; }
         .product-name { font-family: var(--font-titulo); font-size: 1.25rem; font-weight: 400; letter-spacing: 0.06em; color: var(--color-espresso); margin-bottom: 4px; }
@@ -599,6 +616,9 @@
     <a href="https://wa.me/593987884988" class="mobile-link" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
+<div data-barba="wrapper">
+<div data-barba="container" data-barba-namespace="catalogo">
+
 <!-- HERO -->
 <section class="catalog-hero">
     <canvas id="page-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
@@ -659,6 +679,8 @@
                         <div class="visor-dot" data-visor="visor-1" data-idx="1"></div>
                         <div class="visor-dot" data-visor="visor-1" data-idx="2"></div>
                     </div>
+                    <button class="visor-arrow visor-arrow-prev" aria-label="Anterior">&#8249;</button>
+                    <button class="visor-arrow visor-arrow-next" aria-label="Siguiente">&#8250;</button>
                     <div class="visor-zoom"><span class="visor-zoom-label">Ver en detalle</span></div>
                 </div>
                 <div class="product-info">
@@ -685,6 +707,8 @@
                         <div class="visor-dot" data-visor="visor-2" data-idx="1"></div>
                         <div class="visor-dot" data-visor="visor-2" data-idx="2"></div>
                     </div>
+                    <button class="visor-arrow visor-arrow-prev" aria-label="Anterior">&#8249;</button>
+                    <button class="visor-arrow visor-arrow-next" aria-label="Siguiente">&#8250;</button>
                     <div class="visor-zoom"><span class="visor-zoom-label">Ver en detalle</span></div>
                 </div>
                 <div class="product-info">
@@ -712,6 +736,8 @@
                         <div class="visor-dot" data-visor="visor-3" data-idx="1"></div>
                         <div class="visor-dot" data-visor="visor-3" data-idx="2"></div>
                     </div>
+                    <button class="visor-arrow visor-arrow-prev" aria-label="Anterior">&#8249;</button>
+                    <button class="visor-arrow visor-arrow-next" aria-label="Siguiente">&#8250;</button>
                     <div class="visor-zoom"><span class="visor-zoom-label">Ver en detalle</span></div>
                 </div>
                 <div class="product-info">
@@ -737,6 +763,8 @@
                         <div class="visor-dot" data-visor="visor-4" data-idx="1"></div>
                         <div class="visor-dot" data-visor="visor-4" data-idx="2"></div>
                     </div>
+                    <button class="visor-arrow visor-arrow-prev" aria-label="Anterior">&#8249;</button>
+                    <button class="visor-arrow visor-arrow-next" aria-label="Siguiente">&#8250;</button>
                     <div class="visor-zoom"><span class="visor-zoom-label">Ver en detalle</span></div>
                 </div>
                 <div class="product-info">
@@ -926,12 +954,14 @@
 })();
 </script>
 <script>
-// VISOR DE PRODUCTOS — nav por puntos
+// VISOR DE PRODUCTOS — auto-slide + dots + flechas + lightbox
 (function () {
     const INTERVAL = 3800;
     document.querySelectorAll('.product-visor').forEach(function (visor) {
         var slides = visor.querySelectorAll('.product-slide');
         var dots = visor.querySelectorAll('.visor-dot');
+        var btnPrev = visor.querySelector('.visor-arrow-prev');
+        var btnNext = visor.querySelector('.visor-arrow-next');
         if (!slides.length) return;
         var current = 0, timer = null, paused = false;
 
@@ -945,12 +975,28 @@
         function tick() { if (!paused) goTo(current + 1); }
         function reset() { clearInterval(timer); timer = setInterval(tick, INTERVAL); }
 
-        dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); reset(); }); });
+        dots.forEach(function (d, i) {
+            d.addEventListener('click', function (e) { e.stopPropagation(); goTo(i); reset(); });
+        });
+        if (btnPrev) btnPrev.addEventListener('click', function (e) { e.stopPropagation(); goTo(current - 1); reset(); });
+        if (btnNext) btnNext.addEventListener('click', function (e) { e.stopPropagation(); goTo(current + 1); reset(); });
+
+        // Swipe táctil
+        var touchStartX = 0;
+        visor.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; paused = true; }, { passive: true });
+        visor.addEventListener('touchend', function (e) {
+            var diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); reset(); }
+            paused = false;
+        });
+
         visor.addEventListener('mouseenter', function () { paused = true; });
         visor.addEventListener('mouseleave', function () { paused = false; });
 
-        // Lightbox al click
-        visor.addEventListener('click', function () {
+        // Lightbox al click (solo en área de imagen, no en botones)
+        visor.addEventListener('click', function (e) {
+            if (e.target.classList.contains('visor-arrow') || e.target.closest('.visor-arrow')) return;
+            if (e.target.classList.contains('visor-dot') || e.target.closest('.visor-dot')) return;
             var activeSlide = visor.querySelector('.product-slide.active img');
             if (!activeSlide) return;
             var lb = document.getElementById('lightbox');
@@ -999,25 +1045,63 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<style>
+html[data-theme="dark"] { --color-alabastro:#1E1B18; --color-espresso:#F4F1EB; background:#1E1B18; }
+html[data-theme="dark"] body { background:#1E1B18; color:#F4F1EB; }
+html[data-theme="dark"] nav.scrolled { background:rgba(20,18,16,0.96)!important; }
+html[data-theme="dark"] .product-card { background:#252220; border-color:rgba(184,134,69,0.2); }
+html[data-theme="dark"] .product-name { color:#F4F1EB; }
+html[data-theme="dark"] .product-desc { color:rgba(244,241,235,0.6); }
+html { transition: background 0.4s; }
+</style>
 <script>
 (function () {
+  /* Lenis */
   const lenis = new Lenis({ duration: 1.4, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
   function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
 
+  /* GSAP */
   gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray('.catalogo-card').forEach((card, i) => {
-    gsap.from(card, {
-      opacity: 0, y: 44, duration: 1.0, ease: 'power3.out', delay: i * 0.1,
-      scrollTrigger: { trigger: card, start: 'top 88%' }
+  gsap.utils.toArray('.product-card, .reveal').forEach((el, i) => {
+    gsap.from(el, {
+      opacity: 0, y: 40, duration: 1.0, ease: 'power3.out', delay: i * 0.08,
+      scrollTrigger: { trigger: el, start: 'top 88%' }
     });
   });
 
+  /* Vanilla Tilt */
   if (typeof VanillaTilt !== 'undefined') {
-    VanillaTilt.init(document.querySelectorAll('.catalogo-card'), { max: 5, speed: 500, glare: true, 'max-glare': 0.1 });
+    VanillaTilt.init(document.querySelectorAll('.product-card.tilt-card'), { max: 5, speed: 500, glare: true, 'max-glare': 0.1 });
+  }
+
+  /* Lazy blur */
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    img.style.filter = 'blur(8px)'; img.style.transition = 'filter 0.5s ease';
+    if (img.complete && img.naturalWidth) { img.style.filter = 'none'; }
+    else img.addEventListener('load', () => { img.style.filter = 'none'; });
+  });
+
+  /* Dark mode */
+  const dark = localStorage.getItem('albor-theme') === 'dark';
+  if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+
+  /* Barba */
+  if (typeof barba !== 'undefined' && typeof gsap !== 'undefined') {
+    barba.init({
+      preventRunning: true,
+      transitions: [{
+        name: 'albor-fade',
+        leave({ current }) { return new Promise(r => gsap.to(current.container, { opacity: 0, y: -16, duration: 0.35, onComplete: r })); },
+        enter({ next }) { return new Promise(r => gsap.from(next.container, { opacity: 0, y: 20, duration: 0.55, onComplete: r })); },
+        afterEnter() { ScrollTrigger.refresh(); }
+      }]
+    });
   }
 })();
 </script>
+</div><!-- /barba container -->
+</div><!-- /barba wrapper -->
 </body>
 </html>
