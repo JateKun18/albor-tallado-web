@@ -1480,5 +1480,122 @@
     })();
 </script>
 <script src="assets/js/hero-cinematic.js"></script>
+
+<!-- ===== DÍA 1: LENIS SMOOTH SCROLL ===== -->
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+<!-- ===== DÍA 2: GSAP + SCROLLTRIGGER ===== -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<!-- ===== DÍA 3: SPLITTYPE ===== -->
+<script src="https://unpkg.com/split-type"></script>
+
+<script>
+(function () {
+  /* ── LENIS ── */
+  const lenis = new Lenis({
+    duration: 1.4,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+  });
+  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+
+  /* ── GSAP ── */
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Parallax hero image
+  gsap.to('.hero-image', {
+    yPercent: -18,
+    ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+
+  // Reveal universal — añadir clase .gsap-reveal a cualquier elemento
+  gsap.utils.toArray('.gsap-reveal').forEach(el => {
+    gsap.from(el, {
+      opacity: 0, y: 52, duration: 1.1, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%' }
+    });
+  });
+
+  // Stats bar — números cuentan al entrar
+  gsap.utils.toArray('.stat-num').forEach((el, i) => {
+    const target = parseFloat(el.textContent);
+    if (!isNaN(target)) {
+      gsap.from({ val: 0 }, {
+        val: target, duration: 1.8, ease: 'power2.out', delay: i * 0.15,
+        onUpdate() { el.textContent = Math.round(this.targets()[0].val) + (el.dataset.suffix || ''); },
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+      });
+    }
+  });
+
+  // Galería — clip-path reveal por imagen
+  gsap.utils.toArray('.galeria-item').forEach((item, i) => {
+    gsap.from(item, {
+      clipPath: 'inset(100% 0% 0% 0%)',
+      duration: 1.3, ease: 'power4.inOut', delay: i * 0.08,
+      scrollTrigger: { trigger: item, start: 'top 85%' }
+    });
+  });
+
+  // Featured cards — entrada en cascada
+  gsap.utils.toArray('.featured-card').forEach((card, i) => {
+    gsap.from(card, {
+      opacity: 0, y: 40, duration: 0.9, ease: 'power3.out', delay: i * 0.12,
+      scrollTrigger: { trigger: card, start: 'top 88%' }
+    });
+  });
+
+  // Manifesto blockquote — clip-path vertical
+  gsap.from('.manifesto blockquote', {
+    clipPath: 'inset(0% 0% 100% 0%)',
+    duration: 1.4, ease: 'power4.inOut',
+    scrollTrigger: { trigger: '.manifesto', start: 'top 80%' }
+  });
+
+  /* ── SPLITTYPE — hero h1 ── */
+  const heroH1 = document.querySelector('.hero h1');
+  if (heroH1) {
+    // SplitType sobre el h1 ya existente (respeta los .word que tiene)
+    const split = new SplitType(heroH1, { types: 'chars', tagName: 'span' });
+    gsap.from(split.chars, {
+      opacity: 0, y: 28, filter: 'blur(6px)',
+      stagger: 0.022, duration: 0.65, ease: 'power2.out', delay: 0.2
+    });
+  }
+
+  /* ── BOTONES MAGNÉTICOS ── */
+  document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .announcement-cta').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.25;
+      const y = (e.clientY - r.top - r.height / 2) * 0.25;
+      gsap.to(btn, { x, y, duration: 0.3, ease: 'power2.out' });
+    });
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' });
+    });
+  });
+
+  /* ── VANILLA-TILT en featured cards ── */
+  if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll('.featured-card'), {
+      max: 6, speed: 500, glare: true, 'max-glare': 0.12
+    });
+  }
+
+})();
+</script>
+
+<!-- ===== DÍA 4: VANILLA-TILT (cargado después de GSAP) ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script>
+  if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll('.featured-card'), {
+      max: 6, speed: 500, glare: true, 'max-glare': 0.12
+    });
+  }
+</script>
 </body>
 </html>
