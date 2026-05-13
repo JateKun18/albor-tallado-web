@@ -3,158 +3,150 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- ═══════════════════════════════════════════
-       HOME — Prioridad máxima · Día de la Madre
+       HOME — Prioridad máxima
   ═══════════════════════════════════════════ -->
   <url>
     <loc>https://albortallado.com/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
 
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/producto-albor.png</image:loc>
-      <image:title>Ramos en parafina artesanales Quito — Regalos Día de la Madre 2026 · Albor Tallado</image:title>
-      <image:caption>Velas artesanales y ramos en parafina tallados a mano en Quito. El regalo que tu mamá recordará. Desde $25. Entrega en Quito y provincia.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/producto-albor.webp</image:loc>
+      <image:title>Velas artesanales y ramos en parafina tallados a mano — Albor Tallado Quito</image:title>
+      <image:caption>Ramos en parafina y velas artesanales elaborados a mano en Quito. Regalos únicos desde $5. Entrega en Quito y valles.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
 
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/cenital-albor.png</image:loc>
-      <image:title>Vista cenital ramo de flores en parafina Quito — regalo artesanal mamá</image:title>
-      <image:caption>Ramo artesanal en parafina vista desde arriba. Elaborado a mano en Quito, Ecuador. Albor Tallado.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/cenital-albor.webp</image:loc>
+      <image:title>Tallado de velas en parafina Quito — vista cenital arreglo artesanal</image:title>
+      <image:caption>Vista cenital de arreglo en parafina tallado a mano en Quito. Regalos artesanales únicos. Albor Tallado Ecuador.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
 
   </url>
 
   <!-- ═══════════════════════════════════════════
-       CATÁLOGO — Keywords: comprar, precios, ramos
+       CATÁLOGO — Keywords: comprar, precios, colección
   ═══════════════════════════════════════════ -->
   <url>
     <loc>https://albortallado.com/catalogo.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
 
-    <!-- Ramo 01 · $25 -->
+    <!-- Cuenco Jardín $5 -->
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/1/frontal1.png</image:loc>
-      <image:title>Ramo 01 Parafina Quito $25 — regalo Día de la Madre · velas artesanales Ecuador</image:title>
-      <image:caption>Ramo en parafina Nro. 1 elaborado a mano en Quito. Precio: $25. Regalo perfecto para el Día de la Madre 2026.</image:caption>
+      <image:loc>https://albortallado.com/assets/CATALOGO/CUENCO_JARDIN/cuenco_grupo_colores.webp</image:loc>
+      <image:title>Cuenco Jardín — vela parafina Quito desde $5 · regalos artesanales Ecuador</image:title>
+      <image:caption>Cuenco Jardín: vela floral en parafina sobre cuenco cerámico. Colores personalizables. Desde $5. Albor Tallado Quito.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/1/detalle1.png</image:loc>
-      <image:title>Detalle flores parafina artesanal Quito — regalos originales mamá</image:title>
-      <image:caption>Detalle artesanal de flores en parafina talladas a mano. Regalos únicos para mamá en Quito, Ecuador.</image:caption>
-      <image:geo_location>Quito, Ecuador</image:geo_location>
-    </image:image>
-    <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/1/cenital1.png</image:loc>
-      <image:title>Vista aérea Ramo 01 parafina — velas artesanales Quito Ecuador</image:title>
-      <image:caption>Vista superior ramo de velas en parafina Nro. 1. Albor Tallado. Regalo artesanal Día de la Madre 2026.</image:caption>
+      <image:loc>https://albortallado.com/assets/CATALOGO/CUENCO_JARDIN/cuenco_coral_frontal.webp</image:loc>
+      <image:title>Cuenco Jardín coral — tallado de velas artesanal Quito Ecuador</image:title>
+      <image:caption>Cuenco Jardín versión coral. Tallado de velas en parafina artesanal. Albor Tallado, Quito.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
 
-    <!-- Ramo 02 · $25 -->
+    <!-- Jardín en Copa $7 -->
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/2/frontal2.png</image:loc>
-      <image:title>Ramo 02 Flores Parafina Quito $25 — comprar regalo original para mamá</image:title>
-      <image:caption>Ramo en parafina Nro. 2. Hecho artesanalmente en Quito. $25. Entrega a domicilio. Albor Tallado.</image:caption>
-      <image:geo_location>Quito, Ecuador</image:geo_location>
-    </image:image>
-    <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/2/detalle2.png</image:loc>
-      <image:title>Detalle ramo parafina hecho a mano Quito — velas decorativas regalo</image:title>
-      <image:caption>Flores de parafina elaboradas a mano en Quito. Regalos artesanales Ecuador. Día de la Madre.</image:caption>
-      <image:geo_location>Quito, Ecuador</image:geo_location>
-    </image:image>
-    <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/2/cenital2.png</image:loc>
-      <image:title>Vista cenital Ramo 02 parafina artesanal — regalos Quito Ecuador</image:title>
-      <image:caption>Vista superior ramo 2 en parafina. Albor Tallado Quito. Regalo original para el Día de la Madre.</image:caption>
+      <image:loc>https://albortallado.com/assets/CATALOGO/JARDIN_EN_COPA/copa_duo_colores.webp</image:loc>
+      <image:title>Jardín en Copa — arreglo parafina Quito desde $7 · regalo artesanal</image:title>
+      <image:caption>Jardín en Copa: composición floral en parafina sobre copa cerámica. Regalo artesanal desde $7. Albor Tallado Quito.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
 
-    <!-- Ramo 03 · $25 -->
+    <!-- Hoja y Rosa $7 -->
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/3/frontal3.png</image:loc>
-      <image:title>Ramo 03 Velas Parafina Artesanales Quito $25 — regalo Día de la Madre Ecuador</image:title>
-      <image:caption>Ramo en parafina Nro. 3. Artesanal, elaborado a mano en Quito. Perfecto para regalar el Día de la Madre 2026.</image:caption>
-      <image:geo_location>Quito, Ecuador</image:geo_location>
-    </image:image>
-    <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/3/detalle3.png</image:loc>
-      <image:title>Detalle artesanal ramo parafina Quito — flores de vela regalo mamá</image:title>
-      <image:caption>Detalle de flores de parafina talladas a mano. Regalos únicos en Quito para mamá. Albor Tallado.</image:caption>
-      <image:geo_location>Quito, Ecuador</image:geo_location>
-    </image:image>
-    <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/3/cenital3.png</image:loc>
-      <image:title>Vista aérea Ramo 03 parafina — velas artesanales decorativas Quito</image:title>
-      <image:caption>Ramo 3 artesanal en parafina visto desde arriba. Albor Tallado. Quito Ecuador.</image:caption>
+      <image:loc>https://albortallado.com/assets/CATALOGO/HOJA_Y_ROSA/hoja_lavanda_frontal.webp</image:loc>
+      <image:title>Hoja y Rosa lavanda — vela parafina artesanal Quito $7</image:title>
+      <image:caption>Hoja y Rosa: rosa en parafina tallada a mano sobre plato hoja de porcelana. Desde $7. Regalos artesanales Quito.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
 
-    <!-- Ramo 04 · $30 Premium -->
+    <!-- Cielo Cerámica $25 -->
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/4/frontal4.png</image:loc>
-      <image:title>Ramo 04 Premium Parafina Quito $30 — regalo exclusivo Día de la Madre 2026</image:title>
-      <image:caption>Ramo premium en parafina Nro. 4. El más completo de la colección. $30. Elaborado a mano en Quito. Regalo que se queda para siempre.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/catalogo/1/frontal1.webp</image:loc>
+      <image:title>Cielo Cerámica — ramo velas parafina Quito $25 · regalo artesanal exclusivo</image:title>
+      <image:caption>Cielo Cerámica: arreglo en parafina artesanal sobre base cerámica. Tallado a mano en Quito. $25.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/4/detalle4.png</image:loc>
-      <image:title>Detalle Ramo 04 premium flores parafina Quito — regalo exclusivo mamá</image:title>
-      <image:caption>Detalle de ramo premium en parafina. Regalo exclusivo Día de la Madre. Albor Tallado Quito Ecuador.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/catalogo/1/detalle1.webp</image:loc>
+      <image:title>Detalle tallado de velas parafina Quito — flores artesanales Ecuador</image:title>
+      <image:caption>Detalle artesanal de flores en parafina talladas a mano. Regalos únicos en Quito, Ecuador. Albor Tallado.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/catalogo/4/cenital4.png</image:loc>
-      <image:title>Vista cenital Ramo 04 premium parafina — velas decorativas regalo Quito</image:title>
-      <image:caption>Vista superior ramo 4 premium artesanal en parafina. Albor Tallado. Regalo mamá Quito 2026.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/catalogo/1/cenital1.webp</image:loc>
+      <image:title>Vista cenital arreglo parafina Quito — velas artesanales decorativas</image:title>
+      <image:caption>Vista superior de arreglo en parafina artesanal. Tallado a mano en Quito, Ecuador. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
+    <!-- Poema y Metal $30 -->
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/2/frontal2.webp</image:loc>
+      <image:title>Poema y Metal — flores parafina Quito $30 · regalo artesanal premium</image:title>
+      <image:caption>Poema y Metal: composición en parafina sobre base metálica. Tallado artesanal en Quito. $30. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/2/detalle2.webp</image:loc>
+      <image:title>Detalle flores parafina hecho a mano Quito — velas decorativas regalo</image:title>
+      <image:caption>Flores de parafina elaboradas a mano en Quito. Regalos artesanales Ecuador. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+
+    <!-- Bolsa Encantada $30 -->
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/4/frontal4.webp</image:loc>
+      <image:title>Bolsa Encantada — ramo parafina artesanal Quito $30 · regalo exclusivo</image:title>
+      <image:caption>Bolsa Encantada: la pieza más completa de la colección. Parafina artesanal sobre base premium. $30. Albor Tallado Quito.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/4/detalle4.webp</image:loc>
+      <image:title>Detalle Bolsa Encantada parafina premium Quito — regalos artesanales Ecuador</image:title>
+      <image:caption>Detalle de Bolsa Encantada premium en parafina. Regalo exclusivo. Albor Tallado Quito Ecuador.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
 
   </url>
 
   <!-- ═══════════════════════════════════════════
-       BESPOKE — Keywords: personalizado, exclusivo, único
+       BESPOKE — Keywords: personalizado, exclusivo, tallado a mano
   ═══════════════════════════════════════════ -->
   <url>
     <loc>https://albortallado.com/bespoke.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
 
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/BESPOKE/FRONTAL.png</image:loc>
-      <image:title>Ramo Bespoke Personalizado Parafina Quito — regalo exclusivo artesanal desde $50</image:title>
-      <image:caption>Ramo bespoke en parafina diseñado a medida en Quito. El regalo más exclusivo. Desde $50. Albor Tallado.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/FRONTAL.webp</image:loc>
+      <image:title>Pieza Bespoke tallada a mano en parafina Quito — regalo personalizado exclusivo</image:title>
+      <image:caption>Pieza bespoke en parafina diseñada y tallada a mano en Quito. El regalo más exclusivo. Albor Tallado.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/BESPOKE/DETALLE.png</image:loc>
-      <image:title>Detalle vela bespoke parafina Quito — regalo personalizado artesanal Ecuador</image:title>
-      <image:caption>Detalle de pieza bespoke en parafina tallada a mano. Albor Tallado. Regalos personalizados Quito.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/DETALLE.webp</image:loc>
+      <image:title>Detalle tallado de vela bespoke parafina Quito — regalo personalizado artesanal Ecuador</image:title>
+      <image:caption>Detalle del proceso artesanal de tallado en parafina. Pieza bespoke única. Albor Tallado Quito.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/BESPOKE/MANO%20Y%20PRODUCTO.png</image:loc>
-      <image:title>Proceso artesanal tallado velas parafina Quito — Albor Tallado bespoke hecho a mano</image:title>
-      <image:caption>Manos del artesano tallando una pieza en parafina en Quito. Proceso 100% artesanal. Albor Tallado Ecuador.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/MANO%20Y%20PRODUCTO.webp</image:loc>
+      <image:title>Manos tallando vela artesanal en parafina Quito — proceso bespoke Albor Tallado</image:title>
+      <image:caption>Proceso artesanal de tallado de velas en parafina en Quito. 100% hecho a mano. Albor Tallado Ecuador.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://albortallado.com/assets/img/BESPOKE/CENITAL%20LATERAL.png</image:loc>
-      <image:title>Vista lateral ramo bespoke parafina — regalo personalizado Quito Ecuador</image:title>
-      <image:caption>Vista lateral de ramo bespoke artesanal en parafina. Personalizado en Quito, Ecuador. Albor Tallado.</image:caption>
-      <image:geo_location>Quito, Ecuador</image:geo_location>
-    </image:image>
-    <image:image>
-      <image:loc>https://albortallado.com/assets/img/BESPOKE/LATREAL.png</image:loc>
-      <image:title>Ramo parafina bespoke perfil lateral — regalo artesanal exclusivo Quito</image:title>
-      <image:caption>Ramo bespoke en parafina, perfil lateral. Regalo artesanal exclusivo. Albor Tallado, Quito, Ecuador.</image:caption>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/CENITAL%20LATERAL.webp</image:loc>
+      <image:title>Vista lateral pieza parafina bespoke — velas artesanales decorativas Quito</image:title>
+      <image:caption>Vista lateral de pieza bespoke artesanal en parafina. Personalizada en Quito, Ecuador. Albor Tallado.</image:caption>
       <image:geo_location>Quito, Ecuador</image:geo_location>
     </image:image>
 
@@ -165,9 +157,71 @@
   ═══════════════════════════════════════════ -->
   <url>
     <loc>https://albortallado.com/contacto.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       NOVEDADES — Blog SEO
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://albortallado.com/novedades/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://albortallado.com/novedades/bodas-eventos-parafina-quito.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/CENITAL%20LATERAL.webp</image:loc>
+      <image:title>Detalles parafina para bodas Quito — centros de mesa artesanales Ecuador</image:title>
+      <image:caption>Piezas artesanales en parafina para bodas y eventos en Quito. Centros de mesa, souvenirs, bespoke. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://albortallado.com/novedades/velas-bodas-quito.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/BESPOKE/FRONTAL.webp</image:loc>
+      <image:title>Velas parafina para bodas Quito — detalles artesanales evento Ecuador</image:title>
+      <image:caption>Velas y piezas en parafina artesanal para bodas en Quito. Talladas a mano. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://albortallado.com/novedades/ramos-parafina-quito.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/1/cenital1.webp</image:loc>
+      <image:title>Ramos parafina artesanal Quito — regalo que no se marchita Ecuador</image:title>
+      <image:caption>Arreglos de parafina artesanal en Quito. El regalo que dura años sin perder su belleza. Albor Tallado.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://albortallado.com/novedades/regalos-dia-madre-quito-2026.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+    <image:image>
+      <image:loc>https://albortallado.com/assets/img/catalogo/4/frontal4.webp</image:loc>
+      <image:title>Regalos artesanales originales Quito — velas parafina regalo especial Ecuador</image:title>
+      <image:caption>Regalos artesanales únicos en parafina. Tallados a mano en Quito. Desde $5. Albor Tallado Ecuador.</image:caption>
+      <image:geo_location>Quito, Ecuador</image:geo_location>
+    </image:image>
   </url>
 
 </urlset>
