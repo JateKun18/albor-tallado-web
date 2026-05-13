@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Albor Tallado — Velas artesanales y ramos en parafina elaborados a mano en Quito. Piezas únicas para regalar o decorar. Entrega en Quito y provincia. Desde $5.">
+    <meta name="description" content="Albor Tallado — Velas artesanales y ramos en parafina elaborados a mano en Quito. Piezas únicas para regalar, decorar y celebrar. Entrega en Quito y provincia.">
     <meta name="keywords" content="velas artesanales Quito, ramos de velas Quito, regalos originales Quito, velas decorativas Quito, velas de parafina, regalo artesanal Quito, flores de parafina, velas talladas Quito, regalos exclusivos Quito, albor tallado, regalos bodas Quito, decoración parafina Ecuador">
     <link rel="canonical" href="https://albortallado.com/">
     <link rel="icon" href="assets/img/logo-albor.png" type="image/png">
@@ -19,7 +19,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://albortallado.com/">
     <meta property="og:title" content="Albor Tallado | Velas Artesanales y Ramos en Parafina | Quito">
-    <meta property="og:description" content="Piezas artesanales en parafina elaboradas a mano en Quito. El regalo que se queda — diseñado para perdurar. Desde $5 · Entrega garantizada en Quito y valles.">
+    <meta property="og:description" content="Piezas artesanales en parafina elaboradas a mano en Quito. El regalo que se queda — diseñado para perdurar. Entrega garantizada en Quito y valles.">
     <meta property="og:image" content="https://albortallado.com/assets/img/producto-albor.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
     <meta property="og:site_name" content="Albor Tallado">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Albor Tallado | Velas Artesanales y Ramos en Parafina | Quito">
-    <meta name="twitter:description" content="Velas artesanales y ramos en parafina tallados a mano en Quito. Piezas únicas que duran para siempre. Desde $5 · Entrega en Quito y valles.">&nbsp;
+    <meta name="twitter:description" content="Velas artesanales y ramos en parafina tallados a mano en Quito. Piezas únicas que duran para siempre. Entrega en Quito y valles.">
     <meta name="twitter:image" content="https://albortallado.com/assets/img/producto-albor.png">
     <title>Albor Tallado | Velas Artesanales y Ramos de Parafina | Quito Ecuador</title>
     <script type="application/ld+json">
@@ -128,7 +128,7 @@
           "@type": "Product",
           "@id": "https://albortallado.com/#product-bespoke",
           "name": "Ramo Bespoke Personalizado en Parafina — Albor Tallado Quito",
-          "description": "Pieza exclusiva en parafina tallada a mano bajo pedido en Quito. Diseño personalizado e irrepetible — el regalo más único de la ciudad. Desde $50.",
+          "description": "Pieza exclusiva en parafina tallada a mano bajo pedido en Quito. Diseño personalizado e irrepetible — el regalo más único de la ciudad. Cotización por WhatsApp.",
           "image": [
             "https://albortallado.com/assets/img/BESPOKE/FRONTAL.png",
             "https://albortallado.com/assets/img/BESPOKE/DETALLE.png",
@@ -166,7 +166,7 @@
               "name": "¿Dónde comprar velas artesanales y ramos en parafina en Quito?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Puedes comprar velas artesanales y ramos en parafina directamente con Albor Tallado por WhatsApp al +593 987 884 988. Entregamos en todo Quito, Cumbayá, Tumbaco y valles. Desde $5."
+                "text": "Puedes comprar velas artesanales y ramos en parafina directamente con Albor Tallado por WhatsApp al +593 987 884 988. Entregamos en todo Quito, Cumbayá, Tumbaco y valles. Escríbenos para cotización."
               }
             },
             {
@@ -174,7 +174,7 @@
               "name": "¿Cuánto cuestan los arreglos de parafina en Quito?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Los arreglos de parafina de Albor Tallado tienen un precio desde $5 (línea Esencial) y desde $25 (línea Premium). Las piezas bespoke personalizadas se cotizan por WhatsApp."
+                "text": "Los precios varían según la pieza y personalización. Escríbenos por WhatsApp al +593 987 884 988 para una cotización sin compromiso — también puedes ver las opciones en el catálogo."
               }
             },
             {
@@ -800,19 +800,22 @@
                 display: flex;
                 flex-direction: column;
             }
+            /* aspect-ratio 3/4 — muestra el arreglo floral completo sin recortar */
             .hero-image {
                 order: 1;
                 width: 100%;
-                height: 55vw;
-                min-height: 240px;
-                max-height: 340px;
+                aspect-ratio: 3/4;
+                height: auto;
+                min-height: unset;
+                max-height: unset;
                 flex-shrink: 0;
             }
             .hero-image img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
-                object-position: center top;
+                object-fit: contain;
+                object-position: center center;
+                background: var(--color-alabastro);
             }
             .hero-content {
                 order: 2;
@@ -836,17 +839,19 @@
             /* ── STRIP ── */
             .strip { padding: 12px 0; }
 
-            /* ── STATS ── */
-            .stats-bar { padding: 40px 0; }
+            /* ── STATS — 3 columnas compactas en móvil ── */
+            .stats-bar { padding: 36px 0; }
             .stats-inner { grid-template-columns: repeat(3, 1fr); gap: 0; }
-            .stat-item { padding: 24px 12px; border-right: 1px solid rgba(184,134,69,0.12); border-bottom: none; }
+            .stat-item { padding: 20px 8px; border-right: 1px solid rgba(184,134,69,0.12); border-bottom: none; }
             .stat-item:last-child { border-right: none; }
-            .stat-num { font-size: clamp(2rem, 7vw, 3rem); }
-            .stat-label { font-size: 0.6rem; }
+            /* clamp reducido: evita overflow con 3 columnas en 360px */
+            .stat-num { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+            .stat-label { font-size: 0.55rem; letter-spacing: 0.14em; }
 
             /* ── MANIFESTO ── */
             .manifesto { padding: 56px 0; }
-            .manifesto blockquote { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+            /* mínimo 1.1rem garantiza legibilidad en 360px */
+            .manifesto blockquote { font-size: clamp(1.1rem, 4.8vw, 1.7rem); line-height: 1.55; }
 
             /* ── GALERÍA ── */
             .galeria { padding: 48px 0 64px; }
@@ -856,19 +861,23 @@
                 grid-template-rows: auto;
                 gap: 10px;
             }
-            .galeria-item { height: auto; aspect-ratio: 4/5; }
-            .galeria-item.span-col { grid-column: span 1; aspect-ratio: 4/3; }
+            /* Portrait 3/4 — muestra arreglos florales sin recortar */
+            .galeria-item { height: auto; aspect-ratio: 3/4; }
+            /* span-col también portrait — no paisaje, corta las flores */
+            .galeria-item.span-col { grid-column: span 1; aspect-ratio: 3/4; }
 
             /* ── FEATURED PRODUCTS ── */
             .featured { padding: 48px 0 56px; }
             .featured-grid { grid-template-columns: 1fr; gap: 16px; }
-            .featured-card { max-width: 440px; margin: 0 auto; width: 100%; }
-            .featured-img { aspect-ratio: 4/5; }
+            .featured-card { max-width: 100%; margin: 0 auto; width: 100%; }
+            /* 3/4 da más altura vertical para mostrar arreglos florales completos */
+            .featured-img { aspect-ratio: 3/4; }
 
             /* ── INSTAGRAM ── */
             .instagram-strip { padding: 48px 0; }
             .instagram-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-            #ig-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 3px; }
+            /* ig-grid: 2 columnas en móvil, gap mínimo */
+            #ig-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 2px; }
 
             /* ── CATALOGO CARDS ── */
             .catalogo-grid { grid-template-columns: 1fr; }
@@ -884,20 +893,29 @@
             .cta-actions { flex-direction: column; align-items: center; gap: 16px; }
             .cta-actions .btn-primary { width: 100%; max-width: 320px; text-align: center; }
 
+            /* ── WA FLOAT — más pegado al borde en pantallas pequeñas ── */
+            .wa-float { bottom: 20px; right: 20px; width: 48px; height: 48px; }
+
             /* ── FOOTER ── */
             footer { padding: 40px 0 24px; }
             .footer-inner { grid-template-columns: 1fr; gap: 32px; }
             .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
         }
 
-        /* ===== RESPONSIVE — SMALL MOBILE ===== */
+        /* ===== RESPONSIVE — SMALL MOBILE (≤420px: iPhone SE, Android 360px) ===== */
         @media (max-width: 420px) {
-            .stats-inner { grid-template-columns: 1fr; }
-            .stat-item { border-right: none; border-bottom: 1px solid rgba(184,134,69,0.12); }
-            .stat-item:last-child { border-bottom: none; }
+            /* Mantener 3 columnas — solo reducir padding y font */
+            .stats-inner { grid-template-columns: repeat(3, 1fr); }
+            .stat-item { border-right: 1px solid rgba(184,134,69,0.12); border-bottom: none; padding: 16px 6px; }
+            .stat-item:last-child { border-right: none; }
+            .stat-num { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+            .stat-label { font-size: 0.5rem; letter-spacing: 0.1em; }
             .hero h1 { font-size: clamp(1.9rem, 8vw, 2.2rem) !important; }
-            .instagram-grid { grid-template-columns: 1fr; }
-            #ig-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            /* Instagram simple: 2 columnas también en 420px */
+            .instagram-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            /* ig-grid: 2 columnas con gap mínimo */
+            #ig-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 2px; }
+            .manifesto blockquote { font-size: clamp(1.1rem, 4.5vw, 1.5rem); }
         }
 
         /* ===== TOUCH DEVICES — sin cursor personalizado ===== */
@@ -950,7 +968,7 @@
         <span class="announcement-sep">&#183;</span>
         <span>Centros de mesa &amp; detalles en parafina artesanal</span>
         <span class="announcement-sep">&#183;</span>
-        <span>Desde <strong>$5</strong> · Entrega garantizada</span>
+        <span>Entrega garantizada en Quito y Valles</span>
         <a href="https://wa.me/593987884988?text=Hola%2C%20quiero%20cotizar%20piezas%20para%20un%20evento." class="announcement-cta" target="_blank" rel="noopener noreferrer">Cotizar ahora</a>
     </div>
 </div>
@@ -1084,19 +1102,19 @@
             <div class="galeria-item span-col reveal" data-lightbox="assets/img/catalogo/1/frontal1.webp">
                 <img src="assets/img/catalogo/1/frontal1.webp" alt="Cielo Cerámica — Colección 2026" width="900" height="1125" loading="lazy">
                 <div class="galeria-item-overlay">
-                    <span class="galeria-item-caption">Cielo Cerámica — $25</span>
+                    <span class="galeria-item-caption">Cielo Cerámica</span>
                 </div>
             </div>
             <div class="galeria-item reveal" data-lightbox="assets/img/catalogo/2/frontal2.webp">
                 <img src="assets/img/catalogo/2/frontal2.webp" alt="Poema y Metal — parafina artesanal" width="900" height="1125" loading="lazy">
                 <div class="galeria-item-overlay">
-                    <span class="galeria-item-caption">Poema y Metal — $30</span>
+                    <span class="galeria-item-caption">Poema y Metal</span>
                 </div>
             </div>
             <div class="galeria-item reveal" data-lightbox="assets/img/catalogo/3/frontal3.webp">
                 <img src="assets/img/catalogo/3/frontal3.webp" alt="Cielo Cerámica v2 — pieza en parafina" width="900" height="1125" loading="lazy">
                 <div class="galeria-item-overlay">
-                    <span class="galeria-item-caption">Cielo Cerámica — $25</span>
+                    <span class="galeria-item-caption">Cielo Cerámica</span>
                 </div>
             </div>
         </div>
@@ -1122,8 +1140,8 @@
                     <p class="featured-sub">35cm · Base Cerámica · 8–10 piezas</p>
                     <p class="featured-desc">El más pedido. Arreglo en parafina sobre base cerámica — presencia real en cualquier espacio, para siempre.</p>
                     <div class="featured-bottom">
-                        <span class="featured-price">$25</span>
-                        <a href="https://wa.me/593987884988?text=Hola%2C%20me%20interesa%20el%20Cielo%20Cer%C3%A1mica." class="featured-cta" target="_blank" rel="noopener noreferrer">Pedirlo →</a>
+                        <a href="catalogo.html" class="featured-cta" style="color:var(--color-espresso); font-size:0.7rem; letter-spacing:0.12em;">Ver en catálogo</a>
+                        <a href="https://wa.me/593987884988?text=Hola%2C%20me%20interesa%20el%20Cielo%20Cer%C3%A1mica." class="featured-cta" target="_blank" rel="noopener noreferrer">Cotizar →</a>
                     </div>
                 </div>
             </div>
@@ -1137,8 +1155,8 @@
                     <p class="featured-sub">21×12cm · Base Metálica · 15 piezas</p>
                     <p class="featured-desc">Elegante y lista para regalar o decorar. Parafina artesanal sobre base metálica — la pieza que genera conversación.</p>
                     <div class="featured-bottom">
-                        <span class="featured-price">$30</span>
-                        <a href="https://wa.me/593987884988?text=Hola%2C%20me%20interesa%20el%20Poema%20y%20Metal." class="featured-cta" target="_blank" rel="noopener noreferrer">Pedirlo →</a>
+                        <a href="catalogo.html" class="featured-cta" style="color:var(--color-espresso); font-size:0.7rem; letter-spacing:0.12em;">Ver en catálogo</a>
+                        <a href="https://wa.me/593987884988?text=Hola%2C%20me%20interesa%20el%20Poema%20y%20Metal." class="featured-cta" target="_blank" rel="noopener noreferrer">Cotizar →</a>
                     </div>
                 </div>
             </div>
@@ -1262,7 +1280,7 @@
 </section>
 
 <!-- NOVEDADES TEASER -->
-<section style="background: var(--color-alabastro); padding: 5rem 0; border-top: 1px solid rgba(30,27,24,0.08);">
+<section id="novedades-teaser" style="background: var(--color-alabastro); padding: 5rem 0; border-top: 1px solid rgba(30,27,24,0.08);">
     <div class="container">
         <div style="text-align:center; margin-bottom: 3rem;">
             <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-oro); display:block; margin-bottom:0.75rem;">Artículos</span>
@@ -1330,7 +1348,12 @@
 </section>
 <style>
 .ig-item:hover img { transform: scale(1.07); }
-@media(max-width:600px){ #ig-grid { grid-template-columns: repeat(3,1fr); } }
+@media(max-width:768px){
+    /* ig-grid: 2 columnas, gap mínimo */
+    #ig-grid { grid-template-columns: repeat(2,1fr) !important; gap: 2px; }
+    /* Novedades teaser: altura fija 220px → altura automática con aspect-ratio 16/9 */
+    #novedades-teaser img { height: auto !important; aspect-ratio: 16/9; }
+}
 </style>
 
 <!-- FOOTER -->
@@ -1354,11 +1377,11 @@
             <div class="footer-col">
                 <h4>Colección</h4>
                 <ul>
-                    <li><a href="catalogo.html">Cuenco Jardín — $5</a></li>
-                    <li><a href="catalogo.html">Jardín en Copa — $7</a></li>
-                    <li><a href="catalogo.html">Cielo Cerámica — $25</a></li>
-                    <li><a href="catalogo.html">Poema y Metal — $30</a></li>
-                    <li><a href="catalogo.html">Bolsa Encantada — $30</a></li>
+                    <li><a href="catalogo.html">Cuenco Jardín</a></li>
+                    <li><a href="catalogo.html">Jardín en Copa</a></li>
+                    <li><a href="catalogo.html">Cielo Cerámica</a></li>
+                    <li><a href="catalogo.html">Poema y Metal</a></li>
+                    <li><a href="catalogo.html">Bolsa Encantada</a></li>
                     <li><a href="bespoke.html">Bespoke — A medida</a></li>
                 </ul>
             </div>
